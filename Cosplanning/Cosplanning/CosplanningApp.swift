@@ -11,7 +11,7 @@ import SwiftUI
 struct CosplanningApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentTabView()
         }
     }
 }

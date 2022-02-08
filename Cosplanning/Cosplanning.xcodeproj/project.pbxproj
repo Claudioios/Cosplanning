@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		66F7FED927B25B8E00B4BB19 /* CosplanningApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F7FED827B25B8E00B4BB19 /* CosplanningApp.swift */; };
-		66F7FEDB27B25B8E00B4BB19 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F7FEDA27B25B8E00B4BB19 /* ContentView.swift */; };
+		66F7FEDB27B25B8E00B4BB19 /* PlannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F7FEDA27B25B8E00B4BB19 /* PlannerView.swift */; };
 		66F7FEDD27B25B9000B4BB19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66F7FEDC27B25B9000B4BB19 /* Assets.xcassets */; };
 		66F7FEE027B25B9000B4BB19 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66F7FEDF27B25B9000B4BB19 /* Preview Assets.xcassets */; };
 		66F7FEEA27B25B9000B4BB19 /* CosplanningTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F7FEE927B25B9000B4BB19 /* CosplanningTests.swift */; };
 		66F7FEF427B25B9000B4BB19 /* CosplanningUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F7FEF327B25B9000B4BB19 /* CosplanningUITests.swift */; };
 		66F7FEF627B25B9000B4BB19 /* CosplanningUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F7FEF527B25B9000B4BB19 /* CosplanningUITestsLaunchTests.swift */; };
+		F810888727B26182009FC6EB /* InventoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F810888627B26182009FC6EB /* InventoryView.swift */; };
+		F810888927B2618D009FC6EB /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F810888827B2618D009FC6EB /* ProfileView.swift */; };
+		F810888B27B2619D009FC6EB /* ContentTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F810888A27B2619D009FC6EB /* ContentTabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +39,7 @@
 /* Begin PBXFileReference section */
 		66F7FED527B25B8E00B4BB19 /* Cosplanning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cosplanning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66F7FED827B25B8E00B4BB19 /* CosplanningApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosplanningApp.swift; sourceTree = "<group>"; };
-		66F7FEDA27B25B8E00B4BB19 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		66F7FEDA27B25B8E00B4BB19 /* PlannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannerView.swift; sourceTree = "<group>"; };
 		66F7FEDC27B25B9000B4BB19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		66F7FEDF27B25B9000B4BB19 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		66F7FEE527B25B9000B4BB19 /* CosplanningTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CosplanningTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +47,9 @@
 		66F7FEEF27B25B9000B4BB19 /* CosplanningUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CosplanningUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		66F7FEF327B25B9000B4BB19 /* CosplanningUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosplanningUITests.swift; sourceTree = "<group>"; };
 		66F7FEF527B25B9000B4BB19 /* CosplanningUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosplanningUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F810888627B26182009FC6EB /* InventoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryView.swift; sourceTree = "<group>"; };
+		F810888827B2618D009FC6EB /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		F810888A27B2619D009FC6EB /* ContentTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +101,10 @@
 			isa = PBXGroup;
 			children = (
 				66F7FED827B25B8E00B4BB19 /* CosplanningApp.swift */,
-				66F7FEDA27B25B8E00B4BB19 /* ContentView.swift */,
+				66F7FEDA27B25B8E00B4BB19 /* PlannerView.swift */,
+				F810888627B26182009FC6EB /* InventoryView.swift */,
+				F810888827B2618D009FC6EB /* ProfileView.swift */,
+				F810888A27B2619D009FC6EB /* ContentTabView.swift */,
 				66F7FEDC27B25B9000B4BB19 /* Assets.xcassets */,
 				66F7FEDE27B25B9000B4BB19 /* Preview Content */,
 			);
@@ -257,7 +266,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66F7FEDB27B25B8E00B4BB19 /* ContentView.swift in Sources */,
+				F810888927B2618D009FC6EB /* ProfileView.swift in Sources */,
+				F810888B27B2619D009FC6EB /* ContentTabView.swift in Sources */,
+				F810888727B26182009FC6EB /* InventoryView.swift in Sources */,
+				66F7FEDB27B25B8E00B4BB19 /* PlannerView.swift in Sources */,
 				66F7FED927B25B8E00B4BB19 /* CosplanningApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,7 +431,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Cosplanning/Preview Content\"";
-				DEVELOPMENT_TEAM = BWUQ8K9QZU;
+				DEVELOPMENT_TEAM = 4329X84WSG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -427,6 +439,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -448,7 +461,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Cosplanning/Preview Content\"";
-				DEVELOPMENT_TEAM = BWUQ8K9QZU;
+				DEVELOPMENT_TEAM = 4329X84WSG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -456,6 +469,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
