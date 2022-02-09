@@ -7,11 +7,10 @@
 
 import SwiftUI
 
-struct ProfileView: View {
+struct ProjectView: View {
     var body: some View {
-        
         VStack{
-            
+           
             List {
                 Text("Projects on going")
             }
@@ -23,15 +22,15 @@ struct ProfileView: View {
                 
             }
             
-        }
+        
         .padding()
     }
-        
-    }
     
+}
+}
 
-struct ProfileView_Previews: PreviewProvider {
+struct ProjectView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView()
+        ProjectView()
     }
 }

@@ -15,8 +15,9 @@
 		66F7FEF427B25B9000B4BB19 /* CosplanningUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F7FEF327B25B9000B4BB19 /* CosplanningUITests.swift */; };
 		66F7FEF627B25B9000B4BB19 /* CosplanningUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F7FEF527B25B9000B4BB19 /* CosplanningUITestsLaunchTests.swift */; };
 		F810888727B26182009FC6EB /* InventoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F810888627B26182009FC6EB /* InventoryView.swift */; };
-		F810888927B2618D009FC6EB /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F810888827B2618D009FC6EB /* ProfileView.swift */; };
+		F810888927B2618D009FC6EB /* ProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F810888827B2618D009FC6EB /* ProjectView.swift */; };
 		F810888B27B2619D009FC6EB /* ContentTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F810888A27B2619D009FC6EB /* ContentTabView.swift */; };
+		F87F8E9D27B3AD7C0073571E /* BudgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87F8E9C27B3AD7C0073571E /* BudgetView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,8 +49,9 @@
 		66F7FEF327B25B9000B4BB19 /* CosplanningUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosplanningUITests.swift; sourceTree = "<group>"; };
 		66F7FEF527B25B9000B4BB19 /* CosplanningUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosplanningUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F810888627B26182009FC6EB /* InventoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryView.swift; sourceTree = "<group>"; };
-		F810888827B2618D009FC6EB /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		F810888827B2618D009FC6EB /* ProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectView.swift; sourceTree = "<group>"; };
 		F810888A27B2619D009FC6EB /* ContentTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTabView.swift; sourceTree = "<group>"; };
+		F87F8E9C27B3AD7C0073571E /* BudgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +105,8 @@
 				66F7FED827B25B8E00B4BB19 /* CosplanningApp.swift */,
 				66F7FEDA27B25B8E00B4BB19 /* PlannerView.swift */,
 				F810888627B26182009FC6EB /* InventoryView.swift */,
-				F810888827B2618D009FC6EB /* ProfileView.swift */,
+				F810888827B2618D009FC6EB /* ProjectView.swift */,
+				F87F8E9C27B3AD7C0073571E /* BudgetView.swift */,
 				F810888A27B2619D009FC6EB /* ContentTabView.swift */,
 				66F7FEDC27B25B9000B4BB19 /* Assets.xcassets */,
 				66F7FEDE27B25B9000B4BB19 /* Preview Content */,
@@ -266,7 +269,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F810888927B2618D009FC6EB /* ProfileView.swift in Sources */,
+				F810888927B2618D009FC6EB /* ProjectView.swift in Sources */,
+				F87F8E9D27B3AD7C0073571E /* BudgetView.swift in Sources */,
 				F810888B27B2619D009FC6EB /* ContentTabView.swift in Sources */,
 				F810888727B26182009FC6EB /* InventoryView.swift in Sources */,
 				66F7FEDB27B25B8E00B4BB19 /* PlannerView.swift in Sources */,

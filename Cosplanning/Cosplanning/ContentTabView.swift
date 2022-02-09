@@ -23,12 +23,17 @@ struct ContentTabView: View {
               Text("Inventory")
             }
           
-          ProfileView()
+          ProjectView()
             .tabItem {
               Image(systemName: "brain.head.profile")
-              Text("Profile")
+              Text("Projects")
             }
           
+            BudgetView()
+              .tabItem {
+                Image(systemName: "creditcard.fill")
+                Text("Budget")
+              }
         }
           
         .accentColor(Color.indigo)
