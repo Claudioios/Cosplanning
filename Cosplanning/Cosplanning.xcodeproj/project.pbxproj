@@ -19,6 +19,7 @@
 		F810888B27B2619D009FC6EB /* ContentTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F810888A27B2619D009FC6EB /* ContentTabView.swift */; };
 		F815F01627B3C25E00D1B6A4 /* CosplayCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F815F01527B3C25E00D1B6A4 /* CosplayCardView.swift */; };
 		F815F01827B3D05E00D1B6A4 /* NewProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F815F01727B3D05E00D1B6A4 /* NewProjectView.swift */; };
+		F815F01A27B3E0CB00D1B6A4 /* DescriptionCosplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F815F01927B3E0CB00D1B6A4 /* DescriptionCosplayView.swift */; };
 		F87F8E9D27B3AD7C0073571E /* BudgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87F8E9C27B3AD7C0073571E /* BudgetView.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,7 @@
 		F810888A27B2619D009FC6EB /* ContentTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTabView.swift; sourceTree = "<group>"; };
 		F815F01527B3C25E00D1B6A4 /* CosplayCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosplayCardView.swift; sourceTree = "<group>"; };
 		F815F01727B3D05E00D1B6A4 /* NewProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProjectView.swift; sourceTree = "<group>"; };
+		F815F01927B3E0CB00D1B6A4 /* DescriptionCosplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionCosplayView.swift; sourceTree = "<group>"; };
 		F87F8E9C27B3AD7C0073571E /* BudgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,6 +113,7 @@
 				F810888627B26182009FC6EB /* InventoryView.swift */,
 				F810888827B2618D009FC6EB /* ProjectView.swift */,
 				F815F01727B3D05E00D1B6A4 /* NewProjectView.swift */,
+				F815F01927B3E0CB00D1B6A4 /* DescriptionCosplayView.swift */,
 				F87F8E9C27B3AD7C0073571E /* BudgetView.swift */,
 				F810888A27B2619D009FC6EB /* ContentTabView.swift */,
 				F815F01527B3C25E00D1B6A4 /* CosplayCardView.swift */,
@@ -280,6 +283,7 @@
 				F810888B27B2619D009FC6EB /* ContentTabView.swift in Sources */,
 				F815F01827B3D05E00D1B6A4 /* NewProjectView.swift in Sources */,
 				F810888727B26182009FC6EB /* InventoryView.swift in Sources */,
+				F815F01A27B3E0CB00D1B6A4 /* DescriptionCosplayView.swift in Sources */,
 				F815F01627B3C25E00D1B6A4 /* CosplayCardView.swift in Sources */,
 				66F7FEDB27B25B8E00B4BB19 /* PlannerView.swift in Sources */,
 				66F7FED927B25B8E00B4BB19 /* CosplanningApp.swift in Sources */,
