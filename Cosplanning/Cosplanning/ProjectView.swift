@@ -9,24 +9,17 @@ import SwiftUI
 
 struct ProjectView: View {
     var body: some View {
-        VStack{
-           
-            List {
-                Text("Projects on going")
+        NavigationView{
+            VStack{
+                NavigationLink(destination: NewProjectView()){
+            Text("Start a new project")
+        }
             }
-            List {
-                Text("Projects finished")
-            }
-            Button("Start new project"){
-                print ("new project")
-                
-            }
-            
+            .navigationTitle("Projects")
+        }
         
-        .padding()
     }
-    
-}
+       
 }
 
 struct ProjectView_Previews: PreviewProvider {
