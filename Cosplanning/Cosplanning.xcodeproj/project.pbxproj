@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		66E5BF7127B664B000571432 /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E5BF7027B664B000571432 /* TaskListView.swift */; };
 		66F7FED927B25B8E00B4BB19 /* CosplanningApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F7FED827B25B8E00B4BB19 /* CosplanningApp.swift */; };
 		66F7FEDB27B25B8E00B4BB19 /* PlannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F7FEDA27B25B8E00B4BB19 /* PlannerView.swift */; };
 		66F7FEDD27B25B9000B4BB19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66F7FEDC27B25B9000B4BB19 /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 		66F7FEEA27B25B9000B4BB19 /* CosplanningTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F7FEE927B25B9000B4BB19 /* CosplanningTests.swift */; };
 		66F7FEF427B25B9000B4BB19 /* CosplanningUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F7FEF327B25B9000B4BB19 /* CosplanningUITests.swift */; };
 		66F7FEF627B25B9000B4BB19 /* CosplanningUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F7FEF527B25B9000B4BB19 /* CosplanningUITestsLaunchTests.swift */; };
+		66FBF2EE27B678B70090E446 /* BudgetListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FBF2ED27B678B70090E446 /* BudgetListView.swift */; };
 		F810888727B26182009FC6EB /* InventoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F810888627B26182009FC6EB /* InventoryView.swift */; };
 		F810888927B2618D009FC6EB /* ProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F810888827B2618D009FC6EB /* ProjectView.swift */; };
 		F810888B27B2619D009FC6EB /* ContentTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F810888A27B2619D009FC6EB /* ContentTabView.swift */; };
@@ -42,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		66E5BF7027B664B000571432 /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
 		66F7FED527B25B8E00B4BB19 /* Cosplanning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cosplanning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66F7FED827B25B8E00B4BB19 /* CosplanningApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosplanningApp.swift; sourceTree = "<group>"; };
 		66F7FEDA27B25B8E00B4BB19 /* PlannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannerView.swift; sourceTree = "<group>"; };
@@ -52,6 +55,7 @@
 		66F7FEEF27B25B9000B4BB19 /* CosplanningUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CosplanningUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		66F7FEF327B25B9000B4BB19 /* CosplanningUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosplanningUITests.swift; sourceTree = "<group>"; };
 		66F7FEF527B25B9000B4BB19 /* CosplanningUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosplanningUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		66FBF2ED27B678B70090E446 /* BudgetListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetListView.swift; sourceTree = "<group>"; };
 		F810888627B26182009FC6EB /* InventoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryView.swift; sourceTree = "<group>"; };
 		F810888827B2618D009FC6EB /* ProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectView.swift; sourceTree = "<group>"; };
 		F810888A27B2619D009FC6EB /* ContentTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTabView.swift; sourceTree = "<group>"; };
@@ -118,8 +122,10 @@
 				F815F01927B3E0CB00D1B6A4 /* DescriptionCosplayView.swift */,
 				F815F01B27B655F100D1B6A4 /* TaskView.swift */,
 				F87F8E9C27B3AD7C0073571E /* BudgetView.swift */,
+				66FBF2ED27B678B70090E446 /* BudgetListView.swift */,
 				F810888A27B2619D009FC6EB /* ContentTabView.swift */,
 				F815F01527B3C25E00D1B6A4 /* CosplayCardView.swift */,
+				66E5BF7027B664B000571432 /* TaskListView.swift */,
 				66F7FEDC27B25B9000B4BB19 /* Assets.xcassets */,
 				66F7FEDE27B25B9000B4BB19 /* Preview Content */,
 			);
@@ -284,7 +290,9 @@
 				F810888927B2618D009FC6EB /* ProjectView.swift in Sources */,
 				F87F8E9D27B3AD7C0073571E /* BudgetView.swift in Sources */,
 				F810888B27B2619D009FC6EB /* ContentTabView.swift in Sources */,
+				66E5BF7127B664B000571432 /* TaskListView.swift in Sources */,
 				F815F01C27B655F100D1B6A4 /* TaskView.swift in Sources */,
+				66FBF2EE27B678B70090E446 /* BudgetListView.swift in Sources */,
 				F815F01827B3D05E00D1B6A4 /* NewProjectView.swift in Sources */,
 				F810888727B26182009FC6EB /* InventoryView.swift in Sources */,
 				F815F01A27B3E0CB00D1B6A4 /* DescriptionCosplayView.swift in Sources */,
