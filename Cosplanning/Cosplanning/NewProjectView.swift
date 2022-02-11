@@ -17,21 +17,24 @@ struct NewProjectView: View {
                     HStack{
                         VStack{
                             NavigationLink( destination: DescriptionCosplayView(image: "america-cosplay", name: "Captain America", description: "Here you can find all the tasks that you have to follow to complete this cosplay")){
-                            
+                                
                                 CosplayCard(image: "america")
                             }
                         }
                         VStack{
-                            CosplayCard(image: "deadpool")
-                            Text("Deadpool")
+                            NavigationLink( destination: DescriptionCosplayView(image: "deadpool-cosplay", name: "Deadpool", description: "Here you can find all the tasks that you have to follow to complete this cosplay")){
+                                CosplayCard(image: "deadpool")
+                            }
                         }
                         VStack{
-                            CosplayCard(image: "spider-man")
-                            Text("Spider-Man")
+                            NavigationLink( destination: DescriptionCosplayView(image: "spider-man-cosplay", name: "Spider-Man", description: "Here you can find all the tasks that you have to follow to complete this cosplay")){
+                                CosplayCard(image: "spider-man")
+                            }
                         }
                         VStack{
-                            CosplayCard(image: "iron-man")
-                            Text("Iron Man")
+                            NavigationLink( destination: DescriptionCosplayView(image: "iron-man-cosplay", name: "Iron-Man", description: "Here you can find all the tasks that you have to follow to complete this cosplay")){
+                                CosplayCard(image: "iron-man")
+                            }
                         }
                     }
                     
@@ -44,16 +47,19 @@ struct NewProjectView: View {
                     
                     HStack{
                         VStack{
-                            CosplayCard(image: "joker")
-                            Text("Joker")
+                            NavigationLink( destination: DescriptionCosplayView(image: "america-cosplay", name: "Captain America", description: "Here you can find all the tasks that you have to follow to complete this cosplay")){
+                                CosplayCard(image: "joker")
+                            }
                         }
                         VStack{
-                            CosplayCard(image: "superman")
-                            Text("Superman")
+                            NavigationLink( destination: DescriptionCosplayView(image: "america-cosplay", name: "Captain America", description: "Here you can find all the tasks that you have to follow to complete this cosplay")){
+                                CosplayCard(image: "superman")
+                            }
                         }
                         VStack{
-                            CosplayCard(image: "wonder-woman")
-                            Text("Wonder Woman")
+                            NavigationLink( destination: DescriptionCosplayView(image: "america-cosplay", name: "Captain America", description: "Here you can find all the tasks that you have to follow to complete this cosplay")){
+                                CosplayCard(image: "wonder-woman")
+                            }
                         }
                     }
                     
@@ -65,12 +71,14 @@ struct NewProjectView: View {
                 ScrollView(.horizontal){
                     HStack{
                         VStack{
-                            CosplayCard(image: "darth-vader")
-                            Text("Darth Vader")
+                            NavigationLink( destination: DescriptionCosplayView(image: "america-cosplay", name: "Captain America", description: "Here you can find all the tasks that you have to follow to complete this cosplay")){
+                                CosplayCard(image: "darth-vader")
+                            }
                         }
                         VStack{
-                            CosplayCard(image: "stormtrooper")
-                            Text("Stormtrooper")
+                            NavigationLink( destination: DescriptionCosplayView(image: "america-cosplay", name: "Captain America", description: "Here you can find all the tasks that you have to follow to complete this cosplay")){
+                                CosplayCard(image: "stormtrooper")
+                            }
                         }
                     }
                 }
@@ -80,8 +88,9 @@ struct NewProjectView: View {
                 ScrollView(.horizontal){
                     HStack{
                         VStack{
-                            CosplayCard(image: "joker-persona")
-                            Text("Joker")
+                            NavigationLink( destination: DescriptionCosplayView(image: "america-cosplay", name: "Captain America", description: "Here you can find all the tasks that you have to follow to complete this cosplay")){
+                                CosplayCard(image: "joker-persona")
+                            }
                             
                         }
                     }
