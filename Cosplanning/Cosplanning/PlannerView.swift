@@ -10,6 +10,7 @@ import SwiftUI
 struct PlannerView: View {
     
     @State private var date = Date()
+    @State private var currentdate = Date()
 
     let dateRange: ClosedRange<Date> = {
         let calendar = Calendar.current
@@ -22,18 +23,42 @@ struct PlannerView: View {
     
     
     var body: some View {
-        VStack{
-            DatePicker(
-                "Select Date",
-                selection: $date,
-                in: dateRange,
-                displayedComponents: [.date]
-            )
-                .datePickerStyle(GraphicalDatePickerStyle())
+        NavigationView{
+            VStack{
+                ScrollView(.horizontal)
+                {
+                    HStack{
+                        Circle()
+                            .frame(width: 75, height: 75)
+                        Circle()
+                            .frame(width: 75, height: 75)
+                        Circle()
+                            .frame(width: 75, height: 75)
+                        Circle()
+                            .frame(width: 75, height: 75)
+                        Circle()
+                            .frame(width: 75, height: 75)                        
+                    }
+
+                }
                 .padding()
-            Text("today")
-                .padding()
+                Spacer()
+                DatePicker(
+                    "Select Date",
+                    selection: $date,
+                    in: dateRange,
+                    displayedComponents: [.date]
+                )
+                    .datePickerStyle(GraphicalDatePickerStyle())
+                    .padding()
+                    Spacer()
+                Text("\(date)")
+                    .padding()
+                Spacer()
+            }
+            .navigationTitle("Planner")
         }
+
     }
 }
 
