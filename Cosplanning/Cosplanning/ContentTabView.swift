@@ -13,7 +13,8 @@ struct ContentTabView: View {
           
         ProjectView()
             .tabItem {
-              Image(systemName: "icon")
+                Image("icon")
+                    
               Text("Projects")
             }
           
