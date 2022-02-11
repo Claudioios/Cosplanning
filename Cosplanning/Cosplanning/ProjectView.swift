@@ -8,7 +8,7 @@
 import SwiftUI
 struct ProjectView: View {
     @State var selected = 1
-    
+    @State var projectsOne = 0
     var body: some View {
         
         NavigationView{
@@ -21,27 +21,33 @@ struct ProjectView: View {
                     .pickerStyle(SegmentedPickerStyle())
                     
                 if selected == 1 {
-                    List {
-                        Text ("Ciao ")
-                        Text ("Ciao ")
-                        Text ("Ciao ")
-                        Text ("Ciao ")
-                        Text ("Ciao ")
-                        Text ("Ciao ")
+                    if projectsOne == 0 {
+                        Image("nothing")
+                            .resizable(resizingMode: .stretch)
+                            .aspectRatio(contentMode: .fit)
+                            .padding()
+                           
+                    } else{
+                        List {
+                            Text ("Ciao ")
+                           
+                        }
                     }
-                  
 
                 } else {
-                    List {
-                        Text ("Ciao ")
-                        Text ("Ciao ")
-                        Text ("Ciao ")
-                        Text ("Ciao ")
-                        Text ("Ciao ")
-                        Text ("Ciao ")
-                        Text ("Ciao ")
-                    }
+                    if projectsOne == 0 {
+                        Image("nothing")
+                            .resizable(resizingMode: .stretch)
+                            .aspectRatio(contentMode: .fit)
+                            .padding()
+                          
+                    } else{
+                        List {
+                            Text ("Ciao ")
+                           
+                        }
                   
+                }
                 }
                 NavigationLink(destination: NewProjectView()){
                     Text("Start a new project")
