@@ -11,22 +11,22 @@ struct ContentTabView: View {
     var body: some View {
         TabView {
           
-          PlannerView()
+        ProjectView()
             .tabItem {
-              Image(systemName: "list.bullet.rectangle.portrait")
+              Image(systemName: "icon")
+              Text("Projects")
+            }
+          
+            PlannerView()
+            .tabItem {
+              Image(systemName: "calendar")
               Text("Planner")
             }
           
-          InventoryView()
+           InventoryView()
             .tabItem {
-              Image(systemName: "plus.circle.fill")
+              Image(systemName: "archivebox")
               Text("Inventory")
-            }
-          
-          ProjectView()
-            .tabItem {
-              Image(systemName: "brain.head.profile")
-              Text("Projects")
             }
           
             BudgetView()
