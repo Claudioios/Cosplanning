@@ -7,58 +7,96 @@
 
 import SwiftUI
 struct ProjectView: View {
-    @State var selected = 1
-    @State var projectsOne = 0
+    //    @State var selected = 1
+    //    @State var projectsOne = 0
     var body: some View {
-        
+      
         NavigationView{
+         
             VStack{
-                Picker(selection: $selected, label: Text("Projects"), content: {
-                    Text("Projects on going").tag(1)
-                    /*@START_MENU_TOKEN@*/Text("Projects completed").tag(2)/*@END_MENU_TOKEN@*/
-                    
-                })
-                    .pickerStyle(SegmentedPickerStyle())
-                    
-                if selected == 1 {
-                    if projectsOne == 0 {
-                        Image("nothing")
-                            .resizable(resizingMode: .stretch)
-                            .aspectRatio(contentMode: .fit)
-                            .padding()
-                           
-                    } else{
-                        List {
-                            Text ("Ciao ")
-                           
-                        }
-                    }
-
-                } else {
-                    if projectsOne == 0 {
-                        Image("nothing")
-                            .resizable(resizingMode: .stretch)
-                            .aspectRatio(contentMode: .fit)
-                            .padding()
-                          
-                    } else{
-                        List {
-                            Text ("Ciao ")
-                           
-                        }
-                  
-                }
-                }
-                NavigationLink(destination: NewProjectView()){
-                    Text("Start a new project")
-                }
-                .padding()
+                ScrollView{
+                Rectangle()
+                
+                    .scaledToFill()
+                    .foregroundColor(.purple)
+                    .ignoresSafeArea()
+                Text("Hi")
+                    .padding()
+                    Spacer()
+                
             }
-            .navigationTitle("Projects")
-            Spacer()
-               
+            .navigationBarTitle(Text("Tasks")
+                                    .font(.largeTitle)
+                                    .fontWeight(.bold)
+                                , displayMode: .inline)
+            
+                
+            .toolbar{
+                ToolbarItem(placement: .principal)
+                {
+                    Text("Projects")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .accessibilityAddTraits(.isHeader)
+                      
+                }
+             
+            }
+          
+        }
+            .background(Color(.purple))
+           
         }
         
+        
+        //        NavigationView{
+        //            VStack{
+        //                Picker(selection: $selected, label: Text("Projects"), content: {
+        //                    Text("Projects on going").tag(1)
+        //                    /*@START_MENU_TOKEN@*/Text("Projects completed").tag(2)/*@END_MENU_TOKEN@*/
+        //
+        //                })
+        //                    .pickerStyle(SegmentedPickerStyle())
+        //
+        //                if selected == 1 {
+        //                    if projectsOne == 0 {
+        //                        Image("nothing")
+        //                            .resizable(resizingMode: .stretch)
+        //                            .aspectRatio(contentMode: .fit)
+        //                            .padding()
+        //
+        //                    } else{
+        //                        List {
+        //                            Text ("Ciao ")
+        //
+        //                        }
+        //                    }
+        //
+        //                } else {
+        //                    if projectsOne == 0 {
+        //                        Image("nothing")
+        //                            .resizable(resizingMode: .stretch)
+        //                            .aspectRatio(contentMode: .fit)
+        //                            .padding()
+        //
+        //                    } else{
+        //                        List {
+        //                            Text ("Ciao ")
+        //
+        //                        }
+        //
+        //                }
+        //                }
+        //                NavigationLink(destination: NewProjectView()){
+        //                    Text("Start a new project")
+        //                }
+        //                .padding()
+        //            }
+        //            .navigationTitle("Projects")
+        //            Spacer()
+        //
+        //        }
+        //
     }
     
 }

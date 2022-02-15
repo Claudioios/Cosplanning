@@ -10,39 +10,38 @@ import SwiftUI
 struct ContentTabView: View {
     var body: some View {
         TabView {
-          
-        ProjectView()
-            .tabItem {
-                Image("icon")
-                    
-              Text("Projects")
-            }
-          
+            
             PlannerView()
-            .tabItem {
-              Image(systemName: "calendar")
-              Text("Planner")
-            }
-          
-           InventoryView()
-            .tabItem {
-              Image(systemName: "archivebox")
-              Text("Inventory")
-            }
-          
+                .tabItem {
+                    Image(systemName: "calendar")
+                    Text("Planner")
+                }
+            
+            ProjectView()
+                .tabItem {
+                    Image("icon")
+                    Text("Projects")
+                }
+            
+            InventoryView()
+                .tabItem {
+                    Image(systemName: "archivebox")
+                    Text("Inventory")
+                }
+            
             BudgetView()
-              .tabItem {
-                Image(systemName: "creditcard.fill")
-                Text("Budget")
-              }
+                .tabItem {
+                    Image(systemName: "creditcard.fill")
+                    Text("Budget")
+                }
         }
-          
+        
         .accentColor(Color.indigo)
         .onAppear {
             UITabBar.appearance().backgroundColor = UIColor.white
-
-          
-          UITabBar.appearance().unselectedItemTintColor = UIColor.gray
+            
+            
+            UITabBar.appearance().unselectedItemTintColor = UIColor.gray
         }
     }
 }
