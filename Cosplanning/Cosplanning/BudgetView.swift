@@ -34,23 +34,22 @@ struct BudgetView: View {
                         }
 
                     }
-                    Divider()
                     HStack{
                         HStack{
                             Spacer()
                             Button{}
                         label:
                             {
-                                Image(systemName: "plus.circle")
-                                    .resizable()
-                                    .frame(width: 50, height: 50)
+                                Text("Add Money")
+                                    .frame(width: 125)
                                     .padding()
-                                
+                                    .foregroundColor(Color(.white))
+                                    .background(Color("ViolaBottone"))
+                                    .clipShape(Capsule())
                             }
                             Spacer()
                         }
-//                        Spacer()
-                        Divider()
+                        Spacer()
 
                         HStack{
                             Spacer()
@@ -58,17 +57,18 @@ struct BudgetView: View {
                             Button{}
                         label:
                             {
-                                Image(systemName: "minus.circle")
-                                    .resizable()
-                                    .frame(width: 50, height: 50)
+                                Text("Remove Money")
+                                    .frame(width: 125)
                                     .padding()
+                                    .foregroundColor(Color(.white))
+                                    .background(Color("ViolaBottone"))
+                                    .clipShape(Capsule())
                                 
                             }
                             Spacer()
 
                         }
                 }
-                    Divider()
                     
                     BudgetListView()
                     BudgetListView()
