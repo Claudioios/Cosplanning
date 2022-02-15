@@ -10,45 +10,23 @@ struct ProjectView: View {
     //    @State var selected = 1
     //    @State var projectsOne = 0
     var body: some View {
+        
       
         NavigationView{
-         
             VStack{
                 ScrollView{
-                Rectangle()
-                
-                    .scaledToFill()
-                    .foregroundColor(.purple)
-                    .ignoresSafeArea()
-                Text("Hi")
-                    .padding()
-                    Spacer()
-                
-            }
-            .navigationBarTitle(Text("Tasks")
-                                    .font(.largeTitle)
-                                    .fontWeight(.bold)
-                                , displayMode: .inline)
-            
-                
-            .toolbar{
-                ToolbarItem(placement: .principal)
-                {
-                    Text("Projects")
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-                        .accessibilityAddTraits(.isHeader)
-                      
+                    Text("hi")
+                        .padding()
                 }
-             
+                Spacer()
             }
-          
+            .navigationTitle("Projects")
+            .background(
+                Image("deadpool-cosplay")
+                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+            )
         }
-            .background(Color(.purple))
-           
-        }
-        
-        
+       
         //        NavigationView{
         //            VStack{
         //                Picker(selection: $selected, label: Text("Projects"), content: {
