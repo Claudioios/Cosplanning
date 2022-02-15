@@ -22,7 +22,7 @@ struct ProjectView: View {
             }
             .navigationTitle("Projects")
             .background(
-                Image("deadpool-cosplay")
+                Image("Background")
                     .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
             )
         }
