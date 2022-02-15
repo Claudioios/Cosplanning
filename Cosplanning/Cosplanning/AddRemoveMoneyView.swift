@@ -27,8 +27,8 @@ struct AddRemoveMoneyView: View {
                         "",
                         text: $Money
                     )
-                        .padding()
-                        .border(.secondary)
+                        .padding(.horizontal)
+                        .textFieldStyle(.roundedBorder)
                 }
                 HStack{
                     Text("Short Description")
@@ -42,8 +42,8 @@ struct AddRemoveMoneyView: View {
                         "",
                         text: $Description
                     )
-                        .padding()
-                        .border(.secondary)
+                        .padding(.horizontal)
+                        .textFieldStyle(.roundedBorder)
                 }
                 HStack{
                     Text("Date")
@@ -57,8 +57,8 @@ struct AddRemoveMoneyView: View {
                         "",
                         text: $Date
                     )
-                        .padding()
-                        .border(.secondary)
+                        .padding(.horizontal)
+                        .textFieldStyle(.roundedBorder)
                 }
             Spacer()
                 Button{}
