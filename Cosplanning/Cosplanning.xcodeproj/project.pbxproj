@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		662BB4E227BBB302003CB67F /* AddRemoveMoneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662BB4E127BBB301003CB67F /* AddRemoveMoneyView.swift */; };
 		66E5BF7127B664B000571432 /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E5BF7027B664B000571432 /* TaskListView.swift */; };
 		66F7FED927B25B8E00B4BB19 /* CosplanningApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F7FED827B25B8E00B4BB19 /* CosplanningApp.swift */; };
 		66F7FEDB27B25B8E00B4BB19 /* PlannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F7FEDA27B25B8E00B4BB19 /* PlannerView.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		662BB4E127BBB301003CB67F /* AddRemoveMoneyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRemoveMoneyView.swift; sourceTree = "<group>"; };
 		66E5BF7027B664B000571432 /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
 		66F7FED527B25B8E00B4BB19 /* Cosplanning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cosplanning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66F7FED827B25B8E00B4BB19 /* CosplanningApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosplanningApp.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				66F7FEDA27B25B8E00B4BB19 /* PlannerView.swift */,
 				F810888627B26182009FC6EB /* InventoryView.swift */,
 				F87F8E9C27B3AD7C0073571E /* BudgetView.swift */,
+				662BB4E127BBB301003CB67F /* AddRemoveMoneyView.swift */,
 				66FBF2ED27B678B70090E446 /* BudgetListView.swift */,
 				F810888A27B2619D009FC6EB /* ContentTabView.swift */,
 				66F7FEDC27B25B9000B4BB19 /* Assets.xcassets */,
@@ -290,6 +293,7 @@
 				F810888927B2618D009FC6EB /* ProjectView.swift in Sources */,
 				F87F8E9D27B3AD7C0073571E /* BudgetView.swift in Sources */,
 				F810888B27B2619D009FC6EB /* ContentTabView.swift in Sources */,
+				662BB4E227BBB302003CB67F /* AddRemoveMoneyView.swift in Sources */,
 				66E5BF7127B664B000571432 /* TaskListView.swift in Sources */,
 				F815F01C27B655F100D1B6A4 /* TaskView.swift in Sources */,
 				66FBF2EE27B678B70090E446 /* BudgetListView.swift in Sources */,

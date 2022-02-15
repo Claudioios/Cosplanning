@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct BudgetView: View {
+    
+    @State private var showingSheet = false
+    
     var body: some View {
         NavigationView{
             ScrollView()
@@ -37,7 +40,7 @@ struct BudgetView: View {
                     HStack{
                         HStack{
                             Spacer()
-                            Button{}
+                            Button{showingSheet.toggle()}
                         label:
                             {
                                 Text("Add Money")
@@ -47,6 +50,9 @@ struct BudgetView: View {
                                     .background(Color("ViolaBottone"))
                                     .clipShape(Capsule())
                             }
+                            .sheet(isPresented: $showingSheet) {
+                                        AddRemoveMoneyView()
+                                    }
                             Spacer()
                         }
                         Spacer()
@@ -54,7 +60,7 @@ struct BudgetView: View {
                         HStack{
                             Spacer()
 
-                            Button{}
+                            Button{showingSheet.toggle()}
                         label:
                             {
                                 Text("Remove Money")
@@ -65,6 +71,9 @@ struct BudgetView: View {
                                     .clipShape(Capsule())
                                 
                             }
+                            .sheet(isPresented: $showingSheet) {
+                                        AddRemoveMoneyView()
+                                    }
                             Spacer()
 
                         }
