@@ -11,7 +11,7 @@ struct InventoryView: View {
     var body: some View {
         
         Text("How much")
-        
+            .foregroundColor(Color("ViolaBottone"))
         }
     }
 

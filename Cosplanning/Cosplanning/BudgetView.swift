@@ -10,7 +10,8 @@ import SwiftUI
 struct BudgetView: View {
     
     @State private var showingSheet = false
-    
+    @State private var money = 100.00
+
     var body: some View {
         NavigationView{
             ScrollView()
@@ -19,22 +20,15 @@ struct BudgetView: View {
                     Rectangle()
                         .frame(width: 350, height: 200)
                         .cornerRadius(43)
-                        .foregroundColor(.blue)
+                        .foregroundColor(Color("Giallo"))
                         .padding()
                         .overlay()
                     {
-                        Rectangle()
-                            .frame(width: 250, height: 120)
-                            .cornerRadius(40)
-                            .foregroundColor(.cyan)
-                            .padding()
-                            .overlay()
-                        {
-                            Text("100,20$")
-                                .font(.largeTitle)
+
+                            Text("\(money, specifier: "%.2f")$")
+                            .font(.largeTitle)
                                 .padding()
-                                
-                        }
+
 
                     }
                     HStack{
@@ -49,6 +43,7 @@ struct BudgetView: View {
                                     .foregroundColor(Color(.white))
                                     .background(Color("ViolaBottone"))
                                     .clipShape(Capsule())
+                                    .shadow(color: Color.gray, radius: 5, x: -2, y: -2)
                             }
                             .sheet(isPresented: $showingSheet) {
                                         AddRemoveMoneyView()
@@ -69,6 +64,7 @@ struct BudgetView: View {
                                     .foregroundColor(Color(.white))
                                     .background(Color("ViolaBottone"))
                                     .clipShape(Capsule())
+                                    .shadow(color: Color.gray, radius: 5, x: -2, y: -2)
                                 
                             }
                             .sheet(isPresented: $showingSheet) {
