@@ -98,7 +98,7 @@ struct PlannerView: View {
 //                    in: dateRange,
 //                    displayedComponents: [.date]
 //                )
-//                    .datePickerStyle(GraphicalDatePickerStyle())
+//                    .datePickerStyle(CompactDatePickerStyle())
 //                    .padding()
 //                    Spacer()
 //                Text("\(date)")
