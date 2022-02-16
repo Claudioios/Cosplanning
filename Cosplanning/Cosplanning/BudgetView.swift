@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BudgetView: View {
     
-    @State private var showingSheet = false
+    @State private var showingAddRemove = false
     @State private var money = 100.00
 
     var body: some View {
@@ -34,7 +34,7 @@ struct BudgetView: View {
                     HStack{
                         HStack{
                             Spacer()
-                            Button{showingSheet.toggle()}
+                            Button{showingAddRemove.toggle()}
                         label:
                             {
                                 Text("Add Money")
@@ -45,7 +45,7 @@ struct BudgetView: View {
                                     .clipShape(Capsule())
                                     .shadow(color: Color.gray, radius: 5, x: -2, y: -2)
                             }
-                            .sheet(isPresented: $showingSheet) {
+                            .sheet(isPresented: $showingAddRemove) {
                                         AddRemoveMoneyView()
                                     }
                             Spacer()
@@ -55,7 +55,7 @@ struct BudgetView: View {
                         HStack{
                             Spacer()
 
-                            Button{showingSheet.toggle()}
+                            Button{showingAddRemove.toggle()}
                         label:
                             {
                                 Text("Remove Money")
@@ -67,7 +67,7 @@ struct BudgetView: View {
                                     .shadow(color: Color.gray, radius: 5, x: -2, y: -2)
                                 
                             }
-                            .sheet(isPresented: $showingSheet) {
+                            .sheet(isPresented: $showingAddRemove) {
                                         AddRemoveMoneyView()
                                     }
                             Spacer()

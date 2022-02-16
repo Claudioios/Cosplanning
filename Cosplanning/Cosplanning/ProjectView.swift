@@ -28,11 +28,15 @@ struct ProjectView: View {
                         
                     }
                     .font(.title)
-                    .navigationTitle("Projects")
-                    .background(Image("Background"))
-                }
             }
+            .navigationTitle("Projects")
+            .background(Image("Background"))
+            
+           
         }
+        }
+        
+    }
     
 }
 
