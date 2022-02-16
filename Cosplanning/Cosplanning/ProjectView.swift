@@ -10,24 +10,24 @@ import UIKit
 struct ProjectView: View {
     
     var body: some View {
-       
-            NavigationView{
-                ZStack{
-                        VStack{
-                            ScrollView{
-                       Text("hi")
-                            }
-                            
-                        }
-                        .navigationTitle("Projects")
-                        
+        VStack{
+            Rectangle().frame(width: .infinity, height: 55)
+                .foregroundColor(Color("ViolaBottoneChiaro")).ignoresSafeArea()
+        NavigationView{
+            ZStack{
+                Text("hi")
+                    .font(.title)
             }
-                .background(Color("ViolaBottone"))
-                .background(Image("Background"))
-                
+            .navigationTitle("Projects")
+            .background(Image("Background"))
+           
         }
+        }
+        
     }
+    
 }
+
 
 struct ProjectView_Previews: PreviewProvider {
     static var previews: some View {
