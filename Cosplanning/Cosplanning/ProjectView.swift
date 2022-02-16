@@ -14,7 +14,7 @@ struct ProjectView: View {
             
                 VStack{
                 Rectangle()
-                        .frame(width: .infinity, height: 100).ignoresSafeArea( edges: .top)
+                        .frame(width: .infinity, height: 55).ignoresSafeArea( edges: .top)
                     .foregroundColor(Color("ViolaBottoneChiaro"))
                     
                 VStack{
