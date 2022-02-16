@@ -9,6 +9,8 @@ import SwiftUI
 
 struct PlannerView: View {
     
+    @State private var showingNewTask = false
+
 //    @State private var date = Date()
 //    @State private var currentdate = Date()
 
@@ -29,7 +31,7 @@ struct PlannerView: View {
                 Button{}
             label:
                 {
-                    Text("Add Money")
+                    Text("Calendar")
                         .frame(width: 125)
                         .padding()
                         .foregroundColor(Color(.white))
@@ -65,6 +67,24 @@ struct PlannerView: View {
                     PlannerTaskView()
                     PlannerTaskView()
                     PlannerTaskView()
+                    Button{showingNewTask.toggle()}
+                label:
+                    {
+                        VStack{
+                            Spacer()
+                            Text("Add Task")
+                                .frame(width: 125)
+                                .padding()
+                                .foregroundColor(Color(.white))
+                                .background(Color("ViolaBottone"))
+                                .clipShape(Capsule())
+                                .shadow(color: Color.gray, radius: 5, x: -2, y: -2)
+                    }
+                        .sheet(isPresented: $showingNewTask) {
+                                    NewTaskView()
+                                }
+
+                    }
                 }
 //                DatePicker(
 //                    "Select Date",
@@ -79,6 +99,7 @@ struct PlannerView: View {
 //                    .padding()
 //                Spacer()
             }
+            
             .navigationTitle("Planner")
             .background(
                 Image("Background"))
