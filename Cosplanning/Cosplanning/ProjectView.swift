@@ -20,6 +20,7 @@ struct ProjectView: View {
             }
             .navigationTitle("Projects")
             .background(Image("Background"))
+            
            
         }
         }

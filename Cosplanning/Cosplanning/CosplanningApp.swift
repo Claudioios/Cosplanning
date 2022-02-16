@@ -17,7 +17,6 @@ struct CosplanningApp: App {
             UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
         UINavigationBar.appearance().barTintColor = UIColor(Color("ViolaBottoneChiaro"))
             UINavigationBar.appearance().isTranslucent = true
-           
            }
         
     var body: some Scene {
