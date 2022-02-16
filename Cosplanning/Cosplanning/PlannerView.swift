@@ -26,6 +26,11 @@ struct PlannerView: View {
     
     var body: some View {
         NavigationView{
+            VStack{
+            Rectangle()
+                    .frame(width: .infinity, height: 100).ignoresSafeArea( edges: .top)
+                .foregroundColor(Color("ViolaBottoneChiaro"))
+               
             ScrollView(){
             VStack{
                 Button{}
@@ -85,6 +90,7 @@ struct PlannerView: View {
                                 }
 
                     }
+                }
                 }
 //                DatePicker(
 //                    "Select Date",

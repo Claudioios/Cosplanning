@@ -10,9 +10,15 @@ import UIKit
 struct ProjectView: View {
     
     var body: some View {
-            NavigationView{
+        NavigationView{
+            
                 VStack{
-                        ScrollView{
+                Rectangle()
+                        .frame(width: .infinity, height: 100).ignoresSafeArea( edges: .top)
+                    .foregroundColor(Color("ViolaBottoneChiaro"))
+                    
+                VStack{
+                    ScrollView{
                         Text("hi")
                         Text("hi")
                         Text("hi")
@@ -31,7 +37,7 @@ struct ProjectView: View {
             
         }
         }
-        
+    }
     }
     
 

@@ -14,6 +14,11 @@ struct BudgetView: View {
 
     var body: some View {
         NavigationView{
+            VStack{
+            Rectangle()
+                    .frame(width: .infinity, height: 100).ignoresSafeArea( edges: .top)
+                .foregroundColor(Color("ViolaBottoneChiaro"))
+               
             ScrollView()
             {
                 VStack{
@@ -86,6 +91,7 @@ struct BudgetView: View {
 
         }
     }
+}
 }
 
 struct BudgetView_Previews: PreviewProvider {
