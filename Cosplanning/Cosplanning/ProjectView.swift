@@ -6,77 +6,27 @@
 //
 
 import SwiftUI
+import UIKit
 struct ProjectView: View {
-    //    @State var selected = 1
-    //    @State var projectsOne = 0
-    var body: some View {
-        
-      
-        NavigationView{
-            VStack{
-                ScrollView{
-                    Text("hi")
-                        .padding()
-                }
-                Spacer()
-            }
-            .navigationTitle("Projects")
-            .background(
-                Image("Background")
-                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-            )
-        }
-       
-        //        NavigationView{
-        //            VStack{
-        //                Picker(selection: $selected, label: Text("Projects"), content: {
-        //                    Text("Projects on going").tag(1)
-        //                    /*@START_MENU_TOKEN@*/Text("Projects completed").tag(2)/*@END_MENU_TOKEN@*/
-        //
-        //                })
-        //                    .pickerStyle(SegmentedPickerStyle())
-        //
-        //                if selected == 1 {
-        //                    if projectsOne == 0 {
-        //                        Image("nothing")
-        //                            .resizable(resizingMode: .stretch)
-        //                            .aspectRatio(contentMode: .fit)
-        //                            .padding()
-        //
-        //                    } else{
-        //                        List {
-        //                            Text ("Ciao ")
-        //
-        //                        }
-        //                    }
-        //
-        //                } else {
-        //                    if projectsOne == 0 {
-        //                        Image("nothing")
-        //                            .resizable(resizingMode: .stretch)
-        //                            .aspectRatio(contentMode: .fit)
-        //                            .padding()
-        //
-        //                    } else{
-        //                        List {
-        //                            Text ("Ciao ")
-        //
-        //                        }
-        //
-        //                }
-        //                }
-        //                NavigationLink(destination: NewProjectView()){
-        //                    Text("Start a new project")
-        //                }
-        //                .padding()
-        //            }
-        //            .navigationTitle("Projects")
-        //            Spacer()
-        //
-        //        }
-        //
-    }
     
+    var body: some View {
+       
+            NavigationView{
+                ZStack{
+                        VStack{
+                            ScrollView{
+                       Text("hi")
+                            }
+                            
+                        }
+                        .navigationTitle("Projects")
+                        
+            }
+                .background(Color("ViolaBottone"))
+                .background(Image("Background"))
+                
+        }
+    }
 }
 
 struct ProjectView_Previews: PreviewProvider {
