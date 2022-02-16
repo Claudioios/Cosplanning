@@ -11,9 +11,7 @@ struct ProjectView: View {
     
     var body: some View {
             NavigationView{
-              
                 VStack{
-                  
                         ScrollView{
                         Text("hi")
                         Text("hi")
@@ -25,20 +23,18 @@ struct ProjectView: View {
                         Text("hi")
                         Text("hi")
                         
-                        
                     }
                     .font(.title)
             }
             .navigationTitle("Projects")
             .background(Image("Background"))
             
-           
         }
         }
         
     }
     
-}
+
 
 
 struct ProjectView_Previews: PreviewProvider {
