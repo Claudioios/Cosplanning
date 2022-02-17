@@ -29,21 +29,47 @@ struct BudgetListView: View {
 //                }
         HStack
         {
-            if(Positive)
+            Rectangle()
+                .frame(width: 350, height: 75)
+                .opacity(0)
+                .overlay()
             {
-            Text("+ \(Money) $")
-                .font(.title)
-                .fontWeight(.bold)
-                .foregroundColor(.green)
-                .padding()
-            }
-            else
-            {
-                Text("- \(Money) $")
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .foregroundColor(.red)
-                    .padding()
+                if(Positive)
+                {
+                    HStack
+                    {
+                        Text("+ \(Money) $")
+                            .font(.title2)
+                            .fontWeight(.bold)
+                            .foregroundColor(.green)
+                            .padding([.top, .leading, .bottom])
+                        Spacer()
+                        Text("Testo esempio")
+                            .lineLimit(1)
+                            .padding(.vertical)
+                        Spacer()
+                        Text("15/02/2022")
+                            .padding([.top, .bottom, .trailing])
+                    }
+                }
+                else
+                {
+                    HStack
+                    {
+                        Text("- \(Money) $")
+                            .font(.title2)
+                            .fontWeight(.bold)
+                            .foregroundColor(.red)
+                            .padding()
+                        Spacer()
+                        Text("Testo esempio")
+                            .lineLimit(1)
+                            .padding(.vertical)
+                        Spacer()
+                        Text("15/02/2022")
+                            .padding([.top, .bottom, .trailing])
+                    }
+                }
             }
         }
     }
