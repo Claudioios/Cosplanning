@@ -10,7 +10,7 @@ import SwiftUI
 struct BudgetListView: View {
     
     @State private var Money = 500
-    
+    @State private var Positive = true
     var body: some View {
 //        Rectangle()
 //            .frame(width: .infinity, height: 55)
@@ -29,8 +29,22 @@ struct BudgetListView: View {
 //                }
         HStack
         {
-            Text("\(Money) $")
+            if(Positive)
+            {
+            Text("+ \(Money) $")
+                .font(.title)
+                .fontWeight(.bold)
                 .foregroundColor(.green)
+                .padding()
+            }
+            else
+            {
+                Text("- \(Money) $")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .foregroundColor(.red)
+                    .padding()
+            }
         }
     }
 }

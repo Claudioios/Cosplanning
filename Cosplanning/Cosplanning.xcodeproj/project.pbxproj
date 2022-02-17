@@ -52,7 +52,6 @@
 		662BB4E127BBB301003CB67F /* AddRemoveMoneyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRemoveMoneyView.swift; sourceTree = "<group>"; };
 		662BB4E327BCEE6A003CB67F /* ProjectsCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsCardView.swift; sourceTree = "<group>"; };
 		662BB4E527BCF396003CB67F /* PlannerTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannerTaskView.swift; sourceTree = "<group>"; };
-		66B9AD4C27BD0FCA00343A33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		66E5BF7027B664B000571432 /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
 		66F7FED527B25B8E00B4BB19 /* Cosplanning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cosplanning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66F7FED827B25B8E00B4BB19 /* CosplanningApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosplanningApp.swift; sourceTree = "<group>"; };
@@ -123,7 +122,6 @@
 		66F7FED727B25B8E00B4BB19 /* Cosplanning */ = {
 			isa = PBXGroup;
 			children = (
-				66B9AD4C27BD0FCA00343A33 /* Info.plist */,
 				66F7FED827B25B8E00B4BB19 /* CosplanningApp.swift */,
 				F815F01527B3C25E00D1B6A4 /* CosplayCardView.swift */,
 				F810888827B2618D009FC6EB /* ProjectView.swift */,
