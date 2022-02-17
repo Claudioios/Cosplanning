@@ -11,12 +11,14 @@ struct BudgetView: View {
     
     @State private var showingAddRemove = false
     @State private var money = 100.00
+    @State private var x = 500
+
 
     var body: some View {
         NavigationView{
             VStack{
             Rectangle()
-                    .frame(width: .infinity, height: 100).ignoresSafeArea( edges: .top)
+                    .frame(width: .infinity, height: 50).ignoresSafeArea( edges: .top)
                 .foregroundColor(Color("ViolaBottoneChiaro"))
                
             ScrollView()
@@ -79,14 +81,27 @@ struct BudgetView: View {
 
                         }
                 }
+                    VStack{
+                        Rectangle()
+                            .frame(width: 350, height: CGFloat(x))
+                            .cornerRadius(43)
+                            .padding()
+                            .overlay()
+                            {
+                                VStack{
+                                BudgetListView()
+                                BudgetListView()
+                                BudgetListView()
+                                    Spacer()
+                                }
+                            }
+                        
+                    }
                     
-                    BudgetListView()
-                    BudgetListView()
-                    BudgetListView()
-                    BudgetListView()
 
             }
             .navigationTitle("Budget")
+            .background(Image("Background"))
         }
 
         }
@@ -97,5 +112,6 @@ struct BudgetView: View {
 struct BudgetView_Previews: PreviewProvider {
     static var previews: some View {
         BudgetView()
+.previewInterfaceOrientation(.portraitUpsideDown)
     }
 }
