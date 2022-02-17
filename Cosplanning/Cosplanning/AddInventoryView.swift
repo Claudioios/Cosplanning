@@ -12,7 +12,7 @@ struct AddInventoryView: View {
     @State private var Description: String = ""
     @State private var Quantity: String = ""
     var body: some View {
-        NavigationView{
+        
             VStack{
                 HStack{
                     Text("Material")
@@ -71,8 +71,9 @@ struct AddInventoryView: View {
                         .clipShape(Capsule())
                 }
             }
-        }
+        .padding()
     }
+    
 }
 
 struct AddInventoryView_Previews: PreviewProvider {
