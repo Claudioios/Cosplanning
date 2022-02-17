@@ -16,9 +16,10 @@ struct InventoryView: View {
                     .frame(width: .infinity, height: 55).ignoresSafeArea( edges: .top)
                     .foregroundColor(Color("ViolaBottoneChiaro"))
                 Spacer()
+                
                 VStack{
                     Spacer()
-                    if inventory == 0{
+                    if (inventory == 1){
                         VStack{
                             Image("emptyimage")
                                 .background()
@@ -28,13 +29,22 @@ struct InventoryView: View {
                                 .padding()
                         }
                     }
+                    else
+                    {
+                        ScrollView()
+                        {
+                            InventoryCardView()
+                            Spacer()
+                        }
+                    }
                     Spacer()
                    
                 }
-                .padding()
-                .navigationTitle("Inventory")
-                .background(Image("Background"))
+                
+            
             }
+            .navigationTitle("Inventory")
+            .background(Image("Background"))
             .toolbar{
                 ToolbarItemGroup(placement: .navigationBarTrailing){
                 Button{

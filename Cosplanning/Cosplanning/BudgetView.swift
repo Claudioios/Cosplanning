@@ -11,8 +11,8 @@ struct BudgetView: View {
     
     @State private var showingAddRemove = false
     @State private var money = 100.00
-    @State private var x = 500
-
+    @State private var x = 250
+    
 
     var body: some View {
         NavigationView{
@@ -41,7 +41,9 @@ struct BudgetView: View {
                     HStack{
                         HStack{
                             Spacer()
-                            Button{showingAddRemove.toggle()}
+                            Button{showingAddRemove.toggle()
+                                x = x + 50
+                            }
                         label:
                             {
                                 Text("Add Money")
@@ -91,6 +93,7 @@ struct BudgetView: View {
                             .overlay()
                             {
                                 VStack{
+                                    Spacer()
                                 BudgetListView()
                                 BudgetListView()
                                 BudgetListView()
@@ -102,9 +105,9 @@ struct BudgetView: View {
                     
 
             }
+        }
             .navigationTitle("Budget")
             .background(Image("Background"))
-        }
             .toolbar{
                 ToolbarItemGroup(placement: .navigationBarTrailing){
                 Button{
@@ -123,6 +126,9 @@ struct BudgetView: View {
     }
 }
 }
+
+
+
 
 struct BudgetView_Previews: PreviewProvider {
     static var previews: some View {

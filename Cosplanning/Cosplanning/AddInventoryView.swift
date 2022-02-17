@@ -8,14 +8,16 @@
 import SwiftUI
 
 struct AddInventoryView: View {
-    @State private var Material: String = ""
-    @State private var Description: String = ""
+    @State private var Name: String = ""
+    @State private var Price: String = ""
     @State private var Quantity: String = ""
+    @State private var Unit: String = ""
+    @Environment(\.dismiss) var dismiss
+    
     var body: some View {
-        NavigationView{
             VStack{
                 HStack{
-                    Text("Material")
+                    Text("Name")
                         .font(.title)
                         .fontWeight(.regular)
                         .padding()
@@ -24,13 +26,13 @@ struct AddInventoryView: View {
                 HStack{
                     TextField(
                         "",
-                        text: $Material
+                        text: $Name
                     )
                         .padding(.horizontal)
                         .textFieldStyle(.roundedBorder)
                 }
                 HStack{
-                    Text("Description")
+                    Text("Price for piece")
                         .font(.title)
                         .fontWeight(.regular)
                         .padding()
@@ -39,7 +41,7 @@ struct AddInventoryView: View {
                 HStack{
                     TextField(
                         "",
-                        text: $Description
+                        text: $Price
                     )
                         .padding(.horizontal)
                         .textFieldStyle(.roundedBorder)
@@ -59,8 +61,23 @@ struct AddInventoryView: View {
                         .padding(.horizontal)
                         .textFieldStyle(.roundedBorder)
                 }
+                HStack{
+                    Text("Unit")
+                        .font(.title)
+                        .fontWeight(.regular)
+                        .padding()
+                    Spacer()
+                }
+                HStack{
+                    TextField(
+                        "",
+                        text: $Unit
+                    )
+                        .padding(.horizontal)
+                        .textFieldStyle(.roundedBorder)
+                }
                 Spacer()
-                Button{}
+                Button{dismiss()}
             label:
                 {
                     Image(systemName: "checkmark")
@@ -71,8 +88,10 @@ struct AddInventoryView: View {
                         .clipShape(Capsule())
                 }
             }
+            .padding()
+            .background(Image("Background"))
+
         }
-    }
 }
 
 struct AddInventoryView_Previews: PreviewProvider {

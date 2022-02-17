@@ -12,8 +12,9 @@ struct AddRemoveMoneyView: View {
     @State private var Money: String = ""
     @State private var Description: String = ""
     @State private var Date: String = ""
+    @Environment(\.dismiss) var dismiss
+
     var body: some View {
-        NavigationView{
             VStack{
                 HStack{
                     Text("Money")
@@ -61,7 +62,7 @@ struct AddRemoveMoneyView: View {
                         .textFieldStyle(.roundedBorder)
                 }
             Spacer()
-                Button{}
+                Button{dismiss()}
             label:
                 {
                     Image(systemName: "checkmark")
@@ -73,7 +74,9 @@ struct AddRemoveMoneyView: View {
                 }
                 
             }
-        }
+        .padding()
+        .background(Image("Background"))
+    
     }
 }
 
