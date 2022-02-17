@@ -84,6 +84,8 @@ struct BudgetView: View {
                     VStack{
                         Rectangle()
                             .frame(width: 350, height: CGFloat(x))
+                            .foregroundColor(.white)
+                            .border(Color.gray)
                             .cornerRadius(43)
                             .padding()
                             .overlay()
