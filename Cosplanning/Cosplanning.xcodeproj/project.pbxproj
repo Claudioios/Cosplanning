@@ -27,6 +27,8 @@
 		F815F01827B3D05E00D1B6A4 /* NewProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F815F01727B3D05E00D1B6A4 /* NewProjectView.swift */; };
 		F815F01A27B3E0CB00D1B6A4 /* DescriptionCosplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F815F01927B3E0CB00D1B6A4 /* DescriptionCosplayView.swift */; };
 		F815F01C27B655F100D1B6A4 /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F815F01B27B655F100D1B6A4 /* TaskView.swift */; };
+		F81AEF1427BE533A007B7FC0 /* InventoryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81AEF1327BE533A007B7FC0 /* InventoryCardView.swift */; };
+		F81AEF1627BE551B007B7FC0 /* AddInventoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81AEF1527BE551B007B7FC0 /* AddInventoryView.swift */; };
 		F87F8E9D27B3AD7C0073571E /* BudgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87F8E9C27B3AD7C0073571E /* BudgetView.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +73,8 @@
 		F815F01727B3D05E00D1B6A4 /* NewProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProjectView.swift; sourceTree = "<group>"; };
 		F815F01927B3E0CB00D1B6A4 /* DescriptionCosplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionCosplayView.swift; sourceTree = "<group>"; };
 		F815F01B27B655F100D1B6A4 /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
+		F81AEF1327BE533A007B7FC0 /* InventoryCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryCardView.swift; sourceTree = "<group>"; };
+		F81AEF1527BE551B007B7FC0 /* AddInventoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInventoryView.swift; sourceTree = "<group>"; };
 		F87F8E9C27B3AD7C0073571E /* BudgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -132,6 +136,8 @@
 				66F7FEDA27B25B8E00B4BB19 /* PlannerView.swift */,
 				6610FEF127BCFC87001C7105 /* NewTaskView.swift */,
 				F810888627B26182009FC6EB /* InventoryView.swift */,
+				F81AEF1327BE533A007B7FC0 /* InventoryCardView.swift */,
+				F81AEF1527BE551B007B7FC0 /* AddInventoryView.swift */,
 				F87F8E9C27B3AD7C0073571E /* BudgetView.swift */,
 				662BB4E127BBB301003CB67F /* AddRemoveMoneyView.swift */,
 				66FBF2ED27B678B70090E446 /* BudgetListView.swift */,
@@ -302,6 +308,7 @@
 				F810888927B2618D009FC6EB /* ProjectView.swift in Sources */,
 				F87F8E9D27B3AD7C0073571E /* BudgetView.swift in Sources */,
 				F810888B27B2619D009FC6EB /* ContentTabView.swift in Sources */,
+				F81AEF1627BE551B007B7FC0 /* AddInventoryView.swift in Sources */,
 				662BB4E227BBB302003CB67F /* AddRemoveMoneyView.swift in Sources */,
 				6610FEF227BCFC87001C7105 /* NewTaskView.swift in Sources */,
 				662BB4E627BCF396003CB67F /* PlannerTaskView.swift in Sources */,
@@ -312,6 +319,7 @@
 				662BB4E427BCEE6B003CB67F /* ProjectsCardView.swift in Sources */,
 				F810888727B26182009FC6EB /* InventoryView.swift in Sources */,
 				F815F01A27B3E0CB00D1B6A4 /* DescriptionCosplayView.swift in Sources */,
+				F81AEF1427BE533A007B7FC0 /* InventoryCardView.swift in Sources */,
 				F815F01627B3C25E00D1B6A4 /* CosplayCardView.swift in Sources */,
 				66F7FEDB27B25B8E00B4BB19 /* PlannerView.swift in Sources */,
 				66F7FED927B25B8E00B4BB19 /* CosplanningApp.swift in Sources */,

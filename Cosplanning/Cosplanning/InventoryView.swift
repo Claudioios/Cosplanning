@@ -19,41 +19,39 @@ struct InventoryView: View {
                 VStack{
                     Spacer()
                     if inventory == 0{
-                    VStack{
-                        Image("emptyimage")
-                            .background()
-                        Text("There is nothing here")
-                            .font(.title2)
-                            .foregroundColor(Color("ViolaBottone"))
-                            .padding()
-                        
-                    }
+                        VStack{
+                            Image("emptyimage")
+                                .background()
+                            Text("There is nothing here")
+                                .font(.title2)
+                                .foregroundColor(Color("ViolaBottone"))
+                                .padding()
+                        }
                     }
                     Spacer()
-                    Button{showingAddRemove.toggle()}
-                label:
-                    {
-                        Text("Add materials")
-                            .frame(width: 125)
-                            .padding()
-                            .foregroundColor(Color(.white))
-                            .background(Color("ViolaBottone"))
-                            .clipShape(Capsule())
-                            .shadow(color: Color.gray, radius: 5, x: -2, y: -2)
-                    }
-                    .sheet(isPresented: $showingAddRemove) {
-                        AddRemoveMoneyView()
-                    }
+                   
                 }
                 .padding()
                 .navigationTitle("Inventory")
                 .background(Image("Background"))
             }
+            .toolbar{
+                ToolbarItemGroup(placement: .navigationBarTrailing){
+                Button{
+                    showingAddRemove.toggle()
+                }
+            label: {
+                Label ("Add", systemImage: "plus.circle.fill")
+                    .foregroundColor(Color("Giallo"))
+            }
+            .sheet(isPresented: $showingAddRemove) {
+                AddInventoryView()
+            }
         }
     }
 }
-
-
+    }
+}
 struct InventoryView_Previews: PreviewProvider {
     static var previews: some View {
         InventoryView()
