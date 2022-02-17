@@ -27,11 +27,12 @@ struct PlannerView: View {
     var body: some View {
         NavigationView{
             VStack{
+                
             Rectangle()
                     .frame(width: .infinity, height: 55).ignoresSafeArea( edges: .top)
                 .foregroundColor(Color("ViolaBottoneChiaro"))
-               
-            ScrollView(){
+
+           
             VStack{
                 Button{}
             label:
@@ -45,6 +46,7 @@ struct PlannerView: View {
                         .shadow(color: Color.gray, radius: 5, x: -2, y: -2)
                 }
             }
+                Spacer()
                 ScrollView(.horizontal)
                 {
                     HStack{
@@ -67,7 +69,9 @@ struct PlannerView: View {
 
                 }
                 .padding()
-                Spacer()
+              
+                ScrollView(){
+                    Spacer()
                 VStack{
                     PlannerTaskView()
                     PlannerTaskView()

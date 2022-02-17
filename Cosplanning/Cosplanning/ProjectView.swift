@@ -16,7 +16,7 @@ struct ProjectView: View {
                 Rectangle()
                         .frame(width: .infinity, height: 55).ignoresSafeArea( edges: .top)
                     .foregroundColor(Color("ViolaBottoneChiaro"))
-                    
+
                 VStack{
                     ScrollView{
                         Text("hi")

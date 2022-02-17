@@ -18,18 +18,22 @@ struct InventoryView: View {
                 Spacer()
                 VStack{
                     Spacer()
-                    ZStack{
-                        Image("empty")
+                    if inventory == 0{
+                    VStack{
+                        Image("emptyimage")
                             .background()
                         Text("There is nothing here")
                             .font(.title2)
+                            .foregroundColor(Color("ViolaBottone"))
+                            .padding()
+                        
                     }
-                    .padding()
+                    }
                     Spacer()
                     Button{showingAddRemove.toggle()}
                 label:
                     {
-                        Text("Add Money")
+                        Text("Add materials")
                             .frame(width: 125)
                             .padding()
                             .foregroundColor(Color(.white))
@@ -44,9 +48,7 @@ struct InventoryView: View {
                 .padding()
                 .navigationTitle("Inventory")
                 .background(Image("Background"))
-                
             }
-            
         }
     }
 }
