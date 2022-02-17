@@ -105,7 +105,20 @@ struct BudgetView: View {
             .navigationTitle("Budget")
             .background(Image("Background"))
         }
-
+            .toolbar{
+                ToolbarItemGroup(placement: .navigationBarTrailing){
+                Button{
+                    showingAddRemove.toggle()
+                }
+            label: {
+                Label ("Filter", systemImage: "line.3.horizontal.decrease.circle.fill")
+                    .foregroundColor(Color("Giallo"))
+            }
+            .sheet(isPresented: $showingAddRemove) {
+                AddRemoveMoneyView()
+            }
+                }
+            }
         }
     }
 }

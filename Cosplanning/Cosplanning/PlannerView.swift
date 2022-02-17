@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PlannerView: View {
-    
+    @State private var showingAddRemove = false
     @State private var showingNewTask = false
 
 //    @State private var date = Date()
@@ -27,12 +27,9 @@ struct PlannerView: View {
     var body: some View {
         NavigationView{
             VStack{
-                
             Rectangle()
                     .frame(width: .infinity, height: 55).ignoresSafeArea( edges: .top)
                 .foregroundColor(Color("ViolaBottoneChiaro"))
-
-           
             VStack{
                 Button{}
             label:
@@ -66,7 +63,6 @@ struct PlannerView: View {
                             .frame(width: 75, height: 75)
                             .foregroundColor(Color("ViolaBottone"))
                     }
-
                 }
                 .padding()
               
@@ -76,24 +72,6 @@ struct PlannerView: View {
                     PlannerTaskView()
                     PlannerTaskView()
                     PlannerTaskView()
-                    Button{showingNewTask.toggle()}
-                label:
-                    {
-                        VStack{
-                            Spacer()
-                            Text("Add Task")
-                                .frame(width: 125)
-                                .padding()
-                                .foregroundColor(Color(.white))
-                                .background(Color("ViolaBottone"))
-                                .clipShape(Capsule())
-                                .shadow(color: Color.gray, radius: 5, x: -2, y: -2)
-                    }
-                        .sheet(isPresented: $showingNewTask) {
-                                    NewTaskView()
-                                }
-
-                    }
                 }
                 }
 //                DatePicker(
@@ -114,7 +92,22 @@ struct PlannerView: View {
             .background(
                 Image("Background"))
                 
+            .toolbar{
+                ToolbarItemGroup(placement: .navigationBarTrailing){
+                Button{
+                    showingAddRemove.toggle()
+                }
+            label: {
+                Label ("add", systemImage: "plus.circle.fill")
+                    .foregroundColor(Color("Giallo"))
             }
+            .sheet(isPresented: $showingAddRemove) {
+                NewTaskView()
+            }
+                }
+            }
+            }
+        
         
 
     }
