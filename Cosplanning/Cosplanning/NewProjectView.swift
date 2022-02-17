@@ -8,101 +8,73 @@
 import SwiftUI
 
 struct NewProjectView: View {
+    @State private var start: String = ""
+    @State private var task: String = ""
     var body: some View {
-        
-        ScrollView{
-            VStack{
-                CategoryCard(category: "Marvel")
-                ScrollView(.horizontal){
-                    HStack{
-                        VStack{
-                            NavigationLink( destination: DescriptionCosplayView(image: "america-cosplay", name: "Captain America", description: "Here you can find all the tasks that you have to follow to complete this cosplay")){
-                                
-                                CosplayCard(image: "america")
-                            }
-                        }
-                        VStack{
-                            NavigationLink( destination: DescriptionCosplayView(image: "deadpool-cosplay", name: "Deadpool", description: "Here you can find all the tasks that you have to follow to complete this cosplay")){
-                                CosplayCard(image: "deadpool")
-                            }
-                        }
-                        VStack{
-                            NavigationLink( destination: DescriptionCosplayView(image: "spider-man-cosplay", name: "Spider-Man", description: "Here you can find all the tasks that you have to follow to complete this cosplay")){
-                                CosplayCard(image: "spider-man")
-                            }
-                        }
-                        VStack{
-                            NavigationLink( destination: DescriptionCosplayView(image: "iron-man-cosplay", name: "Iron-Man", description: "Here you can find all the tasks that you have to follow to complete this cosplay")){
-                                CosplayCard(image: "iron-man")
-                            }
-                        }
-                    }
-                    
-                }
-                
+        VStack{
+            HStack{
+                Text("Project")
+                    .font(.title)
+                    .fontWeight(.regular)
+                    .padding()
+                Spacer()
             }
-            VStack{
-                CategoryCard(category: "DC Comics")
-                ScrollView(.horizontal){
-                    
-                    HStack{
-                        VStack{
-                            NavigationLink( destination: DescriptionCosplayView(image: "america-cosplay", name: "Captain America", description: "Here you can find all the tasks that you have to follow to complete this cosplay")){
-                                CosplayCard(image: "joker")
-                            }
-                        }
-                        VStack{
-                            NavigationLink( destination: DescriptionCosplayView(image: "america-cosplay", name: "Captain America", description: "Here you can find all the tasks that you have to follow to complete this cosplay")){
-                                CosplayCard(image: "superman")
-                            }
-                        }
-                        VStack{
-                            NavigationLink( destination: DescriptionCosplayView(image: "america-cosplay", name: "Captain America", description: "Here you can find all the tasks that you have to follow to complete this cosplay")){
-                                CosplayCard(image: "wonder-woman")
-                            }
-                        }
-                    }
-                    
-                }
-                
-            }
-            VStack{
-                CategoryCard(category: "Star Wars")
-                ScrollView(.horizontal){
-                    HStack{
-                        VStack{
-                            NavigationLink( destination: DescriptionCosplayView(image: "america-cosplay", name: "Captain America", description: "Here you can find all the tasks that you have to follow to complete this cosplay")){
-                                CosplayCard(image: "darth-vader")
-                            }
-                        }
-                        VStack{
-                            NavigationLink( destination: DescriptionCosplayView(image: "america-cosplay", name: "Captain America", description: "Here you can find all the tasks that you have to follow to complete this cosplay")){
-                                CosplayCard(image: "stormtrooper")
-                            }
-                        }
-                    }
-                }
-            }
-            VStack{
-                CategoryCard(category: "Persona")
-                ScrollView(.horizontal){
-                    HStack{
-                        VStack{
-                            NavigationLink( destination: DescriptionCosplayView(image: "america-cosplay", name: "Captain America", description: "Here you can find all the tasks that you have to follow to complete this cosplay")){
-                                CosplayCard(image: "joker-persona")
-                            }
-                            
-                        }
-                    }
-                }
+            HStack{
+                TextField(
+                    "",
+                    text: $start
+                )
+                    .padding(.horizontal)
+                    .textFieldStyle(.roundedBorder)
             }
             
+            HStack{
+                Text("Number of tasks")
+                    .font(.title)
+                    .fontWeight(.regular)
+                    .padding()
+                Spacer()
+            }
+            HStack{
+                TextField(
+                    "",
+                    text: $task
+                )
+                    .padding(.horizontal)
+                    .textFieldStyle(.roundedBorder)
+            }
+            
+            HStack{
+                Text("Select the color of your project:")
+                    .font(.title)
+                    .fontWeight(.regular)
+                    .padding()
+                Spacer()
+            }
             .padding()
-            .navigationTitle("Start a new project")
-            .navigationBarTitleDisplayMode(.inline)
+            
+            ScrollView(.horizontal){
+                HStack{
+                    Circle()
+                        .foregroundColor(.red)
+                    Circle()
+                        .foregroundColor(.green)
+                    Circle()
+                        .foregroundColor(.blue)
+                    Circle()
+                        .foregroundColor(.yellow)
+                    Circle()
+                        .foregroundColor(.black)
+                    Circle()
+                        .foregroundColor(.white)
+                    
+                }
+                .frame(width: 600, height: 90)
+            }
+            
+            
         }
-        
-        
+        .padding()
         
     }
 }
