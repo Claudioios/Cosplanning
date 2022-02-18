@@ -43,7 +43,6 @@ struct BudgetView: View {
                         HStack{
                             Spacer()
                             Button{showingAddRemove.toggle()
-                                x = x + 50
                             }
                         label:
                             {
@@ -56,7 +55,8 @@ struct BudgetView: View {
                                     .shadow(color: Color.gray, radius: 5, x: -2, y: -2)
                             }
                             .sheet(isPresented: $showingAddRemove) {
-                                        AddRemoveMoneyView()
+                                        
+                                AddRemoveMoneyView(ArrayBudgetOperations: ArrayBudgetOperations)
                                     }
                             Spacer()
                         }
@@ -78,7 +78,7 @@ struct BudgetView: View {
                                 
                             }
                             .sheet(isPresented: $showingAddRemove) {
-                                        AddRemoveMoneyView()
+                                AddRemoveMoneyView(ArrayBudgetOperations: ArrayBudgetOperations)
                                     }
                             Spacer()
 
@@ -95,22 +95,22 @@ struct BudgetView: View {
                             {
                                 VStack{
                                     Spacer()
-                                BudgetListView()
-                                BudgetListView()
-                                    HStack
+                                    if(ArrayBudgetOperations.ArrayBudgetOperations.count > 1){
+                                    ForEach(0..<ArrayBudgetOperations.ArrayBudgetOperations.count - 1) { ind in
+                                        
+                                        BudgetListView(ind: ind, ArrayBudgetOperations: ArrayBudgetOperations)
+                                }
+                                    }
+                                    else
                                     {
-                                        Text("+ \(ArrayBudgetOperations.ArrayBudgetOperations[0].Money) $")
-                                            .font(.title2)
-                                            .fontWeight(.bold)
-                                            .foregroundColor(.green)
-                                            .padding([.top, .leading, .bottom])
-                                        Spacer()
-                                        Text("\(ArrayBudgetOperations.ArrayBudgetOperations[0].Description)")
-                                            .lineLimit(1)
-                                            .padding(.vertical)
-                                        Spacer()
-                                        Text("\(ArrayBudgetOperations.ArrayBudgetOperations[0].Date)")
-                                            .padding([.top, .bottom, .trailing])
+                                        VStack{
+                                            Image("emptyimage")
+                                                .background()
+                                            Text("There is nothing here")
+                                                .font(.title2)
+                                                .foregroundColor(Color("ViolaBottone"))
+                                                .padding()
+                                        }
                                     }
                                     Spacer()
                                 }
@@ -133,7 +133,7 @@ struct BudgetView: View {
                     .foregroundColor(Color("Giallo"))
             }
             .sheet(isPresented: $showingAddRemove) {
-                AddRemoveMoneyView()
+                AddRemoveMoneyView(ArrayBudgetOperations: ArrayBudgetOperations)
             }
                 }
             }
@@ -145,9 +145,8 @@ struct BudgetView: View {
 
 
 
-//struct BudgetView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        BudgetView()
-//.previewInterfaceOrientation(.portraitUpsideDown)
-//    }
-//}
+struct BudgetView_Previews: PreviewProvider {
+    static var previews: some View {
+        BudgetView(ArrayBudgetOperations: .init())
+    }
+}

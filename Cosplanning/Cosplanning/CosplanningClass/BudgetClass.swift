@@ -26,9 +26,9 @@ struct BudgetModel {
         
     }
 
-    let Money: Float
-    let Description: String
-    let Date: Date
+    var Money: Float
+    var Description: String
+    var Date: Date
     
 }
 
@@ -38,7 +38,7 @@ class ArrayModel: ObservableObject{
     
     init()
     {
-        self.ArrayBudgetOperations = [BudgetModel(Money: 50, Description: "Spada", Date: Date.now)]
+        self.ArrayBudgetOperations = [BudgetModel(Money: 0, Description: "0", Date: Date.now)]
         
     }
 }

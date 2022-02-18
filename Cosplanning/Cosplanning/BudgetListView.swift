@@ -11,6 +11,16 @@ struct BudgetListView: View {
     
     @State private var Money = 500
     @State private var Positive = true
+    
+    @ObservedObject var ArrayBudgetOperations: ArrayModel
+
+    var ind: Int
+
+    init(ind: Int, ArrayBudgetOperations: ArrayModel) {
+        self.ind = ind
+        self.ArrayBudgetOperations = ArrayBudgetOperations
+    }
+    
     var body: some View {
 //        Rectangle()
 //            .frame(width: .infinity, height: 55)
@@ -38,17 +48,17 @@ struct BudgetListView: View {
                 {
                     HStack
                     {
-                        Text("+ \(Money) $")
+                        Text("+ \(ArrayBudgetOperations.ArrayBudgetOperations[ind].Money) $")
                             .font(.title2)
                             .fontWeight(.bold)
                             .foregroundColor(.green)
                             .padding([.top, .leading, .bottom])
                         Spacer()
-                        Text("Testo esempio")
+                        Text("\(ArrayBudgetOperations.ArrayBudgetOperations[ind].Description)")
                             .lineLimit(1)
                             .padding(.vertical)
                         Spacer()
-                        Text("15/02/2022")
+                        Text("\(ArrayBudgetOperations.ArrayBudgetOperations[ind].Date)")
                             .padding([.top, .bottom, .trailing])
                     }
                 }
@@ -56,17 +66,17 @@ struct BudgetListView: View {
                 {
                     HStack
                     {
-                        Text("- \(Money) $")
+                        Text("- \(ArrayBudgetOperations.ArrayBudgetOperations[ind].Money) $")
                             .font(.title2)
                             .fontWeight(.bold)
-                            .foregroundColor(.red)
-                            .padding()
+                            .foregroundColor(.green)
+                            .padding([.top, .leading, .bottom])
                         Spacer()
-                        Text("Testo esempio")
+                        Text("\(ArrayBudgetOperations.ArrayBudgetOperations[ind].Description)")
                             .lineLimit(1)
                             .padding(.vertical)
                         Spacer()
-                        Text("15/02/2022")
+                        Text("\(ArrayBudgetOperations.ArrayBudgetOperations[ind].Date)")
                             .padding([.top, .bottom, .trailing])
                     }
                 }
@@ -77,6 +87,6 @@ struct BudgetListView: View {
 
 struct BudgetListView_Previews: PreviewProvider {
     static var previews: some View {
-        BudgetListView()
+        BudgetListView(ind: .init(), ArrayBudgetOperations: .init())
     }
 }

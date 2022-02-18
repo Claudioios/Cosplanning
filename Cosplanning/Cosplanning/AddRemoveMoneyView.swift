@@ -11,9 +11,10 @@ struct AddRemoveMoneyView: View {
     
     @State private var Money: String = ""
     @State private var Description: String = ""
-    @State private var Date: String = ""
+    @State private var date = Date()
     @Environment(\.dismiss) var dismiss
-
+    @ObservedObject var ArrayBudgetOperations: ArrayModel
+    
     var body: some View {
             VStack{
                 HStack{
@@ -30,6 +31,7 @@ struct AddRemoveMoneyView: View {
                     )
                         .padding(.horizontal)
                         .textFieldStyle(.roundedBorder)
+                        .keyboardType(.decimalPad)
                 }
                 HStack{
                     Text("Short Description")
@@ -54,15 +56,21 @@ struct AddRemoveMoneyView: View {
                     Spacer()
                 }
                 HStack{
-                    TextField(
-                        "",
-                        text: $Date
+                    DatePicker(
+                        "Select Date",
+                        selection: $date,
+                        displayedComponents: [.date]
                     )
-                        .padding(.horizontal)
-                        .textFieldStyle(.roundedBorder)
+                        .datePickerStyle(CompactDatePickerStyle())
+                        .padding()
+                    
                 }
             Spacer()
-                Button{dismiss()}
+                Button{
+                    ArrayBudgetOperations.ArrayBudgetOperations.append(BudgetModel(Money: Float(Money)!, Description: Description, Date: date))
+                    dismiss()
+                    
+                }
             label:
                 {
                     Image(systemName: "checkmark")
@@ -82,6 +90,6 @@ struct AddRemoveMoneyView: View {
 
 struct AddRemoveMoneyView_Previews: PreviewProvider {
     static var previews: some View {
-        AddRemoveMoneyView()
+        AddRemoveMoneyView(ArrayBudgetOperations: .init())
     }
 }
