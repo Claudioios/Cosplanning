@@ -13,6 +13,7 @@ struct BudgetView: View {
     @State private var money = 100.00
     @State private var x = 250
     
+    @ObservedObject var ArrayBudgetOperations: ArrayModel
 
     var body: some View {
         NavigationView{
@@ -96,7 +97,21 @@ struct BudgetView: View {
                                     Spacer()
                                 BudgetListView()
                                 BudgetListView()
-                                BudgetListView()
+                                    HStack
+                                    {
+                                        Text("+ \(ArrayBudgetOperations.ArrayBudgetOperations[0].Money) $")
+                                            .font(.title2)
+                                            .fontWeight(.bold)
+                                            .foregroundColor(.green)
+                                            .padding([.top, .leading, .bottom])
+                                        Spacer()
+                                        Text("\(ArrayBudgetOperations.ArrayBudgetOperations[0].Description)")
+                                            .lineLimit(1)
+                                            .padding(.vertical)
+                                        Spacer()
+                                        Text("\(ArrayBudgetOperations.ArrayBudgetOperations[0].Date)")
+                                            .padding([.top, .bottom, .trailing])
+                                    }
                                     Spacer()
                                 }
                             }
@@ -130,9 +145,9 @@ struct BudgetView: View {
 
 
 
-struct BudgetView_Previews: PreviewProvider {
-    static var previews: some View {
-        BudgetView()
-.previewInterfaceOrientation(.portraitUpsideDown)
-    }
-}
+//struct BudgetView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        BudgetView()
+//.previewInterfaceOrientation(.portraitUpsideDown)
+//    }
+//}
