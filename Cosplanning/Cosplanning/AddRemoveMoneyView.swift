@@ -67,7 +67,7 @@ struct AddRemoveMoneyView: View {
                 }
             Spacer()
                 Button{
-                    ArrayBudgetOperations.ArrayBudgetOperations.append(BudgetModel(Money: Float(Money)!, Description: Description, Date: date))
+                    ArrayBudgetOperations.ArrayBudgetOperations.append(BudgetModel(Money: Double(Money)!, Description: Description, Date: date))
                     dismiss()
                     
                 }

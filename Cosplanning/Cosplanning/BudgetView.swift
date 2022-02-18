@@ -95,8 +95,8 @@ struct BudgetView: View {
                             {
                                 VStack{
                                     Spacer()
-                                    if(ArrayBudgetOperations.ArrayBudgetOperations.count > 1){
-                                    ForEach(0..<ArrayBudgetOperations.ArrayBudgetOperations.count - 1) { ind in
+                                    if(ArrayBudgetOperations.ArrayBudgetOperations.count > 0){
+                                    ForEach(0..<ArrayBudgetOperations.ArrayBudgetOperations.count) { ind in
                                         
                                         BudgetListView(ind: ind, ArrayBudgetOperations: ArrayBudgetOperations)
                                 }

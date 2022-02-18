@@ -48,7 +48,7 @@ struct BudgetListView: View {
                 {
                     HStack
                     {
-                        Text("+ \(ArrayBudgetOperations.ArrayBudgetOperations[ind].Money) $")
+                        Text("+ \(ArrayBudgetOperations.ArrayBudgetOperations[ind].Money, specifier: "%.2f") $")
                             .font(.title2)
                             .fontWeight(.bold)
                             .foregroundColor(.green)

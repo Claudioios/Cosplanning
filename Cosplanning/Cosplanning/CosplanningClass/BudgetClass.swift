@@ -18,7 +18,7 @@ import SwiftUI
 
 struct BudgetModel {
     
-    internal init(Money: Float, Description: String, Date: Date) {
+    internal init(Money: Double, Description: String, Date: Date) {
         
         self.Money = Money
         self.Description = Description
@@ -26,9 +26,9 @@ struct BudgetModel {
         
     }
 
-    var Money: Float
-    var Description: String
-    var Date: Date
+    let Money: Double
+    let Description: String
+    let Date: Date
     
 }
 
@@ -38,7 +38,7 @@ class ArrayModel: ObservableObject{
     
     init()
     {
-        self.ArrayBudgetOperations = [BudgetModel(Money: 0, Description: "0", Date: Date.now)]
+        self.ArrayBudgetOperations = []
         
     }
 }
