@@ -13,6 +13,7 @@ struct AddInventoryView: View {
     @State private var Quantity: String = ""
     @State private var Unit: String = ""
     @Environment(\.dismiss) var dismiss
+    @ObservedObject var ArrayInventoryOperations: ArrayInventoryModel
     
     var body: some View {
         
@@ -46,6 +47,7 @@ struct AddInventoryView: View {
                     )
                         .padding(.horizontal)
                         .textFieldStyle(.roundedBorder)
+                        .keyboardType(.decimalPad)
                 }
                 HStack{
                     Text("Quantity")
@@ -61,24 +63,15 @@ struct AddInventoryView: View {
                     )
                         .padding(.horizontal)
                         .textFieldStyle(.roundedBorder)
+                        .keyboardType(.decimalPad)
                 }
-                HStack{
-                    Text("Unit")
-                        .font(.title)
-                        .fontWeight(.regular)
-                        .padding()
-                    Spacer()
-                }
-                HStack{
-                    TextField(
-                        "",
-                        text: $Unit
-                    )
-                        .padding(.horizontal)
-                        .textFieldStyle(.roundedBorder)
-                }
+
                 Spacer()
-                Button{dismiss()}
+                Button{
+                    ArrayInventoryOperations.ArrayInventoryOperations.append(InventoryModel(Name: Name, Price: Double(Price)!, Quantity: Quantity))
+                    dismiss()
+                    
+                }
             label:
                 {
                     Image(systemName: "checkmark")
@@ -97,6 +90,6 @@ struct AddInventoryView: View {
 
 struct AddInventoryView_Previews: PreviewProvider {
     static var previews: some View {
-        AddInventoryView()
+        AddInventoryView(ArrayInventoryOperations: .init())
     }
 }

@@ -11,7 +11,10 @@ struct PlannerView: View {
     @State private var showingAddRemove = false
     @State private var showingNewTask = false
     @State private var showingCalendar = false
-//
+
+    @ObservedObject var ArrayPlannerModel: ArrayPlannerModel
+    
+    
 //    @State private var date = Date()
 //    @State private var currentdate = Date()
 //
@@ -66,11 +69,27 @@ struct PlannerView: View {
                 Spacer()
                 ScrollView(){
                     Spacer()
-                VStack{
-                    PlannerTaskView()
-                    PlannerTaskView()
-                    PlannerTaskView()
-                }
+                    VStack{
+                        Spacer()
+                        if(ArrayPlannerModel.ArrayPlannerOperations.count > 0){
+                            ForEach(0..<ArrayPlannerModel.ArrayPlannerOperations.count) { ind in
+                            
+                                PlannerTaskView(ind: ind, ArrayPlannerModel: ArrayPlannerModel)
+                    }
+                        }
+                        else
+                        {
+                            VStack{
+                                Image("emptyimage")
+                                    .background()
+                                Text("There is nothing here")
+                                    .font(.title2)
+                                    .foregroundColor(Color("ViolaBottone"))
+                                    .padding()
+                            }
+                        }
+                        Spacer()
+                    }
                 }
 //                DatePicker(
 //                    "Select Date",
@@ -100,7 +119,7 @@ struct PlannerView: View {
                     .foregroundColor(Color("Giallo"))
             }
             .sheet(isPresented: $showingAddRemove) {
-                NewTaskView()
+                NewTaskView(ArrayPlannerModel: ArrayPlannerModel)
             }
                 }
             }
@@ -113,6 +132,6 @@ struct PlannerView: View {
 
 struct PlannerView_Previews: PreviewProvider {
     static var previews: some View {
-        PlannerView()
+        PlannerView(ArrayPlannerModel: .init())
     }
 }

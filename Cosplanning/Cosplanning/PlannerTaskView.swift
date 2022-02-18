@@ -8,6 +8,16 @@
 import SwiftUI
 
 struct PlannerTaskView: View {
+    
+    @ObservedObject var ArrayPlannerModel: ArrayPlannerModel
+
+    var ind: Int
+
+    init(ind: Int, ArrayPlannerModel: ArrayPlannerModel) {
+        self.ind = ind
+        self.ArrayPlannerModel = ArrayPlannerModel
+    }
+    
     var body: some View {
         HStack{
             Rectangle()
@@ -20,7 +30,7 @@ struct PlannerTaskView: View {
             {
                 VStack{
                     HStack{
-                        Text("Title")
+                        Text("\(ArrayPlannerModel.ArrayPlannerOperations[ind].Title)")
                             .font(.largeTitle)
                             .fontWeight(.semibold)
                             .foregroundColor(Color("ViolaBottoneChiaro"))
@@ -29,7 +39,7 @@ struct PlannerTaskView: View {
                         Spacer()
                     }
                     HStack{
-                        Text("Descrizione task")
+                        Text("\(ArrayPlannerModel.ArrayPlannerOperations[ind].Description)")
                             .font(.title3)
                             .fontWeight(.regular)
                             .padding(.leading, 50.0)
@@ -45,6 +55,6 @@ struct PlannerTaskView: View {
 
 struct PlannerTaskView_Previews: PreviewProvider {
     static var previews: some View {
-        PlannerTaskView()
+        PlannerTaskView(ind: .init(), ArrayPlannerModel: .init())
     }
 }

@@ -10,11 +10,14 @@ import SwiftUI
 struct ContentTabView: View {
     
     @StateObject var ArrayBudgetOperations = ArrayModel()
-    
+    @StateObject var ArrayPlannerOperations = ArrayPlannerModel()
+    @StateObject var ArrayInventoryOperations = ArrayInventoryModel()
+
+
     var body: some View {
         TabView {
             
-            PlannerView()
+            PlannerView(ArrayPlannerModel: ArrayPlannerOperations)
 //                .overlay(alignment: .top, content: {
 //                    Color.clear // Or any view or color
 //                        .background(Color("ViolaBottoneChiaro")) // I put clear here because I prefer to put a blur in this case. This modifier and the material it contains are optional.
@@ -39,7 +42,7 @@ struct ContentTabView: View {
                     Text("Projects")
                 }
             
-            InventoryView()
+            InventoryView(ArrayInventoryOperations: ArrayInventoryOperations)
 //                .overlay(alignment: .top, content: {
 //                    Color.clear // Or any view or color
 //                        .background(Color("ViolaBottoneChiaro")) // I put clear here because I prefer to put a blur in this case. This modifier and the material it contains are optional.

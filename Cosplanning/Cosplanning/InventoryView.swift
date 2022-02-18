@@ -9,6 +9,9 @@ import SwiftUI
 struct InventoryView: View {
     @State private var showingAddRemove = false
     @State private var inventory = 0
+    
+    @ObservedObject var ArrayInventoryOperations: ArrayInventoryModel
+    
     var body: some View {
         NavigationView{
             VStack{
@@ -19,7 +22,14 @@ struct InventoryView: View {
                 
                 VStack{
                     Spacer()
-                    if (inventory == 1){
+                    if(ArrayInventoryOperations.ArrayInventoryOperations.count > 0){
+                    ForEach(0..<ArrayInventoryOperations.ArrayInventoryOperations.count) { ind in
+                        
+                        InventoryCardView(ind: ind, ArrayInventoryOperations: ArrayInventoryOperations)
+                }
+                    }
+                    else
+                    {
                         VStack{
                             Image("emptyimage")
                                 .background()
@@ -29,16 +39,7 @@ struct InventoryView: View {
                                 .padding()
                         }
                     }
-                    else
-                    {
-                        ScrollView()
-                        {
-                            InventoryCardView()
-                            Spacer()
-                        }
-                    }
                     Spacer()
-                   
                 }
                 
             
@@ -55,7 +56,7 @@ struct InventoryView: View {
                     .foregroundColor(Color("Giallo"))
             }
             .sheet(isPresented: $showingAddRemove) {
-                AddInventoryView()
+                AddInventoryView(ArrayInventoryOperations: ArrayInventoryOperations)
             }
         }
     }
@@ -64,6 +65,6 @@ struct InventoryView: View {
 }
 struct InventoryView_Previews: PreviewProvider {
     static var previews: some View {
-        InventoryView()
+        InventoryView(ArrayInventoryOperations: .init())
     }
 }

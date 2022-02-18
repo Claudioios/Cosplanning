@@ -9,9 +9,15 @@ import SwiftUI
 
 struct InventoryCardView: View {
     @State private var Ntasks = 0
-    @State private var Price = 0
-    @State private var Qty = 0
+    
+    @ObservedObject var ArrayInventoryOperations: ArrayInventoryModel
 
+    var ind: Int
+
+    init(ind: Int, ArrayInventoryOperations: ArrayInventoryModel) {
+        self.ind = ind
+        self.ArrayInventoryOperations = ArrayInventoryOperations
+    }
     var body: some View {
         HStack{
             Rectangle()
@@ -23,7 +29,7 @@ struct InventoryCardView: View {
                 .overlay()
             {
                 HStack{
-                    Text("Type")
+                    Text("\(ArrayInventoryOperations.ArrayInventoryOperations[ind].Name)")
                         .font(.largeTitle)
                         .fontWeight(.semibold)
                         .padding(.leading, 50.0)
@@ -33,7 +39,7 @@ struct InventoryCardView: View {
                             Spacer()
                             Text("Price")
                             Spacer()
-                            Text("\(Price)")
+                            Text("\(ArrayInventoryOperations.ArrayInventoryOperations[ind].Price, specifier: "%.2f")")
                             Spacer()
                         }
                         Divider()
@@ -42,7 +48,7 @@ struct InventoryCardView: View {
                             Spacer()
                             Text("Quantity")
                             Spacer()
-                            Text("\(Qty)")
+                            Text("\(ArrayInventoryOperations.ArrayInventoryOperations[ind].Quantity) $")
                             Spacer()
 
                             
@@ -58,6 +64,6 @@ struct InventoryCardView: View {
 
 struct InventoryCardView_Previews: PreviewProvider {
     static var previews: some View {
-        InventoryCardView()
+        InventoryCardView(ind: .init(), ArrayInventoryOperations: .init())
     }
 }

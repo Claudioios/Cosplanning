@@ -14,9 +14,11 @@ struct NewTaskView: View {
     @State private var Material: String = ""
     @State private var WorkTime1: String = ""
     @State private var WorkTime2: String = ""
-    
+    @Environment(\.dismiss) var dismiss
+
+    @ObservedObject var ArrayPlannerModel: ArrayPlannerModel
+
     var body: some View {
-        NavigationView{
             VStack{
                 HStack{
                     Text("Title")
@@ -77,15 +79,13 @@ struct NewTaskView: View {
                     )
                         .padding(.horizontal)
                         .textFieldStyle(.roundedBorder)
-                    TextField(
-                        "",
-                        text: $WorkTime2
-                    )
-                        .padding(.horizontal)
-                        .textFieldStyle(.roundedBorder)
                 }
             Spacer()
-                Button{}
+                Button{
+                    ArrayPlannerModel.ArrayPlannerOperations.append(PlannerModel(Title: Title, Description: Description, Materials: Material, HoursWork: 0))
+                    dismiss()
+                                                                    
+                    }
             label:
                 {
                     Image(systemName: "checkmark")
@@ -97,13 +97,14 @@ struct NewTaskView: View {
                 }
                 
             }
-        }
+            .padding()
+            .background(Image("Background"))
     }
     
 }
 
 struct NewTaskView_Previews: PreviewProvider {
     static var previews: some View {
-        NewTaskView()
+        NewTaskView(ArrayPlannerModel: .init())
     }
 }

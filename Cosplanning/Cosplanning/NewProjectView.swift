@@ -75,6 +75,7 @@ struct NewProjectView: View {
             
         }
         .padding()
+        .background(Image("Background"))
         
     }
 }
