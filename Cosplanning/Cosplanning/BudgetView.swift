@@ -20,16 +20,16 @@ struct BudgetView: View {
     @FetchRequest(sortDescriptors: []) var operations: FetchedResults<BudgetOperation>
     
     @ObservedObject var ArrayBudgetOperations: ArrayModel
-
+    
     func DeleteElement(at offsets: IndexSet) {
         for offset in offsets {
             // find this book in our fetch request
             let operation = operations[offset]
-
+            
             // delete it from the context
             add.delete(operation)
         }
-
+        
         // save the context
         try? add.save()
     }
@@ -37,15 +37,15 @@ struct BudgetView: View {
     var body: some View {
         NavigationView{
             VStack{
-            Rectangle()
+                Rectangle()
                     .frame(width: .infinity, height: 50).ignoresSafeArea( edges: .top)
-                .foregroundColor(Color("ViolaBottoneChiaro"))
+                    .foregroundColor(Color("ViolaBottoneChiaro"))
                 VStack {
                     List{
                         ForEach(operations) { operation in
                             Text(operation.shortdescription ?? "Unknown")
-                                }
-                            .onDelete(perform: DeleteElement)
+                        }
+                        .onDelete(perform: DeleteElement)
                     }
                     HStack
                     {
@@ -60,13 +60,10 @@ struct BudgetView: View {
                             try? add.save()
                         }
                     }
-                
+                    
                 }
-            ScrollView()
-            {
-                VStack{
-
-                    }
+                ScrollView()
+                {
                     Rectangle()
                         .frame(width: 350, height: 200)
                         .cornerRadius(43)
@@ -74,12 +71,9 @@ struct BudgetView: View {
                         .padding()
                         .overlay()
                     {
-
-                            Text("\(money, specifier: "%.2f")$")
+                        Text("\(money, specifier: "%.2f")$")
                             .font(.largeTitle)
-                                .padding()
-
-
+                            .padding()
                     }
                     HStack{
                         HStack{
@@ -97,16 +91,13 @@ struct BudgetView: View {
                                     .shadow(color: Color.gray, radius: 5, x: -2, y: -2)
                             }
                             .sheet(isPresented: $showingAddRemove) {
-                                        
                                 AddRemoveMoneyView(ArrayBudgetOperations: ArrayBudgetOperations)
-                                    }
+                            }
                             Spacer()
                         }
                         Spacer()
-
                         HStack{
                             Spacer()
-
                             Button{showingAddRemove.toggle()}
                         label:
                             {
@@ -117,15 +108,13 @@ struct BudgetView: View {
                                     .background(Color("ViolaBottone"))
                                     .clipShape(Capsule())
                                     .shadow(color: Color.gray, radius: 5, x: -2, y: -2)
-                                
                             }
                             .sheet(isPresented: $showingAddRemove) {
                                 AddRemoveMoneyView(ArrayBudgetOperations: ArrayBudgetOperations)
-                                    }
+                            }
                             Spacer()
-
                         }
-                }
+                    }
                     VStack{
                         Rectangle()
                             .frame(width: 350, height: CGFloat(x))
@@ -134,49 +123,49 @@ struct BudgetView: View {
                             .cornerRadius(43)
                             .padding()
                             .overlay()
-                            {
-                                VStack{
-                                    Spacer()
-                                    if(ArrayBudgetOperations.ArrayBudgetOperations.count > 0){
+                        {
+                            VStack{
+                                Spacer()
+                                if(ArrayBudgetOperations.ArrayBudgetOperations.count > 0){
                                     ForEach(0..<ArrayBudgetOperations.ArrayBudgetOperations.count) { ind in
                                         
                                         BudgetListView(ind: ind, ArrayBudgetOperations: ArrayBudgetOperations)
-                                }
                                     }
-                                    else
-                                    {
-                                        VStack{
-                                            Image("emptyimage")
-                                                .background()
-                                            Text("There is nothing here")
-                                                .font(.title2)
-                                                .foregroundColor(Color("ViolaBottone"))
-                                                .padding()
-                                        }
-                                    }
-                                    Spacer()
                                 }
+                                else
+                                {
+                                    VStack{
+                                        Image("emptyimage")
+                                            .background()
+                                        Text("There is nothing here")
+                                            .font(.title2)
+                                            .foregroundColor(Color("ViolaBottone"))
+                                            .padding()
+                                    }
+                                }
+                                Spacer()
                             }
+                        }
                         
                     }
                     
-
+                    
+                }
             }
-        }
             .navigationTitle("Budget")
             .background(Image("Background"))
             .toolbar{
                 ToolbarItemGroup(placement: .navigationBarTrailing){
-                Button{
-                    showingAddRemove.toggle()
+                    Button{
+                        showingAddRemove.toggle()
+                    }
+                label: {
+                    Label ("Filter", systemImage: "line.3.horizontal.decrease.circle.fill")
+                        .foregroundColor(Color("Giallo"))
                 }
-            label: {
-                Label ("Filter", systemImage: "line.3.horizontal.decrease.circle.fill")
-                    .foregroundColor(Color("Giallo"))
-            }
-            .sheet(isPresented: $showingAddRemove) {
-                AddRemoveMoneyView(ArrayBudgetOperations: ArrayBudgetOperations)
-            }
+                .sheet(isPresented: $showingAddRemove) {
+                    AddRemoveMoneyView(ArrayBudgetOperations: ArrayBudgetOperations)
+                }
                 }
             }
         }
