@@ -13,6 +13,12 @@ struct BudgetView: View {
     @State private var money = 100.00
     @State private var x = 250
     
+    let Money = 100.00
+    let Description = "Ciao"
+    
+    @FetchRequest(sortDescriptors: []) var operations: FetchedResults<BudgetOperation>
+    @Environment(\.managedObjectContext) var add
+    
     @ObservedObject var ArrayBudgetOperations: ArrayModel
 
     var body: some View {
@@ -25,6 +31,34 @@ struct BudgetView: View {
             ScrollView()
             {
                 VStack{
+                    VStack {
+                            ForEach(operations) { operation in
+                                Text(operation.shortdescription ?? "Unknown")
+                        }
+                        HStack
+                        {
+                            Button("Add") {
+                                
+                                let NewOperation = BudgetOperation(context: add)
+                                NewOperation.money = Money
+                                NewOperation.shortdescription = "Ciao"
+                                NewOperation.date = Date.now
+                                // more code to come
+                                
+                                try? add.save()
+                            }
+                            Button("Delete") {
+                                
+                                let NewOperation = BudgetOperation(context: add)
+                                NewOperation.money = Money
+                                NewOperation.shortdescription = "Ciao"
+                                NewOperation.date = Date.now
+                                // more code to come
+                                
+                                try? add.save()
+                            }
+                        }
+                    }
                     Rectangle()
                         .frame(width: 350, height: 200)
                         .cornerRadius(43)

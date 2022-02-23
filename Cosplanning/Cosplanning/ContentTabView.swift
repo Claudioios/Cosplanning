@@ -13,6 +13,7 @@ struct ContentTabView: View {
     @StateObject var ArrayPlannerOperations = ArrayPlannerModel()
     @StateObject var ArrayInventoryOperations = ArrayInventoryModel()
 
+    @StateObject private var dataController = DataController()
 
     var body: some View {
         TabView {
@@ -65,6 +66,8 @@ struct ContentTabView: View {
                     Image(systemName: "creditcard.fill")
                     Text("Budget")
                 }
+                .environment(\.managedObjectContext, dataController.container.viewContext)
+
         }
         
         .accentColor(Color.indigo)
