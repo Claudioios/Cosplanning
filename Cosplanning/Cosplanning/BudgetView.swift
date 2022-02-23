@@ -140,7 +140,7 @@ struct BudgetView: View {
 //                                        BudgetListView(ind: ind, ArrayBudgetOperations: ArrayBudgetOperations)
                                         List{
                                             ForEach(operations) { operation in
-                                                Text(operation.shortdescription ?? "Unknown")
+                                                BudgetListView(ind: ind, ArrayBudgetOperations: ArrayBudgetOperations)
                                             }
                                             .onDelete(perform: DeleteElement)
                                         }
