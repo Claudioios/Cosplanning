@@ -40,32 +40,32 @@ struct BudgetView: View {
             Rectangle()
                     .frame(width: .infinity, height: 50).ignoresSafeArea( edges: .top)
                 .foregroundColor(Color("ViolaBottoneChiaro"))
-               
+                VStack {
+                    List{
+                        ForEach(operations) { operation in
+                            Text(operation.shortdescription ?? "Unknown")
+                                }
+                            .onDelete(perform: DeleteElement)
+                    }
+                    HStack
+                    {
+                        Button("Add") {
+                            
+                            let NewOperation = BudgetOperation(context: add)
+                            NewOperation.money = Money
+                            NewOperation.shortdescription = "Ciao"
+                            NewOperation.date = Date.now
+                            // more code to come
+                            
+                            try? add.save()
+                        }
+                    }
+                
+                }
             ScrollView()
             {
                 VStack{
-                    VStack {
-                    
-                            ForEach(operations) { operation in
-                                Text(operation.shortdescription ?? "Unknown")
-                                    }
-                                .onDelete(perform: DeleteElement)
-                        
-                        HStack
-                        {
-                            Button("Add") {
-                                
-                                let NewOperation = BudgetOperation(context: add)
-                                NewOperation.money = Money
-                                NewOperation.shortdescription = "Ciao"
-                                NewOperation.date = Date.now
-                                // more code to come
-                                
-                                try? add.save()
-                            }
-                        }
-                    
-                    }
+
                     }
                     Rectangle()
                         .frame(width: 350, height: 200)
