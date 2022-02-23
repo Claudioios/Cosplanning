@@ -16,11 +16,24 @@ struct BudgetView: View {
     let Money = 100.00
     let Description = "Ciao"
     
-    @FetchRequest(sortDescriptors: []) var operations: FetchedResults<BudgetOperation>
     @Environment(\.managedObjectContext) var add
+    @FetchRequest(sortDescriptors: []) var operations: FetchedResults<BudgetOperation>
     
     @ObservedObject var ArrayBudgetOperations: ArrayModel
 
+    func DeleteElement(at offsets: IndexSet) {
+        for offset in offsets {
+            // find this book in our fetch request
+            let operation = operations[offset]
+
+            // delete it from the context
+            add.delete(operation)
+        }
+
+        // save the context
+        try? add.save()
+    }
+    
     var body: some View {
         NavigationView{
             VStack{
@@ -32,9 +45,12 @@ struct BudgetView: View {
             {
                 VStack{
                     VStack {
+                    
                             ForEach(operations) { operation in
                                 Text(operation.shortdescription ?? "Unknown")
-                        }
+                                    }
+                                .onDelete(perform: DeleteElement)
+                        
                         HStack
                         {
                             Button("Add") {
@@ -47,17 +63,9 @@ struct BudgetView: View {
                                 
                                 try? add.save()
                             }
-                            Button("Delete") {
-                                
-                                let NewOperation = BudgetOperation(context: add)
-                                NewOperation.money = Money
-                                NewOperation.shortdescription = "Ciao"
-                                NewOperation.date = Date.now
-                                // more code to come
-                                
-                                try? add.save()
-                            }
                         }
+                    
+                    }
                     }
                     Rectangle()
                         .frame(width: 350, height: 200)
@@ -174,11 +182,6 @@ struct BudgetView: View {
         }
     }
 }
-}
-
-
-
-
 struct BudgetView_Previews: PreviewProvider {
     static var previews: some View {
         BudgetView(ArrayBudgetOperations: .init())
