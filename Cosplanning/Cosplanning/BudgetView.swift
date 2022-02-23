@@ -41,24 +41,24 @@ struct BudgetView: View {
                     .frame(width: .infinity, height: 50).ignoresSafeArea( edges: .top)
                     .foregroundColor(Color("ViolaBottoneChiaro"))
                 VStack {
-                    List{
-                        ForEach(operations) { operation in
-                            Text(operation.shortdescription ?? "Unknown")
-                        }
-                        .onDelete(perform: DeleteElement)
-                    }
+//                    List{
+//                        ForEach(operations) { operation in
+//                            Text(operation.shortdescription ?? "Unknown")
+//                        }
+//                        .onDelete(perform: DeleteElement)
+//                    }
                     HStack
                     {
-                        Button("Add") {
-                            
-                            let NewOperation = BudgetOperation(context: add)
-                            NewOperation.money = Money
-                            NewOperation.shortdescription = "Ciao"
-                            NewOperation.date = Date.now
-                            // more code to come
-                            
-                            try? add.save()
-                        }
+//                        Button("Add") {
+//
+//                            let NewOperation = BudgetOperation(context: add)
+//                            NewOperation.money = Money
+//                            NewOperation.shortdescription = "Ciao"
+//                            NewOperation.date = Date.now
+//                            // more code to come
+//
+//                            try? add.save()
+//                        }
                     }
                     
                 }
@@ -78,8 +78,16 @@ struct BudgetView: View {
                     HStack{
                         HStack{
                             Spacer()
-                            Button{showingAddRemove.toggle()
-                            }
+                            Button{
+                                showingAddRemove.toggle()
+                                    let NewOperation = BudgetOperation(context: add)
+                                    NewOperation.money = Money
+                                    NewOperation.shortdescription = "Ciao"
+                                    NewOperation.date = Date.now
+                                    // more code to come
+                                    
+                                    try? add.save()
+                                }
                         label:
                             {
                                 Text("Add Money")
@@ -129,7 +137,13 @@ struct BudgetView: View {
                                 if(ArrayBudgetOperations.ArrayBudgetOperations.count > 0){
                                     ForEach(0..<ArrayBudgetOperations.ArrayBudgetOperations.count) { ind in
                                         
-                                        BudgetListView(ind: ind, ArrayBudgetOperations: ArrayBudgetOperations)
+//                                        BudgetListView(ind: ind, ArrayBudgetOperations: ArrayBudgetOperations)
+                                        List{
+                                            ForEach(operations) { operation in
+                                                Text(operation.shortdescription ?? "Unknown")
+                                            }
+                                            .onDelete(perform: DeleteElement)
+                                        }
                                     }
                                 }
                                 else
