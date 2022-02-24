@@ -10,6 +10,12 @@ import SwiftUI
 struct NewProjectView: View {
     @State private var start: String = ""
     @State private var task: String = ""
+    @State private var r = 0
+    @State private var g = 0
+    @State private var b = 0
+    @State private var y = 0
+    @State private var gr = 0
+    @State private var bl = 0
     var body: some View {
         VStack{
             HStack{
@@ -55,19 +61,78 @@ struct NewProjectView: View {
             
             ScrollView(.horizontal){
                 HStack{
+                    Button{
+                        r  = r+1
+                        g = 0
+                        b = 0
+                        y = 0
+                        gr = 0
+                        bl = 0
+                    }
+                    label : {
                     Circle()
                         .foregroundColor(.red)
+                    }
+                    Button{
+                        g  = g+1
+                        r = 0
+                        b = 0
+                        y = 0
+                        gr = 0
+                        bl = 0
+                    }
+                    label : {
                     Circle()
                         .foregroundColor(.green)
+                    }
+                    Button{
+                        b  = b+1
+                        r = 0
+                        g = 0
+                        y = 0
+                        gr = 0
+                        bl = 0
+                    }
+                    label : {
                     Circle()
                         .foregroundColor(.blue)
+                    }
+                    Button{
+                        y  = y+1
+                        r = 0
+                        b = 0
+                        g = 0
+                        gr = 0
+                        bl = 0
+                    }
+                    label : {
                     Circle()
                         .foregroundColor(.yellow)
+                    }
+                    Button{
+                        gr  = gr+1
+                        r = 0
+                        b = 0
+                        y = 0
+                        g = 0
+                        bl = 0
+                    }
+                    label : {
+                    Circle()
+                        .foregroundColor(.gray)
+                    }
+                    Button{
+                        bl  = bl+1
+                        r = 0
+                        b = 0
+                        y = 0
+                        gr = 0
+                        g = 0
+                    }
+                    label : {
                     Circle()
                         .foregroundColor(.black)
-                    Circle()
-                        .foregroundColor(.white)
-                    
+                    }
                 }
                 .frame(width: 600, height: 90)
             }

@@ -29,6 +29,8 @@ struct ContentTabView: View {
                     Image(systemName: "calendar")
                     Text("Planner")
                 }
+                .environment(\.managedObjectContext, dataController.container.viewContext)
+
             
             
             ProjectView()
@@ -42,6 +44,8 @@ struct ContentTabView: View {
                     Image("icon")
                     Text("Projects")
                 }
+                .environment(\.managedObjectContext, dataController.container.viewContext)
+
             
             InventoryView(ArrayInventoryOperations: ArrayInventoryOperations)
 //                .overlay(alignment: .top, content: {
@@ -54,6 +58,8 @@ struct ContentTabView: View {
                     Image(systemName: "archivebox")
                     Text("Inventory")
                 }
+                .environment(\.managedObjectContext, dataController.container.viewContext)
+
             
             BudgetView()
 //                .overlay(alignment: .top, content: {
