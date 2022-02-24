@@ -19,8 +19,9 @@ struct BudgetView: View {
     @Environment(\.managedObjectContext) var add
     @FetchRequest(sortDescriptors: []) var operations: FetchedResults<BudgetOperation>
     
-    @ObservedObject var ArrayBudgetOperations: ArrayModel
-    
+//    @ObservedObject var ArrayBudgetOperations: ArrayModel
+//    @ObservedObject var dataController: DataController
+
     func DeleteElement(at offsets: IndexSet) {
         for offset in offsets {
             // find this book in our fetch request
@@ -80,13 +81,13 @@ struct BudgetView: View {
                             Spacer()
                             Button{
                                 showingAddRemove.toggle()
-                                    let NewOperation = BudgetOperation(context: add)
-                                    NewOperation.money = Money
-                                    NewOperation.shortdescription = "Ciao"
-                                    NewOperation.date = Date.now
-                                    // more code to come
-                                    
-                                    try? add.save()
+//                                    let NewOperation = BudgetOperation(context: add)
+//                                    NewOperation.money = Money
+//                                    NewOperation.shortdescription = "Ciao"
+//                                    NewOperation.date = Date.now
+//                                    // more code to come
+//
+//                                    try? add.save()
                                 }
                         label:
                             {
@@ -99,7 +100,7 @@ struct BudgetView: View {
                                     .shadow(color: Color.gray, radius: 5, x: -2, y: -2)
                             }
                             .sheet(isPresented: $showingAddRemove) {
-                                AddRemoveMoneyView(ArrayBudgetOperations: ArrayBudgetOperations)
+                                AddRemoveMoneyView()
                             }
                             Spacer()
                         }
@@ -118,7 +119,7 @@ struct BudgetView: View {
                                     .shadow(color: Color.gray, radius: 5, x: -2, y: -2)
                             }
                             .sheet(isPresented: $showingAddRemove) {
-                                AddRemoveMoneyView(ArrayBudgetOperations: ArrayBudgetOperations)
+                                AddRemoveMoneyView()
                             }
                             Spacer()
                         }
@@ -134,17 +135,17 @@ struct BudgetView: View {
                         {
                             VStack{
                                 Spacer()
-                                if(ArrayBudgetOperations.ArrayBudgetOperations.count > 0){
-                                    ForEach(0..<ArrayBudgetOperations.ArrayBudgetOperations.count) { ind in
+                                if(x > 0){
+//                                    ForEach(0..<ArrayBudgetOperations.ArrayBudgetOperations.count) { ind in
                                         
 //                                        BudgetListView(ind: ind, ArrayBudgetOperations: ArrayBudgetOperations)
                                         List{
                                             ForEach(operations) { operation in
-                                                BudgetListView(ind: ind, ArrayBudgetOperations: ArrayBudgetOperations)
+                                                BudgetListView(Money: operation.money ?? 0, Description: operation.shortdescription ?? "Unknown", date: operation.date ?? Date.now)
                                             }
                                             .onDelete(perform: DeleteElement)
                                         }
-                                    }
+                                    
                                 }
                                 else
                                 {
@@ -178,7 +179,7 @@ struct BudgetView: View {
                         .foregroundColor(Color("Giallo"))
                 }
                 .sheet(isPresented: $showingAddRemove) {
-                    AddRemoveMoneyView(ArrayBudgetOperations: ArrayBudgetOperations)
+                    AddRemoveMoneyView()
                 }
                 }
             }
@@ -187,6 +188,6 @@ struct BudgetView: View {
 }
 struct BudgetView_Previews: PreviewProvider {
     static var previews: some View {
-        BudgetView(ArrayBudgetOperations: .init())
+        BudgetView()
     }
 }

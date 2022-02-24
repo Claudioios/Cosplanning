@@ -13,7 +13,9 @@ struct AddRemoveMoneyView: View {
     @State private var Description: String = ""
     @State private var date = Date()
     @Environment(\.dismiss) var dismiss
-    @ObservedObject var ArrayBudgetOperations: ArrayModel
+//    @ObservedObject var ArrayBudgetOperations: ArrayModel
+    @Environment(\.managedObjectContext) var add
+    @FetchRequest(sortDescriptors: []) var operations: FetchedResults<BudgetOperation>
     
     var body: some View {
             VStack{
@@ -67,7 +69,17 @@ struct AddRemoveMoneyView: View {
                 }
             Spacer()
                 Button{
-                    ArrayBudgetOperations.ArrayBudgetOperations.append(BudgetModel(Money: Double(Money)!, Description: Description, Date: date))
+//                    ArrayBudgetOperations.ArrayBudgetOperations.append(BudgetModel(Money: Double(Money)!, Description: Description, Date: date))
+                    
+                    
+                    let NewOperation = BudgetOperation(context: add)
+                    NewOperation.money = Double(Money) ?? 0
+                    NewOperation.shortdescription = Description
+                    NewOperation.date = date
+                    // more code to come
+                    
+                    try? add.save()
+                    
                     dismiss()
                     
                 }
@@ -90,6 +102,6 @@ struct AddRemoveMoneyView: View {
 
 struct AddRemoveMoneyView_Previews: PreviewProvider {
     static var previews: some View {
-        AddRemoveMoneyView(ArrayBudgetOperations: .init())
+        AddRemoveMoneyView()
     }
 }

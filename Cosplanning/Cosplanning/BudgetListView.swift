@@ -9,16 +9,20 @@ import SwiftUI
 
 struct BudgetListView: View {
     
-    @State private var Money = 500
     @State private var Positive = true
     
-    @ObservedObject var ArrayBudgetOperations: ArrayModel
-
-    var ind: Int
-
-    init(ind: Int, ArrayBudgetOperations: ArrayModel) {
-        self.ind = ind
-        self.ArrayBudgetOperations = ArrayBudgetOperations
+//    @ObservedObject var ArrayBudgetOperations: ArrayModel
+    
+    @Environment(\.managedObjectContext) var add
+    @FetchRequest(sortDescriptors: []) var operations: FetchedResults<BudgetOperation>
+    
+    var Money: Double
+    var Description: String
+    var date: Date
+    init(Money: Double, Description: String, date:Date) {
+        self.Money = Money
+        self.Description = Description
+        self.date = date
     }
     
     var body: some View {
@@ -48,17 +52,17 @@ struct BudgetListView: View {
                 {
                     HStack
                     {
-                        Text("+ \(ArrayBudgetOperations.ArrayBudgetOperations[ind].Money, specifier: "%.2f") $")
+                        Text("\(Money, specifier: "%.2f") ")
                             .font(.title2)
                             .fontWeight(.bold)
                             .foregroundColor(.green)
                             .padding([.top, .leading, .bottom])
                         Spacer()
-                        Text("\(ArrayBudgetOperations.ArrayBudgetOperations[ind].Description)")
+                        Text("\(Description)")
                             .lineLimit(1)
                             .padding(.vertical)
                         Spacer()
-                        Text("\(ArrayBudgetOperations.ArrayBudgetOperations[ind].Date)")
+                        Text("\(date)")
                             .padding([.top, .bottom, .trailing])
                     }
                 }
@@ -66,17 +70,17 @@ struct BudgetListView: View {
                 {
                     HStack
                     {
-                        Text("- \(ArrayBudgetOperations.ArrayBudgetOperations[ind].Money) $")
+                        Text("\(Money, specifier: "%.2f")")
                             .font(.title2)
                             .fontWeight(.bold)
                             .foregroundColor(.green)
                             .padding([.top, .leading, .bottom])
                         Spacer()
-                        Text("\(ArrayBudgetOperations.ArrayBudgetOperations[ind].Description)")
+                        Text("\(Description)")
                             .lineLimit(1)
                             .padding(.vertical)
                         Spacer()
-                        Text("\(ArrayBudgetOperations.ArrayBudgetOperations[ind].Date)")
+                        Text("\(date)")
                             .padding([.top, .bottom, .trailing])
                     }
                 }
@@ -87,6 +91,6 @@ struct BudgetListView: View {
 
 struct BudgetListView_Previews: PreviewProvider {
     static var previews: some View {
-        BudgetListView(ind: .init(), ArrayBudgetOperations: .init())
+        BudgetListView(Money: 10, Description: "Ciao", date: Date.now)
     }
 }
