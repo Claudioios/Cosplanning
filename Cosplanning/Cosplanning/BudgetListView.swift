@@ -10,9 +10,7 @@ import SwiftUI
 struct BudgetListView: View {
     
     @State private var Positive = true
-    
-//    @ObservedObject var ArrayBudgetOperations: ArrayModel
-    
+        
     @Environment(\.managedObjectContext) var add
     @FetchRequest(sortDescriptors: []) var operations: FetchedResults<BudgetOperation>
     

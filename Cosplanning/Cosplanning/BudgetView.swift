@@ -12,15 +12,12 @@ struct BudgetView: View {
     @State private var showingAddRemove = false
     @State private var money : Double = 0
     @State private var x = 250
-    
+
     let Money : Double = 0
     let Description = "Ciao"
     
     @Environment(\.managedObjectContext) var add
     @FetchRequest(sortDescriptors: []) var operations: FetchedResults<BudgetOperation>
-    
-//    @ObservedObject var ArrayBudgetOperations: ArrayModel
-//    @ObservedObject var dataController: DataController
 
     func DeleteElement(at offsets: IndexSet) {
         for offset in offsets {
@@ -143,6 +140,7 @@ struct BudgetView: View {
                                         List{
                                             ForEach(operations) { operation in
                                                 BudgetListView(Money: operation.money ?? 0, Description: operation.shortdescription ?? "Unknown", date: operation.date ?? Date.now)
+                                                    
                                                
                                             }
                                             

@@ -13,7 +13,7 @@ struct AddRemoveMoneyView: View {
     @State private var Description: String = ""
     @State private var date = Date()
     @Environment(\.dismiss) var dismiss
-//    @ObservedObject var ArrayBudgetOperations: ArrayModel
+
     @Environment(\.managedObjectContext) var add
     @FetchRequest(sortDescriptors: []) var operations: FetchedResults<BudgetOperation>
     
@@ -69,7 +69,6 @@ struct AddRemoveMoneyView: View {
                 }
             Spacer()
                 Button{
-//                    ArrayBudgetOperations.ArrayBudgetOperations.append(BudgetModel(Money: Double(Money)!, Description: Description, Date: date))
                     
                     
                     let NewOperation = BudgetOperation(context: add)
