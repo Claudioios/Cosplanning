@@ -17,6 +17,8 @@ struct NewProjectView: View {
     @State private var gr = 0
     @State private var bl = 0
     
+    @Environment(\.dismiss) var dismiss
+
     @Environment(\.managedObjectContext) var add
     @FetchRequest(sortDescriptors: []) var operations: FetchedResults<ProjectOperation>
     
@@ -49,8 +51,10 @@ struct NewProjectView: View {
                 TextField(
                     "",
                     text: $task
+                    
                 )
                     .padding(.horizontal)
+                    .keyboardType(.decimalPad)
                     .textFieldStyle(.roundedBorder)
             }
             
@@ -144,15 +148,15 @@ struct NewProjectView: View {
                 Button{
                     
                     
-//                    let NewOperation = BudgetOperation(context: add)
-//                    NewOperation.money = Double(Money) ?? 0
-//                    NewOperation.shortdescription = Description
-//                    NewOperation.date = date
-                    // more code to come
+                    let NewOperation = ProjectOperation(context: add)
+                    NewOperation.projectname = start
+                    NewOperation.tasksnumber = Int64(task) ?? 0
+                    NewOperation.colorproject = ""
+//                  more code to come
                     
-//                    try? add.save()
-//                    
-//                    dismiss()
+                    try? add.save()
+
+                    dismiss()
                     
                 }
             label:
