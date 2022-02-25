@@ -13,8 +13,9 @@ struct AddInventoryView: View {
     @State private var Quantity: String = ""
     @State private var Unit: String = ""
     @Environment(\.dismiss) var dismiss
-    @ObservedObject var ArrayInventoryOperations: ArrayInventoryModel
     
+    @Environment(\.managedObjectContext) var add
+    @FetchRequest(sortDescriptors: []) var operations: FetchedResults<BudgetOperation>
     var body: some View {
         
             VStack{
@@ -68,7 +69,13 @@ struct AddInventoryView: View {
 
                 Spacer()
                 Button{
-                    ArrayInventoryOperations.ArrayInventoryOperations.append(InventoryModel(Name: Name, Price: Double(Price)!, Quantity: Quantity))
+                    let NewOperation = InventoryOperation(context: add)
+                    NewOperation.materialname = Name
+                    NewOperation.price = Double(Price) ?? 0.0
+                    NewOperation.quantity = Int64(Quantity) ?? 0
+                    // more code to come
+                    
+                    try? add.save()
                     dismiss()
                     
                 }
@@ -90,6 +97,6 @@ struct AddInventoryView: View {
 
 struct AddInventoryView_Previews: PreviewProvider {
     static var previews: some View {
-        AddInventoryView(ArrayInventoryOperations: .init())
+        AddInventoryView()
     }
 }

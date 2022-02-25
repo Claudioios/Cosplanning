@@ -9,15 +9,20 @@ import SwiftUI
 
 struct InventoryCardView: View {
     @State private var Ntasks = 0
+        
+    @Environment(\.managedObjectContext) var add
+    @FetchRequest(sortDescriptors: []) var operations: FetchedResults<InventoryOperation>
     
-    @ObservedObject var ArrayInventoryOperations: ArrayInventoryModel
-
-    var ind: Int
-
-    init(ind: Int, ArrayInventoryOperations: ArrayInventoryModel) {
-        self.ind = ind
-        self.ArrayInventoryOperations = ArrayInventoryOperations
+    var Name: String
+    var Price: Double
+    var Quantity: Int64
+    
+    init(Name: String, Price: Double, Quantity: Int64) {
+        self.Name = Name
+        self.Price = Price
+        self.Quantity = Quantity
     }
+    
     var body: some View {
         HStack{
             Rectangle()
@@ -29,7 +34,7 @@ struct InventoryCardView: View {
                 .overlay()
             {
                 HStack{
-                    Text("\(ArrayInventoryOperations.ArrayInventoryOperations[ind].Name)")
+                    Text("\(Name)")
                         .font(.largeTitle)
                         .fontWeight(.semibold)
                         .padding(.leading, 50.0)
@@ -39,7 +44,7 @@ struct InventoryCardView: View {
                             Spacer()
                             Text("Price")
                             Spacer()
-                            Text("\(ArrayInventoryOperations.ArrayInventoryOperations[ind].Price, specifier: "%.2f")")
+                            Text("\(Price, specifier: "%.2f")")
                             Spacer()
                         }
                         Divider()
@@ -48,7 +53,7 @@ struct InventoryCardView: View {
                             Spacer()
                             Text("Quantity")
                             Spacer()
-                            Text("\(ArrayInventoryOperations.ArrayInventoryOperations[ind].Quantity) $")
+                            Text("\(Quantity) $")
                             Spacer()
 
                             
@@ -64,6 +69,6 @@ struct InventoryCardView: View {
 
 struct InventoryCardView_Previews: PreviewProvider {
     static var previews: some View {
-        InventoryCardView(ind: .init(), ArrayInventoryOperations: .init())
+        InventoryCardView(Name: "Ciao", Price: 10.0, Quantity: 1)
     }
 }

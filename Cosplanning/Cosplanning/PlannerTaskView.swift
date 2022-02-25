@@ -9,13 +9,15 @@ import SwiftUI
 
 struct PlannerTaskView: View {
     
-    @ObservedObject var ArrayPlannerModel: ArrayPlannerModel
-
-    var ind: Int
-
-    init(ind: Int, ArrayPlannerModel: ArrayPlannerModel) {
-        self.ind = ind
-        self.ArrayPlannerModel = ArrayPlannerModel
+    @Environment(\.managedObjectContext) var add
+    @FetchRequest(sortDescriptors: []) var operations: FetchedResults<PlannerOperation>
+    
+    var Title: String
+    var Description: String
+    
+    init(Title: String, Description: String) {
+        self.Title = Title
+        self.Description = Description
     }
     
     var body: some View {
@@ -30,7 +32,7 @@ struct PlannerTaskView: View {
             {
                 VStack{
                     HStack{
-                        Text("\(ArrayPlannerModel.ArrayPlannerOperations[ind].Title)")
+                        Text("\(Title)")
                             .font(.largeTitle)
                             .fontWeight(.semibold)
                             .foregroundColor(Color("ViolaBottoneChiaro"))
@@ -39,7 +41,7 @@ struct PlannerTaskView: View {
                         Spacer()
                     }
                     HStack{
-                        Text("\(ArrayPlannerModel.ArrayPlannerOperations[ind].Description)")
+                        Text("\(Description)")
                             .font(.title3)
                             .fontWeight(.regular)
                             .padding(.leading, 50.0)
@@ -55,6 +57,6 @@ struct PlannerTaskView: View {
 
 struct PlannerTaskView_Previews: PreviewProvider {
     static var previews: some View {
-        PlannerTaskView(ind: .init(), ArrayPlannerModel: .init())
+        PlannerTaskView(Title: "Title", Description: "Description")
     }
 }

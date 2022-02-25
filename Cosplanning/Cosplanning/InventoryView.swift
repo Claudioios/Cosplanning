@@ -8,12 +8,25 @@
 import SwiftUI
 struct InventoryView: View {
     @State private var showingAddRemove = false
-    @State private var inventory = 0
+    @State private var inventory = 1
     
     @ObservedObject var ArrayInventoryOperations: ArrayInventoryModel
     
     @Environment(\.managedObjectContext) var add
     @FetchRequest(sortDescriptors: []) var operations: FetchedResults<InventoryOperation>
+    
+    func DeleteElement(at offsets: IndexSet) {
+        for offset in offsets {
+            // find this book in our fetch request
+            let operation = operations[offset]
+            
+            // delete it from the context
+            add.delete(operation)
+        }
+        
+        // save the context
+        try? add.save()
+    }
     
     var body: some View {
         NavigationView{
@@ -25,11 +38,17 @@ struct InventoryView: View {
                 
                 VStack{
                     Spacer()
-                    if(ArrayInventoryOperations.ArrayInventoryOperations.count > 0){
-                    ForEach(0..<ArrayInventoryOperations.ArrayInventoryOperations.count) { ind in
-                        
-                        InventoryCardView(ind: ind, ArrayInventoryOperations: ArrayInventoryOperations)
-                }
+                    if(inventory > 0){
+                        List{
+                            ForEach(operations) { operation in
+                                InventoryCardView(Name: operation.materialname ?? "Unknow", Price: operation.price ?? 0.0, Quantity: operation.quantity ?? 0)
+                                    
+                               
+                            }
+                            .onDelete(perform: DeleteElement)
+                            
+//                            .onDelete(perform: DeleteElement)
+                        }
                     }
                     else
                     {
@@ -59,7 +78,7 @@ struct InventoryView: View {
                     .foregroundColor(Color("Giallo"))
             }
             .sheet(isPresented: $showingAddRemove) {
-                AddInventoryView(ArrayInventoryOperations: ArrayInventoryOperations)
+                AddInventoryView()
             }
         }
     }

@@ -11,13 +11,16 @@ struct NewTaskView: View {
     
     @State private var Title: String = ""
     @State private var Description: String = ""
+    
     @State private var Material: String = ""
     @State private var WorkTime1: String = ""
     @State private var WorkTime2: String = ""
+    
     @Environment(\.dismiss) var dismiss
 
-    @ObservedObject var ArrayPlannerModel: ArrayPlannerModel
-
+    @Environment(\.managedObjectContext) var add
+    @FetchRequest(sortDescriptors: []) var operations: FetchedResults<PlannerOperation>
+    
     var body: some View {
             VStack{
                 HStack{
@@ -50,39 +53,46 @@ struct NewTaskView: View {
                         .padding(.horizontal)
                         .textFieldStyle(.roundedBorder)
                 }
-                HStack{
-                    Text("Material")
-                        .font(.title)
-                        .fontWeight(.regular)
-                        .padding()
-                    Spacer()
-                }
-                HStack{
-                    TextField(
-                        "",
-                        text: $Material
-                    )
-                        .padding(.horizontal)
-                        .textFieldStyle(.roundedBorder)
-                }
-                HStack{
-                    Text("Work Time")
-                        .font(.title)
-                        .fontWeight(.regular)
-                        .padding()
-                    Spacer()
-                }
-                HStack{
-                    TextField(
-                        "",
-                        text: $WorkTime1
-                    )
-                        .padding(.horizontal)
-                        .textFieldStyle(.roundedBorder)
-                }
+//                HStack{
+//                    Text("Material")
+//                        .font(.title)
+//                        .fontWeight(.regular)
+//                        .padding()
+//                    Spacer()
+//                }
+//                HStack{
+//                    TextField(
+//                        "",
+//                        text: $Material
+//                    )
+//                        .padding(.horizontal)
+//                        .textFieldStyle(.roundedBorder)
+//                }
+//                HStack{
+//                    Text("Work Time")
+//                        .font(.title)
+//                        .fontWeight(.regular)
+//                        .padding()
+//                    Spacer()
+//                }
+//                HStack{
+//                    TextField(
+//                        "",
+//                        text: $WorkTime1
+//                    )
+//                        .padding(.horizontal)
+//                        .textFieldStyle(.roundedBorder)
+//                }
             Spacer()
                 Button{
-                    ArrayPlannerModel.ArrayPlannerOperations.append(PlannerModel(Title: Title, Description: Description, Materials: Material, HoursWork: 0))
+                    
+                    let NewOperation = PlannerOperation(context: add)
+                    NewOperation.title = Title
+                    NewOperation.titledescription = Description
+                    // more code to come
+                    
+                    try? add.save()
+                    
                     dismiss()
                                                                     
                     }
@@ -105,6 +115,6 @@ struct NewTaskView: View {
 
 struct NewTaskView_Previews: PreviewProvider {
     static var previews: some View {
-        NewTaskView(ArrayPlannerModel: .init())
+        NewTaskView()
     }
 }

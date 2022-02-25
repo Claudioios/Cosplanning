@@ -11,8 +11,6 @@ struct PlannerView: View {
     @State private var showingAddRemove = false
     @State private var showingNewTask = false
     @State private var showingCalendar = false
-
-    @ObservedObject var ArrayPlannerModel: ArrayPlannerModel
     
     @Environment(\.managedObjectContext) var add
     @FetchRequest(sortDescriptors: []) var operations: FetchedResults<PlannerOperation>
@@ -28,6 +26,18 @@ struct PlannerView: View {
 //            calendar.date(from:endComponents)!
 //    }()
 //    
+    func DeleteElement(at offsets: IndexSet) {
+        for offset in offsets {
+            // find this book in our fetch request
+            let operation = operations[offset]
+            
+            // delete it from the context
+            add.delete(operation)
+        }
+        
+        // save the context
+        try? add.save()
+    }
     
     var body: some View {
         NavigationView{
@@ -68,15 +78,17 @@ struct PlannerView: View {
                 }
             }
                 Spacer()
-                ScrollView(){
-                    Spacer()
+                
                     VStack{
                         Spacer()
-                        if(ArrayPlannerModel.ArrayPlannerOperations.count > 0){
-                            ForEach(0..<ArrayPlannerModel.ArrayPlannerOperations.count) { ind in
-                            
-                                PlannerTaskView(ind: ind, ArrayPlannerModel: ArrayPlannerModel)
-                    }
+                        if(2 > 1){
+                            List{
+                                ForEach(operations) { operation in
+                                    PlannerTaskView(Title: operation.title ?? "Unknown", Description: operation.titledescription ?? "Unknown")
+                                        
+                                }
+                                .onDelete(perform: DeleteElement)
+                            }
                         }
                         else
                         {
@@ -91,7 +103,7 @@ struct PlannerView: View {
                         }
                         Spacer()
                     }
-                }
+                
 //                DatePicker(
 //                    "Select Date",
 //                    selection: $date,
@@ -120,7 +132,7 @@ struct PlannerView: View {
                     .foregroundColor(Color("Giallo"))
             }
             .sheet(isPresented: $showingAddRemove) {
-                NewTaskView(ArrayPlannerModel: ArrayPlannerModel)
+                NewTaskView()
             }
                 }
             }
@@ -133,6 +145,6 @@ struct PlannerView: View {
 
 struct PlannerView_Previews: PreviewProvider {
     static var previews: some View {
-        PlannerView(ArrayPlannerModel: .init())
+        PlannerView()
     }
 }
