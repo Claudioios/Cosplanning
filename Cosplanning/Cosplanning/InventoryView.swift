@@ -12,6 +12,9 @@ struct InventoryView: View {
     
     @ObservedObject var ArrayInventoryOperations: ArrayInventoryModel
     
+    @Environment(\.managedObjectContext) var add
+    @FetchRequest(sortDescriptors: []) var operations: FetchedResults<InventoryOperation>
+    
     var body: some View {
         NavigationView{
             VStack{

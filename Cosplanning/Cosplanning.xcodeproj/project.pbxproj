@@ -29,7 +29,6 @@
 		F815F01627B3C25E00D1B6A4 /* CosplayCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F815F01527B3C25E00D1B6A4 /* CosplayCardView.swift */; };
 		F815F01827B3D05E00D1B6A4 /* NewProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F815F01727B3D05E00D1B6A4 /* NewProjectView.swift */; };
 		F815F01A27B3E0CB00D1B6A4 /* DescriptionCosplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F815F01927B3E0CB00D1B6A4 /* DescriptionCosplayView.swift */; };
-		F815F01C27B655F100D1B6A4 /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F815F01B27B655F100D1B6A4 /* TaskView.swift */; };
 		F81AEF1427BE533A007B7FC0 /* InventoryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81AEF1327BE533A007B7FC0 /* InventoryCardView.swift */; };
 		F81AEF1627BE551B007B7FC0 /* AddInventoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81AEF1527BE551B007B7FC0 /* AddInventoryView.swift */; };
 		F81AEF1827BE6106007B7FC0 /* ShowCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81AEF1727BE6106007B7FC0 /* ShowCalendarView.swift */; };
@@ -82,7 +81,6 @@
 		F815F01527B3C25E00D1B6A4 /* CosplayCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosplayCardView.swift; sourceTree = "<group>"; };
 		F815F01727B3D05E00D1B6A4 /* NewProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProjectView.swift; sourceTree = "<group>"; };
 		F815F01927B3E0CB00D1B6A4 /* DescriptionCosplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionCosplayView.swift; sourceTree = "<group>"; };
-		F815F01B27B655F100D1B6A4 /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
 		F81AEF1327BE533A007B7FC0 /* InventoryCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryCardView.swift; sourceTree = "<group>"; };
 		F81AEF1527BE551B007B7FC0 /* AddInventoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInventoryView.swift; sourceTree = "<group>"; };
 		F81AEF1727BE6106007B7FC0 /* ShowCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCalendarView.swift; sourceTree = "<group>"; };
@@ -147,7 +145,6 @@
 				F810888827B2618D009FC6EB /* ProjectView.swift */,
 				F815F01727B3D05E00D1B6A4 /* NewProjectView.swift */,
 				F815F01927B3E0CB00D1B6A4 /* DescriptionCosplayView.swift */,
-				F815F01B27B655F100D1B6A4 /* TaskView.swift */,
 				66E5BF7027B664B000571432 /* TaskListView.swift */,
 				66F7FEDA27B25B8E00B4BB19 /* PlannerView.swift */,
 				F81AEF1727BE6106007B7FC0 /* ShowCalendarView.swift */,
@@ -339,7 +336,6 @@
 				66566C5127C6283E0042F8A5 /* DataController.swift in Sources */,
 				662BB4E627BCF396003CB67F /* PlannerTaskView.swift in Sources */,
 				66E5BF7127B664B000571432 /* TaskListView.swift in Sources */,
-				F815F01C27B655F100D1B6A4 /* TaskView.swift in Sources */,
 				66FBF2EE27B678B70090E446 /* BudgetListView.swift in Sources */,
 				F815F01827B3D05E00D1B6A4 /* NewProjectView.swift in Sources */,
 				662BB4E427BCEE6B003CB67F /* ProjectsCardView.swift in Sources */,

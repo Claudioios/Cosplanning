@@ -10,6 +10,10 @@ import UIKit
 struct ProjectView: View {
     @State private var showingAddRemove = false
     @State private var projects = 0
+    
+    @Environment(\.managedObjectContext) var add
+    @FetchRequest(sortDescriptors: []) var operations: FetchedResults<ProjectOperation>
+    
     var body: some View {
         NavigationView{
                 VStack{

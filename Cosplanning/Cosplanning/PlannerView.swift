@@ -14,7 +14,8 @@ struct PlannerView: View {
 
     @ObservedObject var ArrayPlannerModel: ArrayPlannerModel
     
-    
+    @Environment(\.managedObjectContext) var add
+    @FetchRequest(sortDescriptors: []) var operations: FetchedResults<PlannerOperation>
 //    @State private var date = Date()
 //    @State private var currentdate = Date()
 //
