@@ -9,7 +9,7 @@ import SwiftUI
 import UIKit
 struct ProjectView: View {
     @State private var showingAddRemove = false
-    @State private var projects = 1
+    @State private var projects = 0
     
     @Environment(\.managedObjectContext) var add
     @FetchRequest(sortDescriptors: []) var operations: FetchedResults<ProjectOperation>
@@ -46,6 +46,8 @@ struct ProjectView: View {
                                 
                                 .onDelete(perform: DeleteElement)
                             }
+                            .padding()
+                            .opacity(50)
                         }
                         else
                         {
@@ -68,6 +70,7 @@ struct ProjectView: View {
                 .toolbar{
                     ToolbarItemGroup(placement: .navigationBarTrailing){
                     Button{
+                        projects = projects+1
                         showingAddRemove.toggle()
                     }
                 label: {
