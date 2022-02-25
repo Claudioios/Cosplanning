@@ -11,7 +11,7 @@ struct PlannerView: View {
     @State private var showingAddRemove = false
     @State private var showingNewTask = false
     @State private var showingCalendar = false
-    
+    @State private var x = 0
     @Environment(\.managedObjectContext) var add
     @FetchRequest(sortDescriptors: []) var operations: FetchedResults<PlannerOperation>
 //    @State private var date = Date()
@@ -49,7 +49,7 @@ struct PlannerView: View {
                 Button{
 
                     showingCalendar.toggle()
-                    
+                   
 //                    DatePicker(
 //                        "Select Date",
 //                        selection: $date,
@@ -81,7 +81,7 @@ struct PlannerView: View {
                 
                     VStack{
                         Spacer()
-                        if(2 > 1){
+                        if(x > 0){
                             List{
                                 ForEach(operations) { operation in
                                     PlannerTaskView(Title: operation.title ?? "Unknown", Description: operation.titledescription ?? "Unknown")
@@ -89,6 +89,8 @@ struct PlannerView: View {
                                 }
                                 .onDelete(perform: DeleteElement)
                             }
+                            .padding()
+                            .opacity(50)
                         }
                         else
                         {
@@ -125,6 +127,7 @@ struct PlannerView: View {
             .toolbar{
                 ToolbarItemGroup(placement: .navigationBarTrailing){
                 Button{
+                    x = x+1
                     showingAddRemove.toggle()
                 }
             label: {
