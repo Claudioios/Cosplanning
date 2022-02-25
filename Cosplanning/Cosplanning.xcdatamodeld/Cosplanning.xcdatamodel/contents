@@ -15,7 +15,7 @@
         <attribute name="titledescription" optional="YES" attributeType="String"/>
     </entity>
     <entity name="ProjectOperation" representedClassName="ProjectOperation" syncable="YES" codeGenerationType="class">
-        <attribute name="colorid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="colorproject" optional="YES" attributeType="String"/>
         <attribute name="projectname" optional="YES" attributeType="String"/>
         <attribute name="tasksnumber" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>

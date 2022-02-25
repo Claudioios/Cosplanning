@@ -9,10 +9,23 @@ import SwiftUI
 import UIKit
 struct ProjectView: View {
     @State private var showingAddRemove = false
-    @State private var projects = 0
+    @State private var projects = 1
     
     @Environment(\.managedObjectContext) var add
     @FetchRequest(sortDescriptors: []) var operations: FetchedResults<ProjectOperation>
+    
+    func DeleteElement(at offsets: IndexSet) {
+        for offset in offsets {
+            // find this book in our fetch request
+            let operation = operations[offset]
+            
+            // delete it from the context
+            add.delete(operation)
+        }
+        
+        // save the context
+        try? add.save()
+    }
     
     var body: some View {
         NavigationView{
@@ -23,7 +36,19 @@ struct ProjectView: View {
 
                     VStack{
                         Spacer()
-                        if projects == 0 {
+                        if (projects > 0) {
+                            List{
+                                ForEach(operations) { operation in
+                                    ProjectsCardView(Title: operation.projectname ?? "Unknown", TasksNumber: operation.tasksnumber, ColorProject: operation.colorproject ?? "Unknown")
+                                        
+                                   
+                                }
+                                
+                                .onDelete(perform: DeleteElement)
+                            }
+                        }
+                        else
+                        {
                             VStack{
                                 Image("emptyimage")
                                     .background()
@@ -32,7 +57,7 @@ struct ProjectView: View {
                                     .foregroundColor(Color("ViolaBottone"))
                                     .padding()
                             
-                        }
+                            }
                         }
                         Spacer()
                        

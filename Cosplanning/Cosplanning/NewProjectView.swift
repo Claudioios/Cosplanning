@@ -16,6 +16,10 @@ struct NewProjectView: View {
     @State private var y = 0
     @State private var gr = 0
     @State private var bl = 0
+    
+    @Environment(\.managedObjectContext) var add
+    @FetchRequest(sortDescriptors: []) var operations: FetchedResults<ProjectOperation>
+    
     var body: some View {
         VStack{
             HStack{
@@ -136,7 +140,30 @@ struct NewProjectView: View {
                 }
                 .frame(width: 600, height: 90)
             }
-            
+            Spacer()
+                Button{
+                    
+                    
+//                    let NewOperation = BudgetOperation(context: add)
+//                    NewOperation.money = Double(Money) ?? 0
+//                    NewOperation.shortdescription = Description
+//                    NewOperation.date = date
+                    // more code to come
+                    
+//                    try? add.save()
+//                    
+//                    dismiss()
+                    
+                }
+            label:
+                {
+                    Image(systemName: "checkmark")
+                        .frame(width: 125)
+                        .padding()
+                        .foregroundColor(Color(.white))
+                        .background(Color("ViolaBottone"))
+                        .clipShape(Capsule())
+                }
             
         }
         .padding()

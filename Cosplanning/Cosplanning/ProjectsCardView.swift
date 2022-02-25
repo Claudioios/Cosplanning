@@ -9,8 +9,18 @@ import SwiftUI
 
 struct ProjectsCardView: View {
     
-    @State private var Ntasks = 0
+    @Environment(\.managedObjectContext) var add
+    @FetchRequest(sortDescriptors: []) var operations: FetchedResults<ProjectOperation>
+
+    var Title: String
+    var TasksNumber: Int64
+    var ColorProject: String
     
+    init(Title: String, TasksNumber: Int64, ColorProject: String) {
+        self.Title = Title
+        self.TasksNumber = TasksNumber
+        self.ColorProject = ColorProject
+    }
     var body: some View {
         HStack{
             Rectangle()
@@ -23,7 +33,7 @@ struct ProjectsCardView: View {
             {
                 VStack{
                     HStack{
-                        Text("Title")
+                        Text("\(Title)")
                             .font(.largeTitle)
                             .fontWeight(.semibold)
                             .foregroundColor(Color("ViolaBottoneChiaro"))
@@ -37,7 +47,7 @@ struct ProjectsCardView: View {
                             .foregroundColor(.green)
                     }
                     HStack{
-                        Text("Number of task: \(Ntasks)")
+                        Text("Number of task: \(TasksNumber)")
                             .font(.title3)
                             .fontWeight(.regular)
                             .padding(.leading, 50.0)
@@ -53,6 +63,6 @@ struct ProjectsCardView: View {
 
 struct ProjectsCardView_Previews: PreviewProvider {
     static var previews: some View {
-        ProjectsCardView()
+        ProjectsCardView(Title: "Ciao", TasksNumber: 10, ColorProject: "red")
     }
 }
