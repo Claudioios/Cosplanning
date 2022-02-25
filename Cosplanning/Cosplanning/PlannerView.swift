@@ -11,7 +11,7 @@ struct PlannerView: View {
     @State private var showingAddRemove = false
     @State private var showingNewTask = false
     @State private var showingCalendar = false
-    @State private var x = 0
+    @State private var x = 1
     @Environment(\.managedObjectContext) var add
     @FetchRequest(sortDescriptors: []) var operations: FetchedResults<PlannerOperation>
 //    @State private var date = Date()
@@ -127,7 +127,7 @@ struct PlannerView: View {
             .toolbar{
                 ToolbarItemGroup(placement: .navigationBarTrailing){
                 Button{
-                    x = x+1
+//                    x = x+1
                     showingAddRemove.toggle()
                 }
             label: {

@@ -8,7 +8,7 @@
 import SwiftUI
 struct InventoryView: View {
     @State private var showingAddRemove = false
-    @State private var inventory = 0
+    @State private var inventory = 1
     
     @ObservedObject var ArrayInventoryOperations: ArrayInventoryModel
     
@@ -73,7 +73,7 @@ struct InventoryView: View {
             .toolbar{
                 ToolbarItemGroup(placement: .navigationBarTrailing){
                 Button{
-                    inventory = inventory+1
+//                    inventory = inventory+1
                     showingAddRemove.toggle()
                 }
             label: {
