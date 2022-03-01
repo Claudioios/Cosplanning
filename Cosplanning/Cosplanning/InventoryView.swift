@@ -39,7 +39,7 @@ struct InventoryView: View {
                 VStack{
                     Spacer()
                     if(operations.count > 0){
-//                        List{
+                        ScrollView{
                             ForEach(operations) { operation in
                                 InventoryCardView(Name: operation.materialname ?? "Unknow", Price: operation.price ?? 0.0, Quantity: operation.quantity ?? 0)
                                     
@@ -47,7 +47,7 @@ struct InventoryView: View {
                             }
 //                            .onDelete(perform: DeleteElement)
 //                           
-//                        }
+                        }
                         .padding()
                         .opacity(50)
                     }
