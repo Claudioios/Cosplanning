@@ -38,7 +38,7 @@ struct InventoryView: View {
                 
                 VStack{
                     Spacer()
-                    if(inventory > 0){
+                    if(operations.count > 0){
 //                        List{
                             ForEach(operations) { operation in
                                 InventoryCardView(Name: operation.materialname ?? "Unknow", Price: operation.price ?? 0.0, Quantity: operation.quantity ?? 0)

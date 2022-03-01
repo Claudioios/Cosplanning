@@ -132,7 +132,7 @@ struct BudgetView: View {
                         {
                             VStack{
                                 Spacer()
-                                if(x > 0){
+                                if(operations.count > 0){
                                     
 //                                    ForEach(0..<ArrayBudgetOperations.ArrayBudgetOperations.count) { ind in
                                         

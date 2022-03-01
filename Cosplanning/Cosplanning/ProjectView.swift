@@ -36,16 +36,15 @@ struct ProjectView: View {
 
                     VStack{
                         Spacer()
-                        if (projects > 0) {
-                            List{
+                        if (operations.count > 0) {
+//                            List{
                                 ForEach(operations) { operation in
                                     ProjectsCardView(Title: operation.projectname ?? "Unknown", TasksNumber: operation.tasksnumber, ColorProject: operation.colorproject ?? "Unknown")
                                         
                                    
                                 }
-                                
-                                .onDelete(perform: DeleteElement)
-                            }
+//                                .onDelete(perform: DeleteElement)
+//                            }
                             .padding()
                             .opacity(50)
                         }

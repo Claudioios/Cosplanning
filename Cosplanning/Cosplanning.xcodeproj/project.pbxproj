@@ -14,7 +14,6 @@
 		662BB4E627BCF396003CB67F /* PlannerTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662BB4E527BCF396003CB67F /* PlannerTaskView.swift */; };
 		66566C4F27C624320042F8A5 /* Cosplanning.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 66566C4D27C624320042F8A5 /* Cosplanning.xcdatamodeld */; };
 		66566C5127C6283E0042F8A5 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66566C5027C6283E0042F8A5 /* DataController.swift */; };
-		66E5BF7127B664B000571432 /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E5BF7027B664B000571432 /* TaskListView.swift */; };
 		66F7FED927B25B8E00B4BB19 /* CosplanningApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F7FED827B25B8E00B4BB19 /* CosplanningApp.swift */; };
 		66F7FEDB27B25B8E00B4BB19 /* PlannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F7FEDA27B25B8E00B4BB19 /* PlannerView.swift */; };
 		66F7FEDD27B25B9000B4BB19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66F7FEDC27B25B9000B4BB19 /* Assets.xcassets */; };
@@ -61,7 +60,6 @@
 		662BB4E527BCF396003CB67F /* PlannerTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannerTaskView.swift; sourceTree = "<group>"; };
 		66566C4E27C624320042F8A5 /* Cosplanning.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cosplanning.xcdatamodel; sourceTree = "<group>"; };
 		66566C5027C6283E0042F8A5 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
-		66E5BF7027B664B000571432 /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
 		66F7FED527B25B8E00B4BB19 /* Cosplanning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cosplanning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66F7FED827B25B8E00B4BB19 /* CosplanningApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosplanningApp.swift; sourceTree = "<group>"; };
 		66F7FEDA27B25B8E00B4BB19 /* PlannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannerView.swift; sourceTree = "<group>"; };
@@ -139,7 +137,6 @@
 				66566C5027C6283E0042F8A5 /* DataController.swift */,
 				F810888827B2618D009FC6EB /* ProjectView.swift */,
 				F815F01727B3D05E00D1B6A4 /* NewProjectView.swift */,
-				66E5BF7027B664B000571432 /* TaskListView.swift */,
 				66F7FEDA27B25B8E00B4BB19 /* PlannerView.swift */,
 				F81AEF1727BE6106007B7FC0 /* ShowCalendarView.swift */,
 				6610FEF127BCFC87001C7105 /* NewTaskView.swift */,
@@ -329,7 +326,6 @@
 				F81AEF2C27BFA598007B7FC0 /* PlannerClass.swift in Sources */,
 				66566C5127C6283E0042F8A5 /* DataController.swift in Sources */,
 				662BB4E627BCF396003CB67F /* PlannerTaskView.swift in Sources */,
-				66E5BF7127B664B000571432 /* TaskListView.swift in Sources */,
 				66FBF2EE27B678B70090E446 /* BudgetListView.swift in Sources */,
 				F815F01827B3D05E00D1B6A4 /* NewProjectView.swift in Sources */,
 				662BB4E427BCEE6B003CB67F /* ProjectsCardView.swift in Sources */,
