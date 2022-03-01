@@ -130,6 +130,7 @@ struct BudgetView: View {
                             .padding()
                             .overlay()
                         {
+                            ScrollView(){
                             VStack{
                                 Spacer()
                                 if(operations.count > 0){
@@ -137,15 +138,14 @@ struct BudgetView: View {
 //                                    ForEach(0..<ArrayBudgetOperations.ArrayBudgetOperations.count) { ind in
                                         
 //                                        BudgetListView(ind: ind, ArrayBudgetOperations: ArrayBudgetOperations)
-//                                        ScrollView{
                                             ForEach(operations) { operation in
                                                 BudgetListView(Money: operation.money ?? 0, Description: operation.shortdescription ?? "Unknown", date: operation.date ?? Date.now)
                                                     
                                                
                                             }
 //                                            .onDelete(perform: DeleteElement)
-//                                        }
-                                    
+                                        
+                                
                                 }
                                 else
                                 {
@@ -158,9 +158,11 @@ struct BudgetView: View {
                                             .padding()
                                     }
                                 }
-                                
+                            
                                 Spacer()
+                                }
                             }
+                            
                         }
                         
                     }
