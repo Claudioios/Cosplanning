@@ -24,6 +24,7 @@ struct NewTaskView: View {
     var body: some View {
             VStack{
                 HStack{
+                    
                     Text("Title")
                         .font(.title)
                         .fontWeight(.regular)
@@ -84,6 +85,7 @@ struct NewTaskView: View {
 //                        .textFieldStyle(.roundedBorder)
 //                }
             Spacer()
+                
                 Button{
                     
                     let NewOperation = PlannerOperation(context: add)
@@ -94,7 +96,7 @@ struct NewTaskView: View {
                     try? add.save()
                     
                     dismiss()
-                                                                    
+
                     }
             label:
                 {

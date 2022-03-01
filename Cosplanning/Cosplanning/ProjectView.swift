@@ -37,14 +37,14 @@ struct ProjectView: View {
                     VStack{
                         Spacer()
                         if (operations.count > 0) {
-//                            List{
+                            ScrollView{
                                 ForEach(operations) { operation in
                                     ProjectsCardView(Title: operation.projectname ?? "Unknown", TasksNumber: operation.tasksnumber, ColorProject: operation.colorproject ?? "Unknown")
                                         
                                    
                                 }
 //                                .onDelete(perform: DeleteElement)
-//                            }
+                            }
                             .padding()
                             .opacity(50)
                         }

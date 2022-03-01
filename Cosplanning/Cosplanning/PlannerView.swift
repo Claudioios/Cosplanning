@@ -82,13 +82,13 @@ struct PlannerView: View {
                     VStack{
                         Spacer()
                         if(operations.count > 0){
-//                            List{
+                            ScrollView{
                                 ForEach(operations) { operation in
                                     PlannerTaskView(Title: operation.title ?? "Unknown", Description: operation.titledescription ?? "Unknown")
                                         
                                 }
 //                                .onDelete(perform: DeleteElement)
-//                            }
+                            }
                             .padding()
                             .opacity(50)
                         }
