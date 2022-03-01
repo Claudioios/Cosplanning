@@ -137,7 +137,7 @@ struct BudgetView: View {
 //                                    ForEach(0..<ArrayBudgetOperations.ArrayBudgetOperations.count) { ind in
                                         
 //                                        BudgetListView(ind: ind, ArrayBudgetOperations: ArrayBudgetOperations)
-//                                        List{
+//                                        ScrollView{
                                             ForEach(operations) { operation in
                                                 BudgetListView(Money: operation.money ?? 0, Description: operation.shortdescription ?? "Unknown", date: operation.date ?? Date.now)
                                                     
