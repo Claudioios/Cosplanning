@@ -162,6 +162,7 @@ struct BudgetView: View {
                                 Spacer()
                                 }
                             }
+                            .padding()
                             
                         }
                         
