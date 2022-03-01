@@ -63,9 +63,10 @@ struct ProjectView: View {
                         Spacer()
                        
                     }
-            .navigationTitle("Projects")
-            .background(Image("Background"))
+
         }
+                .navigationTitle("Projects")
+                .background(Image("Background"))
                 .toolbar{
                     ToolbarItemGroup(placement: .navigationBarTrailing){
                     Button{

@@ -119,7 +119,6 @@ struct PlannerView: View {
 //                    .padding()
 //                Spacer()
             }
-            
             .navigationTitle("Planner")
             .background(
                 Image("Background"))
