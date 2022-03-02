@@ -22,6 +22,7 @@ struct ProjectsCardView: View {
         self.ColorProject = ColorProject
     }
     var body: some View {
+        NavigationLink(destination: ShowProjectView()){
         HStack{
             Rectangle()
                 .frame(width: 350, height: 150)
@@ -55,12 +56,11 @@ struct ProjectsCardView: View {
                     }
                     Spacer()
                 }
-
             }
         }
     }
 }
-
+}
 struct ProjectsCardView_Previews: PreviewProvider {
     static var previews: some View {
         ProjectsCardView(Title: "Ciao", TasksNumber: 10, ColorProject: "red")
