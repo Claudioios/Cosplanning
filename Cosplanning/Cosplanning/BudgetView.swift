@@ -14,7 +14,6 @@ struct BudgetView: View {
     @State private var x = 250
 
     let Money : Double = 0
-    let Description = "Ciao"
     
     @Environment(\.managedObjectContext) var add
     @FetchRequest(sortDescriptors: []) var operations: FetchedResults<BudgetOperation>
@@ -122,7 +121,7 @@ struct BudgetView: View {
                     VStack{
                         Rectangle()
                             .frame(width: 350, height: CGFloat(x))
-                            .foregroundColor(.white)
+                            .foregroundColor(Color("ViolaBottoneChiaro"))
                             .border(Color.gray)
                             .cornerRadius(43)
                             .padding()
