@@ -78,9 +78,7 @@ struct ContentTabView: View {
         
         .accentColor(Color.indigo)
         .onAppear {
-            UITabBar.appearance().backgroundColor = UIColor.white
-            
-            
+            UITabBar.appearance().backgroundColor = UIColor.systemGray6
             UITabBar.appearance().unselectedItemTintColor = UIColor.gray
         }
     }
