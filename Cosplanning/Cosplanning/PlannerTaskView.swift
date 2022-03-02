@@ -27,7 +27,6 @@ struct PlannerTaskView: View {
                 .frame(width: 350, height: 150)
                 .cornerRadius(43)
                 .foregroundColor(.white)
-                .shadow(color: .gray, radius: 2, x: -2, y: -2)
                 .padding()
                 .overlay()
             {

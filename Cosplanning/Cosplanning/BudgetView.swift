@@ -94,7 +94,6 @@ struct BudgetView: View {
                                     .foregroundColor(Color(.white))
                                     .background(Color("ViolaBottone"))
                                     .clipShape(Capsule())
-                                    .shadow(color: Color.gray, radius: 5, x: -2, y: -2)
                             }
                             .sheet(isPresented: $showingAddRemove) {
                                 AddRemoveMoneyView()
@@ -113,7 +112,6 @@ struct BudgetView: View {
                                     .foregroundColor(Color(.white))
                                     .background(Color("ViolaBottone"))
                                     .clipShape(Capsule())
-                                    .shadow(color: Color.gray, radius: 5, x: -2, y: -2)
                             }
                             .sheet(isPresented: $showingAddRemove) {
                                 AddRemoveMoneyView()

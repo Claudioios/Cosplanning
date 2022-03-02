@@ -71,7 +71,6 @@ struct PlannerView: View {
                         .foregroundColor(Color(.white))
                         .background(Color("ViolaBottone"))
                         .clipShape(Capsule())
-                        .shadow(color: Color.gray, radius: 5, x: -2, y: -2)
                 }
                 .sheet(isPresented: $showingCalendar) {
                     ShowCalendarView()
