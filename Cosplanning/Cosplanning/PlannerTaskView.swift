@@ -21,6 +21,7 @@ struct PlannerTaskView: View {
     }
     
     var body: some View {
+        NavigationLink(destination: ShowPlannerTaskView()){
         HStack{
             Rectangle()
                 .frame(width: 350, height: 150)
@@ -54,7 +55,7 @@ struct PlannerTaskView: View {
         }
     }
 }
-
+}
 struct PlannerTaskView_Previews: PreviewProvider {
     static var previews: some View {
         PlannerTaskView(Title: "Title", Description: "Description")

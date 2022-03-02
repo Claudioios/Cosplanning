@@ -24,6 +24,7 @@ struct InventoryCardView: View {
     }
     
     var body: some View {
+        NavigationLink(destination: ShowInventoryView()){
         HStack{
             Rectangle()
                 .frame(width: 350, height: 100)
@@ -66,7 +67,7 @@ struct InventoryCardView: View {
         }
     }
 }
-
+}
 struct InventoryCardView_Previews: PreviewProvider {
     static var previews: some View {
         InventoryCardView(Name: "Ciao", Price: 10.0, Quantity: 1)
