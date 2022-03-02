@@ -64,12 +64,13 @@ struct BudgetView: View {
                     Rectangle()
                         .frame(width: 350, height: 200)
                         .cornerRadius(43)
-                        .foregroundColor(Color("ViolaBottoneChiaro"))
+                        .foregroundColor(Color("Giallo"))
                         .padding()
                         .overlay()
                     {
                         Text("\(money, specifier: "%.2f")$")
                             .font(.largeTitle)
+                            .foregroundColor(.black)
                             .padding()
                     }
                     HStack{
@@ -121,7 +122,7 @@ struct BudgetView: View {
                     VStack{
                         Rectangle()
                             .frame(width: 350, height: CGFloat(x))
-                            .foregroundColor(Color("ViolaBottoneChiaro"))
+                            .foregroundColor(.white)
                             .border(Color.gray)
                             .cornerRadius(43)
                             .padding()
@@ -140,7 +141,7 @@ struct BudgetView: View {
                                                     
                                                
                                             }
-                                            .foregroundColor(Color("ViolaBottoneChiaro"))
+//                                            .foregroundColor(Color("ViolaBottoneChiaro"))
 //                                            .onDelete(perform: DeleteElement)
                                         
                                 
