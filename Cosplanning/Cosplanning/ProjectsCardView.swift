@@ -27,7 +27,7 @@ struct ProjectsCardView: View {
             Rectangle()
                 .frame(width: 350, height: 150)
                 .cornerRadius(43)
-                .foregroundColor(.white)
+                .foregroundColor(Color("ViolaBottoneChiaro"))
                 .padding()
                 .overlay()
             {
@@ -36,7 +36,7 @@ struct ProjectsCardView: View {
                         Text("\(Title)")
                             .font(.largeTitle)
                             .fontWeight(.semibold)
-                            .foregroundColor(Color("ViolaBottoneChiaro"))
+                            .foregroundColor(.white)
                             .padding(.top, 30.0)
                             .padding(.leading, 50.0)
                         Spacer()
@@ -50,6 +50,7 @@ struct ProjectsCardView: View {
                         Text("Number of task: \(TasksNumber)")
                             .font(.title3)
                             .fontWeight(.regular)
+                            .foregroundColor(.white)
                             .padding(.leading, 50.0)
                         Spacer()
                     }

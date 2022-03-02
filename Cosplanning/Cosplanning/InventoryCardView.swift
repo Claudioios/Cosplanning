@@ -29,7 +29,7 @@ struct InventoryCardView: View {
             Rectangle()
                 .frame(width: 350, height: 100)
                 .cornerRadius(43)
-                .foregroundColor(.white)
+                .foregroundColor(Color("ViolaBottoneChiaro"))
                 .padding()
                 .overlay()
             {
@@ -37,14 +37,17 @@ struct InventoryCardView: View {
                     Text("\(Name)")
                         .font(.largeTitle)
                         .fontWeight(.semibold)
+                        .foregroundColor(.white)
                         .padding(.leading, 50.0)
                     Spacer()
                     HStack{
                         VStack{
                             Spacer()
                             Text("Price")
+                                .foregroundColor(.white)
                             Spacer()
                             Text("\(Price, specifier: "%.2f")")
+                                .foregroundColor(.white)
                             Spacer()
                         }
                         Divider()
@@ -52,8 +55,10 @@ struct InventoryCardView: View {
                         VStack{
                             Spacer()
                             Text("Quantity")
+                                .foregroundColor(.white)
                             Spacer()
                             Text("\(Quantity) $")
+                                .foregroundColor(.white)
                             Spacer()
 
                             
