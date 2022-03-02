@@ -65,7 +65,7 @@ struct BudgetView: View {
                     Rectangle()
                         .frame(width: 350, height: 200)
                         .cornerRadius(43)
-                        .foregroundColor(Color("Giallo"))
+                        .foregroundColor(Color("ViolaBottoneChiaro"))
                         .padding()
                         .overlay()
                     {
@@ -141,6 +141,7 @@ struct BudgetView: View {
                                                     
                                                
                                             }
+                                            .foregroundColor(Color("ViolaBottoneChiaro"))
 //                                            .onDelete(perform: DeleteElement)
                                         
                                 
