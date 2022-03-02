@@ -141,7 +141,7 @@ struct BudgetView: View {
                                                     
                                                
                                             }
-//                                            .foregroundColor(Color("ViolaBottoneChiaro"))
+                                            .foregroundColor(Color("ViolaBottoneChiaro"))
 //                                            .onDelete(perform: DeleteElement)
                                         
                                 
@@ -150,7 +150,7 @@ struct BudgetView: View {
                                 {
                                     VStack{
                                         Image("emptyimage")
-                                            .background(Color("ViolaBottoneChiaro"))
+                                            .background()
                                         Text("There is nothing here")
                                             .font(.title2)
                                             .foregroundColor(Color("ViolaBottone"))
