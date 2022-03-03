@@ -8,16 +8,6 @@
 import SwiftUI
 import UIKit
 
-
-class AppDelegate: NSObject, UIApplicationDelegate {
-        
-    static var orientationLock = UIInterfaceOrientationMask.all //By default you want all your views to rotate freely
-
-    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
-        return AppDelegate.orientationLock
-    }
-}
-
 struct ProjectView: View {
     @State private var showingAddRemove = false
     @State private var projects = 1
@@ -74,10 +64,7 @@ struct ProjectView: View {
                         Spacer()
                        
                     }
-                    .onAppear {
-                                UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation") // Forcing the rotation to portrait
-                                AppDelegate.orientationLock = .portrait // And making sure it stays that way
-                            }
+                    
 
         }
                 .navigationTitle("Projects")

@@ -20,10 +20,24 @@ struct CosplanningApp: App {
             UINavigationBar.appearance().isTranslucent = true
         
     }
+    class AppDelegate: NSObject, UIApplicationDelegate {
+            
+        static var orientationLock = UIInterfaceOrientationMask.all //By default you want all your views to rotate freely
+
+        func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+            return AppDelegate.orientationLock
+        }
+    }
+
         
     var body: some Scene {
         WindowGroup {
             ContentTabView()
+                .onAppear {
+                            UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation") // Forcing the rotation to portrait
+                            AppDelegate.orientationLock = .portrait // And making sure it stays that way
+                        }
         }
+        
     }
 }
