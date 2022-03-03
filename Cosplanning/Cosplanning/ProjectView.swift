@@ -7,6 +7,7 @@
 
 import SwiftUI
 import UIKit
+
 struct ProjectView: View {
     @State private var showingAddRemove = false
     @State private var projects = 1
@@ -63,6 +64,7 @@ struct ProjectView: View {
                         Spacer()
                        
                     }
+                    
 
         }
                 .navigationTitle("Projects")
@@ -90,5 +92,6 @@ struct ProjectView: View {
 struct ProjectView_Previews: PreviewProvider {
     static var previews: some View {
         ProjectView()
+.previewInterfaceOrientation(.portraitUpsideDown)
     }
 }
