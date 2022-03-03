@@ -137,6 +137,7 @@ struct AddRemoveMoneyView: View {
                     NewOperation.money = Double(Money) ?? 0
                     NewOperation.shortdescription = Description
                     NewOperation.date = date
+                    NewOperation.typeOperation = selectedOperation
                     // more code to come
                     
                     try? add.save()

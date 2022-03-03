@@ -17,10 +17,12 @@ struct BudgetListView: View {
     var Money: Double
     var Description: String
     var date: Date
-    init(Money: Double, Description: String, date:Date) {
+    var typeOperation: String
+    init(Money: Double, Description: String, date: Date, typeOperation: String) {
         self.Money = Money
         self.Description = Description
         self.date = date
+        self.typeOperation = typeOperation
     }
     
     var body: some View {
@@ -46,11 +48,11 @@ struct BudgetListView: View {
                 .opacity(0)
                 .overlay()
             {
-                if(Positive)
+                if(typeOperation == "Add")
                 {
                     HStack
                     {
-                        Text("\(Money, specifier: "%.2f") ")
+                        Text("\(Money, specifier: "%.2f") $")
                             .font(.title2)
                             .fontWeight(.bold)
                             .foregroundColor(Color(UIColor.systemGreen))
@@ -68,7 +70,7 @@ struct BudgetListView: View {
                 {
                     HStack
                     {
-                        Text("\(Money, specifier: "%.2f")")
+                        Text("\(Money, specifier: "%.2f") $")
                             .font(.title2)
                             .fontWeight(.bold)
                             .foregroundColor(Color(UIColor.systemRed))
@@ -89,6 +91,6 @@ struct BudgetListView: View {
 
 struct BudgetListView_Previews: PreviewProvider {
     static var previews: some View {
-        BudgetListView(Money: 10, Description: "Ciao", date: Date.now)
+        BudgetListView(Money: 10, Description: "Ciao", date: Date.now, typeOperation: "Add")
     }
 }

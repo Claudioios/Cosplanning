@@ -4,7 +4,7 @@
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="money" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="shortdescription" optional="YES" attributeType="String"/>
-        <attribute name="typeOperaton" optional="YES" attributeType="String"/>
+        <attribute name="typeOperation" optional="YES" attributeType="String"/>
     </entity>
     <entity name="InventoryOperation" representedClassName="InventoryOperation" syncable="YES" codeGenerationType="class">
         <attribute name="materialname" optional="YES" attributeType="String"/>

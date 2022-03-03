@@ -120,7 +120,7 @@ struct BudgetView: View {
                                         
 //                                        BudgetListView(ind: ind, ArrayBudgetOperations: ArrayBudgetOperations)
                                             ForEach(operations) { operation in
-                                                BudgetListView(Money: operation.money ?? 0, Description: operation.shortdescription ?? "Unknown", date: operation.date ?? Date.now)
+                                                BudgetListView(Money: operation.money ?? 0, Description: operation.shortdescription ?? "Unknown", date: operation.date ?? Date.now, typeOperation: operation.typeOperation ?? "Add")
                                                     
                                                
                                             }
