@@ -154,7 +154,6 @@
 				F88D2E1427CF763D0090C341 /* ShowInventoryView.swift */,
 				F81AEF1527BE551B007B7FC0 /* AddInventoryView.swift */,
 				F87F8E9C27B3AD7C0073571E /* BudgetView.swift */,
-				66986F9B27D0B0CD00B9949D /* Localizable.strings */,
 				662BB4E127BBB301003CB67F /* AddRemoveMoneyView.swift */,
 				66FBF2ED27B678B70090E446 /* BudgetListView.swift */,
 				662BB4E327BCEE6A003CB67F /* ProjectsCardView.swift */,
@@ -162,6 +161,7 @@
 				662BB4E527BCF396003CB67F /* PlannerTaskView.swift */,
 				F88D2E1227CF761C0090C341 /* ShowPlannerTaskView.swift */,
 				F810888A27B2619D009FC6EB /* ContentTabView.swift */,
+				66986F9B27D0B0CD00B9949D /* Localizable.strings */,
 				66F7FEDC27B25B9000B4BB19 /* Assets.xcassets */,
 				66F7FEDE27B25B9000B4BB19 /* Preview Content */,
 				6619A58E27BEC3A0004ACEF9 /* BudgetClass.swift */,
@@ -535,6 +535,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIStatusBarHidden = NO;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -542,7 +543,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = JesusAgeTeamCosplanning;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -567,6 +568,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIStatusBarHidden = NO;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -574,7 +576,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = JesusAgeTeamCosplanning;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

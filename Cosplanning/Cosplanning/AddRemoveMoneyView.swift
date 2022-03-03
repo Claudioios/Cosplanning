@@ -12,6 +12,7 @@ struct AddRemoveMoneyView: View {
     @State private var Money: String = ""
     @State private var Description: String = ""
     @State private var date = Date()
+    @State var selectedOperation = "Add"
     @Environment(\.dismiss) var dismiss
 
     @Environment(\.managedObjectContext) var add
@@ -66,6 +67,67 @@ struct AddRemoveMoneyView: View {
                         .datePickerStyle(CompactDatePickerStyle())
                         .padding()
                     
+                }
+                HStack{
+                    Spacer()
+                    if (selectedOperation == "Add"){
+                        Button{
+                            selectedOperation = "Add"
+                        }
+                    label:
+                        {
+                            Text("Add")
+                                .frame(width: 100)
+                                .padding()
+                                .foregroundColor(Color(.white))
+                                .background(Color(UIColor.systemGreen))
+                                .clipShape(Capsule())
+                        }
+                    }
+                    else{
+                        Button{
+                            selectedOperation = "Add"
+                        }
+                    label:
+                        {
+                            Text("Add")
+                                .frame(width: 100)
+                                .padding()
+                                .foregroundColor(Color(.white))
+                                .background(Color(UIColor.systemGray3))
+                                .clipShape(Capsule())
+                        }
+                    }
+                    Spacer()
+                    if (selectedOperation == "Remove"){
+                        Button{
+                            selectedOperation = "Remove"
+                        }
+                    label:
+                        {
+                            Text("Remove")
+                                .frame(width: 100)
+                                .padding()
+                                .foregroundColor(Color(.white))
+                                .background(Color(UIColor.systemRed))
+                                .clipShape(Capsule())
+                        }
+                    }
+                    else{
+                        Button{
+                            selectedOperation = "Remove"
+                        }
+                    label:
+                        {
+                            Text("Remove")
+                                .frame(width: 100)
+                                .padding()
+                                .foregroundColor(Color(.white))
+                                .background(Color(UIColor.systemGray3))
+                                .clipShape(Capsule())
+                        }
+                    }
+                    Spacer()
                 }
             Spacer()
                 Button{

@@ -88,8 +88,8 @@ struct BudgetView: View {
                                 }
                         label:
                             {
-                                Text("Add Money")
-                                    .frame(width: 125)
+                                Text("New Operation")
+                                    .frame(width: 225)
                                     .padding()
                                     .foregroundColor(Color(.white))
                                     .background(Color("ViolaBottone"))
@@ -101,23 +101,6 @@ struct BudgetView: View {
                             Spacer()
                         }
                         Spacer()
-                        HStack{
-                            Spacer()
-                            Button{showingAddRemove.toggle()}
-                        label:
-                            {
-                                Text("Remove Money")
-                                    .frame(width: 125)
-                                    .padding()
-                                    .foregroundColor(Color(.white))
-                                    .background(Color("ViolaBottone"))
-                                    .clipShape(Capsule())
-                            }
-                            .sheet(isPresented: $showingAddRemove) {
-                                AddRemoveMoneyView()
-                            }
-                            Spacer()
-                        }
                     }
                     VStack{
                         Rectangle()
