@@ -14,6 +14,7 @@
 		662BB4E627BCF396003CB67F /* PlannerTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662BB4E527BCF396003CB67F /* PlannerTaskView.swift */; };
 		66566C4F27C624320042F8A5 /* Cosplanning.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 66566C4D27C624320042F8A5 /* Cosplanning.xcdatamodeld */; };
 		66566C5127C6283E0042F8A5 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66566C5027C6283E0042F8A5 /* DataController.swift */; };
+		66986F9927D0B0CD00B9949D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 66986F9B27D0B0CD00B9949D /* Localizable.strings */; };
 		66F7FED927B25B8E00B4BB19 /* CosplanningApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F7FED827B25B8E00B4BB19 /* CosplanningApp.swift */; };
 		66F7FEDB27B25B8E00B4BB19 /* PlannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F7FEDA27B25B8E00B4BB19 /* PlannerView.swift */; };
 		66F7FEDD27B25B9000B4BB19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66F7FEDC27B25B9000B4BB19 /* Assets.xcassets */; };
@@ -63,6 +64,8 @@
 		662BB4E527BCF396003CB67F /* PlannerTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannerTaskView.swift; sourceTree = "<group>"; };
 		66566C4E27C624320042F8A5 /* Cosplanning.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cosplanning.xcdatamodel; sourceTree = "<group>"; };
 		66566C5027C6283E0042F8A5 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		66986F9A27D0B0CD00B9949D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		66986F9C27D0B0F600B9949D /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		66F7FED527B25B8E00B4BB19 /* Cosplanning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cosplanning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66F7FED827B25B8E00B4BB19 /* CosplanningApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosplanningApp.swift; sourceTree = "<group>"; };
 		66F7FEDA27B25B8E00B4BB19 /* PlannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannerView.swift; sourceTree = "<group>"; };
@@ -151,6 +154,7 @@
 				F88D2E1427CF763D0090C341 /* ShowInventoryView.swift */,
 				F81AEF1527BE551B007B7FC0 /* AddInventoryView.swift */,
 				F87F8E9C27B3AD7C0073571E /* BudgetView.swift */,
+				66986F9B27D0B0CD00B9949D /* Localizable.strings */,
 				662BB4E127BBB301003CB67F /* AddRemoveMoneyView.swift */,
 				66FBF2ED27B678B70090E446 /* BudgetListView.swift */,
 				662BB4E327BCEE6A003CB67F /* ProjectsCardView.swift */,
@@ -279,6 +283,7 @@
 			knownRegions = (
 				en,
 				Base,
+				it,
 			);
 			mainGroup = 66F7FECC27B25B8E00B4BB19;
 			productRefGroup = 66F7FED627B25B8E00B4BB19 /* Products */;
@@ -298,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				66F7FEE027B25B9000B4BB19 /* Preview Assets.xcassets in Resources */,
+				66986F9927D0B0CD00B9949D /* Localizable.strings in Resources */,
 				66F7FEDD27B25B9000B4BB19 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -382,11 +388,24 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		66986F9B27D0B0CD00B9949D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				66986F9A27D0B0CD00B9949D /* en */,
+				66986F9C27D0B0F600B9949D /* it */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		66F7FEF727B25B9000B4BB19 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -448,6 +467,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";

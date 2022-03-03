@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct PlannerView: View {
+    let CalendarButton = NSLocalizedString("Calendar", comment: "Caledar")
+    
     @State private var showingAddRemove = false
     @State private var showingNewTask = false
     @State private var showingCalendar = false
@@ -65,7 +67,7 @@ struct PlannerView: View {
                 }
             label:
                 {
-                    Text("Calendar")
+                    Text("\(CalendarButton)")
                         .frame(width: 125)
                         .padding()
                         .foregroundColor(Color(.white))
