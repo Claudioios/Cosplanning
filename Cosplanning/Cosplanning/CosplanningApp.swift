@@ -10,7 +10,8 @@ import SwiftUI
 @main
 struct CosplanningApp: App {
     
-    
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+
     init() {
         UINavigationBar.appearance().backgroundColor = UIColor(Color("ViolaBottoneChiaro"))// UTILISSIMO MI HA SALVATO LA VITA
             UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(Color("WhiteBlack"))]
