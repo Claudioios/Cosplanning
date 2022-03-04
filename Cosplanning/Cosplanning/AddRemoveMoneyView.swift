@@ -13,6 +13,7 @@ struct AddRemoveMoneyView: View {
     @State private var Description: String = ""
     @State private var date = Date()
     @State var selectedOperation = "Add"
+    @Binding var money: Double
     @Environment(\.dismiss) var dismiss
 
     @Environment(\.managedObjectContext) var add
@@ -142,6 +143,15 @@ struct AddRemoveMoneyView: View {
                     
                     try? add.save()
                     
+                    if (NewOperation.typeOperation == "Add")
+                    {
+                        money = money + Double(Money)!
+                    }
+                    else
+                    {
+                        money = money - Double(Money)!
+                    }
+                     
                     dismiss()
                     
                 }
@@ -171,8 +181,8 @@ extension View {
     }
 }
 
-struct AddRemoveMoneyView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddRemoveMoneyView()
-    }
-}
+//struct AddRemoveMoneyView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AddRemoveMoneyView(money: 0.0)
+//    }
+//}

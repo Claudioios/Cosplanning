@@ -10,14 +10,15 @@ import SwiftUI
 struct BudgetView: View {
     
     @State private var showingAddRemove = false
-    @State private var money : Double = 0
+//    @State private var money : Double = 0
+    @AppStorage("Money") private var money : Double = 0.0
     @State private var x = 250
 
     let Money : Double = 0
     
     @Environment(\.managedObjectContext) var add
     @FetchRequest(sortDescriptors: []) var operations: FetchedResults<BudgetOperation>
-
+    
     func DeleteElement(at offsets: IndexSet) {
         for offset in offsets {
             // find this book in our fetch request
@@ -96,7 +97,7 @@ struct BudgetView: View {
                                     .clipShape(Capsule())
                             }
                             .sheet(isPresented: $showingAddRemove) {
-                                AddRemoveMoneyView()
+                                AddRemoveMoneyView(money: $money)
                             }
                             Spacer()
                         }
@@ -121,7 +122,6 @@ struct BudgetView: View {
 //                                        BudgetListView(ind: ind, ArrayBudgetOperations: ArrayBudgetOperations)
                                             ForEach(operations) { operation in
                                                 BudgetListView(Money: operation.money ?? 0, Description: operation.shortdescription ?? "Unknown", date: operation.date ?? Date.now, typeOperation: operation.typeOperation ?? "Add")
-                                                    
                                                
                                             }
                                             .foregroundColor(Color("ViolaBottoneChiaro"))
