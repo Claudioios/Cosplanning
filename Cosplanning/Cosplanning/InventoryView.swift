@@ -34,7 +34,6 @@ struct InventoryView: View {
                 Rectangle()
                     .frame(width: .infinity, height: 55).ignoresSafeArea( edges: .top)
                     .foregroundColor(Color("ViolaBottoneChiaro"))
-                Spacer()
                 
                 VStack{
                     Spacer()
@@ -55,7 +54,6 @@ struct InventoryView: View {
                     {
                         VStack{
                             Image("emptyimage")
-                                .background()
                             Text("There is nothing here")
                                 .font(.title2)
                                 .foregroundColor(Color("ViolaBottone"))

@@ -53,10 +53,9 @@ struct ProjectView: View {
                         {
                             VStack{
                                 Image("emptyimage")
-                                    .background()
                                 Text("There is nothing here")
                                     .font(.title2)
-                                    .foregroundColor(Color("ViolaBottone"))
+                                    .foregroundColor(Color("ViolaBottoneChiaro"))
                                     .padding()
                             
                             }
@@ -92,6 +91,7 @@ struct ProjectView: View {
 struct ProjectView_Previews: PreviewProvider {
     static var previews: some View {
         ProjectView()
+            .preferredColorScheme(.dark)
 .previewInterfaceOrientation(.portraitUpsideDown)
     }
 }

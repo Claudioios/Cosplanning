@@ -133,7 +133,6 @@ struct BudgetView: View {
                                 {
                                     VStack{
                                         Image("emptyimage")
-                                            .background()
                                         Text("There is nothing here")
                                             .font(.title2)
                                             .foregroundColor(Color("ViolaBottone"))
