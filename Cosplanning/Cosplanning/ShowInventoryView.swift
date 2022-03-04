@@ -8,23 +8,31 @@
 import SwiftUI
 
 struct ShowInventoryView: View {
-    @ObservedObject var ArrayInventoryOperations: ArrayInventoryModel
+    @State private var Name: String = ""
+    @State private var Price: String = ""
+    @State private var Quantity: String = ""
+    @Environment(\.dismiss) var dismiss
+    
     @Environment(\.managedObjectContext) var add
     @FetchRequest(sortDescriptors: []) var operations: FetchedResults<InventoryOperation>
     
-   
-    
     var body: some View {
-        ForEach(operations) { operation in
-            InventoryCardView(Name: operation.materialname ?? "Unknow", Price: operation.price ?? 0.0, Quantity: operation.quantity ?? 0)
+        VStack{
+            ForEach(operations) { operation in
+                InventoryCardView(Name: operation.materialname ?? "Unknow", Price: operation.price ?? 0.0, Quantity: operation.quantity ?? 0)
+//                Text("\(operation.materialname?)")
+//                Text("\(operation.price?)")
+//                Text("\(operation.quantity?)")
+//
                 
-           
+            }
+            
+            
         }
-    
-}
+    }
 }
 struct ShowInventoryView_Previews: PreviewProvider {
     static var previews: some View {
-        ShowInventoryView(ArrayInventoryOperations: .init())
+        ShowInventoryView()
     }
 }

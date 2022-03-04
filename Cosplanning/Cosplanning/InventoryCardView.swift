@@ -24,7 +24,7 @@ struct InventoryCardView: View {
     }
     
     var body: some View {
-        NavigationLink(destination: ShowInventoryView(ArrayInventoryOperations: .init())){
+        NavigationLink(destination: ShowInventoryView()){
         HStack{
             Rectangle()
                 .frame(width: 350, height: 100)
