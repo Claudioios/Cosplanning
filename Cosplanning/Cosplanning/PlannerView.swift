@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct PlannerView: View {
     let CalendarButton = NSLocalizedString("Calendar", comment: "Caledar")
@@ -13,7 +14,9 @@ struct PlannerView: View {
     @State private var showingAddRemove = false
     @State private var showingNewTask = false
     @State private var showingCalendar = false
+    
     @State private var x = 1
+    
     @Environment(\.managedObjectContext) var add
     @FetchRequest(sortDescriptors: []) var operations: FetchedResults<PlannerOperation>
 //    @State private var date = Date()
@@ -85,7 +88,7 @@ struct PlannerView: View {
                         if(operations.count > 0){
                             ScrollView{
                                 ForEach(operations) { operation in
-                                    PlannerTaskView(Title: operation.title ?? "Unknown", Description: operation.titledescription ?? "Unknown")
+                                    PlannerTaskView(Title: operation.title ?? "Unknown", Description: operation.titledescription ?? "Unknown", Iden: operation.objectID)
                                         
                                 }
 //                                .onDelete(perform: DeleteElement)

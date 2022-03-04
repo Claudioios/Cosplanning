@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct PlannerTaskView: View {
     
@@ -14,14 +15,16 @@ struct PlannerTaskView: View {
     
     var Title: String
     var Description: String
+    var Iden: NSManagedObjectID
     
-    init(Title: String, Description: String) {
+    init(Title: String, Description: String, Iden: NSManagedObjectID) {
         self.Title = Title
         self.Description = Description
+        self.Iden = Iden
     }
     
     var body: some View {
-        NavigationLink(destination: ShowPlannerTaskView()){
+        NavigationLink(destination: ShowPlannerTaskView(Title: Title, Description: Description, Iden: Iden)){
         HStack{
             Rectangle()
                 .frame(width: 350, height: 150)
@@ -56,8 +59,8 @@ struct PlannerTaskView: View {
     }
 }
 }
-struct PlannerTaskView_Previews: PreviewProvider {
-    static var previews: some View {
-        PlannerTaskView(Title: "Title", Description: "Description")
-    }
-}
+//struct PlannerTaskView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PlannerTaskView(Title: "Title", Description: "Description", Iden:)
+//    }
+//}
