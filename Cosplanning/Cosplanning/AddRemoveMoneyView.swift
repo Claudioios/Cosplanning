@@ -158,7 +158,16 @@ struct AddRemoveMoneyView: View {
             }
         .padding()
         .background(Image("Background"))
+        .onTapGesture {
+            dismissKeyboard()
+        }
     
+    }
+}
+
+extension View {
+    func dismissKeyboard(){
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to:nil, from:nil, for:nil)
     }
 }
 
