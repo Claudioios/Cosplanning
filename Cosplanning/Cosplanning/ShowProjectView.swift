@@ -75,6 +75,21 @@ struct ShowProjectView: View {
                             }
                         }
                     }
+                    HStack{
+                        Button{
+                                add.delete(operation)
+                                try? add.save()
+                                ProjectView()
+                            }
+                        label:
+                            {
+                                Text("Completed")
+                                    .frame(width: 125)
+                                    .padding()
+                                    .foregroundColor(Color(.white))
+                                    .background(Color(UIColor.systemGreen))
+                                    .clipShape(Capsule())
+                            }
                 Button{
                         add.delete(operation)
                         try? add.save()
@@ -88,6 +103,7 @@ struct ShowProjectView: View {
                             .foregroundColor(Color(.white))
                             .background(Color(UIColor.systemRed))
                             .clipShape(Capsule())
+                    }
                     }
                 }
                  Spacer()
