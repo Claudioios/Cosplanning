@@ -10,7 +10,6 @@ struct InventoryView: View {
     @State private var showingAddRemove = false
     @State private var inventory = 1
     
-    @ObservedObject var ArrayInventoryOperations: ArrayInventoryModel
     
     @Environment(\.managedObjectContext) var add
     @FetchRequest(sortDescriptors: []) var operations: FetchedResults<InventoryOperation>
@@ -40,7 +39,7 @@ struct InventoryView: View {
                     if(operations.count > 0){
                         ScrollView{
                             ForEach(operations) { operation in
-                                InventoryCardView(Name: operation.materialname ?? "Unknow", Price: operation.price ?? 0.0, Quantity: operation.quantity ?? 0)
+                                InventoryCardView(Name: operation.materialname ?? "Unknow", Price: operation.price ?? 0.0, Quantity: operation.quantity ?? 0, Iden: operation.objectID)
                                     
                                
                             }
@@ -87,6 +86,6 @@ struct InventoryView: View {
 }
 struct InventoryView_Previews: PreviewProvider {
     static var previews: some View {
-        InventoryView(ArrayInventoryOperations: .init())
+        InventoryView()
     }
 }

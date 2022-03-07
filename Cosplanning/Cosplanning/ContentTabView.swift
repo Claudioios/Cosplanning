@@ -63,7 +63,7 @@ struct ContentTabView: View {
 
             
             
-            InventoryView(ArrayInventoryOperations: ArrayInventoryOperations)
+            InventoryView()
 //                .overlay(alignment: .top, content: {
 //                    Color.clear // Or any view or color
 //                        .background(Color("ViolaBottoneChiaro")) // I put clear here because I prefer to put a blur in this case. This modifier and the material it contains are optional.
