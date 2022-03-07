@@ -11,10 +11,10 @@ struct NewTaskView: View {
     
     @State private var Title: String = ""
     @State private var Description: String = ""
+//    @State private var Material: String = ""
     
-    @State private var Material: String = ""
-    @State private var WorkTime1: String = ""
-    @State private var WorkTime2: String = ""
+    @State private var date = Date()
+
     
     @Environment(\.dismiss) var dismiss
 
@@ -54,36 +54,16 @@ struct NewTaskView: View {
                         .padding(.horizontal)
                         .textFieldStyle(.roundedBorder)
                 }
-//                HStack{
-//                    Text("Material")
-//                        .font(.title)
-//                        .fontWeight(.regular)
-//                        .padding()
-//                    Spacer()
-//                }
-//                HStack{
-//                    TextField(
-//                        "",
-//                        text: $Material
-//                    )
-//                        .padding(.horizontal)
-//                        .textFieldStyle(.roundedBorder)
-//                }
-//                HStack{
-//                    Text("Work Time")
-//                        .font(.title)
-//                        .fontWeight(.regular)
-//                        .padding()
-//                    Spacer()
-//                }
-//                HStack{
-//                    TextField(
-//                        "",
-//                        text: $WorkTime1
-//                    )
-//                        .padding(.horizontal)
-//                        .textFieldStyle(.roundedBorder)
-//                }
+                HStack{
+                    DatePicker(
+                        "Select Date",
+                        selection: $date,
+    //                    in: dateRange,
+                        displayedComponents: [.date]
+                    )
+                        .datePickerStyle(CompactDatePickerStyle())
+                        .padding()
+                }
             Spacer()
                 
                 Button{
@@ -91,6 +71,7 @@ struct NewTaskView: View {
                     let NewOperation = PlannerOperation(context: add)
                     NewOperation.title = Title
                     NewOperation.titledescription = Description
+                    NewOperation.date = date
                     // more code to come
                     
                     try? add.save()
@@ -111,6 +92,9 @@ struct NewTaskView: View {
             }
             .padding()
             .background(Image("Background"))
+            .onTapGesture {
+                dismissKeyboard()
+            }
     }
     
 }

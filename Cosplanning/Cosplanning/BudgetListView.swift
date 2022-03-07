@@ -52,7 +52,7 @@ struct BudgetListView: View {
                 {
                     HStack
                     {
-                        Text("\(Money, specifier: "%.2f") $")
+                        Text("+ \(Money, specifier: "%.2f") $")
                             .font(.title2)
                             .fontWeight(.bold)
                             .foregroundColor(Color(UIColor.systemGreen))
@@ -70,7 +70,7 @@ struct BudgetListView: View {
                 {
                     HStack
                     {
-                        Text("\(Money, specifier: "%.2f") $")
+                        Text("- \(Money, specifier: "%.2f") $")
                             .font(.title2)
                             .fontWeight(.bold)
                             .foregroundColor(Color(UIColor.systemRed))

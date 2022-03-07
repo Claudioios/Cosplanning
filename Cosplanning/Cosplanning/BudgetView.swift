@@ -115,7 +115,7 @@ struct BudgetView: View {
                             .frame(width: 350, height: CGFloat(x))
                             .foregroundColor(.white)
 //                            .border(Color.gray)
-                            .cornerRadius(43)
+                            .cornerRadius(42)
                             .padding()
                             .overlay()
                         {
@@ -129,6 +129,30 @@ struct BudgetView: View {
 //                                        BudgetListView(ind: ind, ArrayBudgetOperations: ArrayBudgetOperations)
                                             ForEach(operations) { operation in
                                                 BudgetListView(Money: operation.money ?? 0, Description: operation.shortdescription ?? "Unknown", date: operation.date ?? Date.now, typeOperation: operation.typeOperation ?? "Add")
+                                                    .contextMenu()
+                                                    {
+                                                        Button(action: {
+                                                            if (operation.typeOperation == "Add")
+                                                            {
+                                                                money = money - operation.money
+                                                            }
+                                                            else
+                                                            {
+                                                                money = money + operation.money
+                                                            }
+                                                            add.delete(operation)
+                                                               try? add.save()
+                                                        })
+                                                        {
+                                                            HStack{
+                                                            Image(systemName: "trash")
+                                                            Text("Delete")
+                                                                
+                                                            }
+                                                                
+                                                        }
+                                                    }
+                                                
                                                
                                             }
                                     //      .onDelete(perform: DeleteElement)

@@ -11,6 +11,13 @@ import CoreData
 struct PlannerView: View {
     let CalendarButton = NSLocalizedString("Calendar", comment: "Caledar")
     
+    var dateFormatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        return formatter
+    }
+    
     @State private var showingAddRemove = false
     @State private var showingNewTask = false
     @State private var showingCalendar = false
@@ -102,7 +109,7 @@ struct PlannerView: View {
                     .datePickerStyle(CompactDatePickerStyle())
                     .padding()
 //                Spacer()
-                Text("\(date, format: .dateTime.day().month().year())")
+                Text("\(dateFormatter.string(from: date))")
                     .padding()
 //                Spacer()
             }
@@ -113,8 +120,9 @@ struct PlannerView: View {
                         if(operations.count > 0){
                             ScrollView{
                                 ForEach(operations) { operation in
+                                    if (dateFormatter.string(from: operation.date ?? Date.now) == dateFormatter.string(from: date)){
                                     PlannerTaskView(Title: operation.title ?? "Unknown", Description: operation.titledescription ?? "Unknown", Iden: operation.objectID)
-                                        
+                                    }
                                 }
 //                                .onDelete(perform: DeleteElement)
                             }

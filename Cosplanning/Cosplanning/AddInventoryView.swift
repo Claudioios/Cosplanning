@@ -91,6 +91,9 @@ struct AddInventoryView: View {
             }
             .padding()
             .background(Image("Background"))
+            .onTapGesture {
+                dismissKeyboard()
+            }
 
         }
 }

@@ -172,7 +172,9 @@ struct NewProjectView: View {
         }
         .padding()
         .background(Image("Background"))
-        
+        .onTapGesture {
+            dismissKeyboard()
+        }
     }
 }
 
