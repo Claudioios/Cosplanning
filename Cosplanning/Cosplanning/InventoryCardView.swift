@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import CoreData
 struct InventoryCardView: View {
     @State private var Ntasks = 0
         
@@ -16,15 +16,16 @@ struct InventoryCardView: View {
     var Name: String
     var Price: Double
     var Quantity: Int64
-    
-    init(Name: String, Price: Double, Quantity: Int64) {
+    var Iden: NSManagedObjectID
+    init(Name: String, Price: Double, Quantity: Int64, Iden: NSManagedObjectID) {
         self.Name = Name
         self.Price = Price
         self.Quantity = Quantity
+        self.Iden = Iden
     }
     
     var body: some View {
-        NavigationLink(destination: ShowInventoryView()){
+        NavigationLink(destination: ShowInventoryView(Name: Name, Price: Price, Quantity: Quantity, Iden: Iden)){
         HStack{
             Rectangle()
                 .frame(width: 350, height: 100)
@@ -72,8 +73,8 @@ struct InventoryCardView: View {
     }
 }
 }
-struct InventoryCardView_Previews: PreviewProvider {
-    static var previews: some View {
-        InventoryCardView(Name: "Ciao", Price: 10.0, Quantity: 1)
-    }
-}
+//struct InventoryCardView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        InventoryCardView(Name: "Ciao", Price: 10.0, Quantity: 1, Iden: "")
+//    }
+//}

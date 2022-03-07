@@ -6,24 +6,51 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct ShowInventoryView: View {
-    @State private var Name: String = ""
-    @State private var Price: String = ""
-    @State private var Quantity: String = ""
+    //    @State private var Name: String = ""
+    //    @State private var Price: Double
+    //    @State private var Quantity: Int64
     @Environment(\.dismiss) var dismiss
     
     @Environment(\.managedObjectContext) var add
     @FetchRequest(sortDescriptors: []) var operations: FetchedResults<InventoryOperation>
+    var Name: String
+    var Price: Double
+    var Quantity: Int64
+    var Iden: NSManagedObjectID
+    init(Name: String, Price: Double, Quantity: Int64, Iden: NSManagedObjectID) {
+        self.Name = Name
+        self.Price = Price
+        self.Quantity = Quantity
+        self.Iden = Iden
+    }
     
     var body: some View {
         VStack{
+            
             ForEach(operations) { operation in
-                InventoryCardView(Name: operation.materialname ?? "Unknow", Price: operation.price ?? 0.0, Quantity: operation.quantity ?? 0)
-//                Text("\(operation.materialname?)")
-//                Text("\(operation.price?)")
-//                Text("\(operation.quantity?)")
-//
+                if (Iden == operation.objectID)
+                {
+                    Text("\(Name)")
+                    Text("\(Price, specifier: "%.2f")")
+                    Text("\(Quantity)")
+                    Button{
+                        add.delete(operation)
+                        InventoryView()
+                        
+                    }
+                label:
+                    {
+                        Text("Delete")
+                            .frame(width: 125)
+                            .padding()
+                            .foregroundColor(Color(.white))
+                            .background(Color(UIColor.systemRed))
+                            .clipShape(Capsule())
+                    }
+                }
                 
             }
             
@@ -31,8 +58,8 @@ struct ShowInventoryView: View {
         }
     }
 }
-struct ShowInventoryView_Previews: PreviewProvider {
-    static var previews: some View {
-        ShowInventoryView()
-    }
-}
+//struct ShowInventoryView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ShowInventoryView(Name: "", Price: 0.0, Quantity: 0)
+//    }
+//}
