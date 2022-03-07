@@ -21,43 +21,67 @@ struct ShowPlannerTaskView: View {
         self.Title = Title
         self.Description = Description
         self.Iden = Iden
-
+        
     }
     
     
     var body: some View {
         VStack{
-            
-            ForEach(operations) { operation in
-                if (Iden == operation.objectID)
-                {
-                    Text("Hello World")
-                    
-                    Text("\(Title)")
-                    Text("\(Description)")
-                    Button{
-                        add.delete(operation)
-                        try? add.save()
-                        PlannerView()
-                    }
-                label:
+            Rectangle()
+                .frame(width: .infinity, height: 55).ignoresSafeArea( edges: .top)
+                .foregroundColor(Color("ViolaBottoneChiaro"))
+            VStack{
+                Spacer()
+                ForEach(operations) { operation in
+                    if (Iden == operation.objectID)
                     {
-                        Text("Delete")
-                            .frame(width: 125)
-                            .padding()
-                            .foregroundColor(Color(.white))
-                            .background(Color(UIColor.systemRed))
-                            .clipShape(Capsule())
+                        HStack{
+                            Rectangle()
+                                .frame(width: 350, height: 100)
+                                .cornerRadius(43)
+                                .foregroundColor(Color("ViolaBottoneChiaro"))
+                                .padding()
+                                .overlay()
+                            {
+                                HStack{
+                                    Text("\(Title)")
+                                }
+                            }
+                        }
+                        HStack{
+                            Rectangle()
+                                .frame(width: 350, height: 100)
+                                .cornerRadius(43)
+                                .foregroundColor(Color("ViolaBottoneChiaro"))
+                                .padding()
+                                .overlay()
+                            {
+                                HStack{
+                                    Text("\(Description)")
+                                }
+                            }
+                        }
+                        Button{
+                            add.delete(operation)
+                            PlannerView()
+                        }
+                    label:
+                        {
+                            Text("Delete")
+                                .frame(width: 125)
+                                .padding()
+                                .foregroundColor(Color(.white))
+                                .background(Color(UIColor.systemRed))
+                                .clipShape(Capsule())
+                        }
                     }
+                    Spacer()
                 }
-                    
+                
             }
-
+            .padding()
         }
-
-
-        
-    
+        .background(Image("Background"))
     }
 }
 
