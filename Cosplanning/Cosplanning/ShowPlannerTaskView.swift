@@ -37,6 +37,7 @@ struct ShowPlannerTaskView: View {
                     Text("\(Description)")
                     Button{
                         add.delete(operation)
+                        try? add.save()
                         PlannerView()
                     }
                 label:

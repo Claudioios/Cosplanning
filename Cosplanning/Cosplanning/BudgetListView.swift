@@ -62,7 +62,7 @@ struct BudgetListView: View {
                             .lineLimit(1)
                             .padding(.vertical)
                         Spacer()
-                        Text("\(date)")
+                        Text("\(date, format: .dateTime.day().month().year())")
                             .padding([.top, .bottom, .trailing])
                     }
                 }
@@ -80,7 +80,7 @@ struct BudgetListView: View {
                             .lineLimit(1)
                             .padding(.vertical)
                         Spacer()
-                        Text("\(date)")
+                        Text("\(date, format: .dateTime.day().month().year())")
                             .padding([.top, .bottom, .trailing])
                     }
                 }

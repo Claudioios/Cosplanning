@@ -38,6 +38,7 @@ struct ShowProjectView: View {
 
                     Button{
                         add.delete(operation)
+                        try? add.save()
                         ProjectView()
                     }
                 label:
