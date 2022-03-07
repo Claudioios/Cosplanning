@@ -105,9 +105,16 @@ struct BudgetView: View {
                     }
                     VStack{
                         Rectangle()
+                            .frame(width: 351, height: CGFloat(x + 1))
+                            .background(Color.gray)
+                            .cornerRadius(43)
+                            .padding()
+                            .overlay()
+                        {
+                            Rectangle()
                             .frame(width: 350, height: CGFloat(x))
                             .foregroundColor(.white)
-                            .border(Color.gray)
+//                            .border(Color.gray)
                             .cornerRadius(43)
                             .padding()
                             .overlay()
@@ -124,8 +131,8 @@ struct BudgetView: View {
                                                 BudgetListView(Money: operation.money ?? 0, Description: operation.shortdescription ?? "Unknown", date: operation.date ?? Date.now, typeOperation: operation.typeOperation ?? "Add")
                                                
                                             }
+                                    //      .onDelete(perform: DeleteElement)
                                             .foregroundColor(Color("ViolaBottoneChiaro"))
-//                                            .onDelete(perform: DeleteElement)
                                         
                                 
                                 }
@@ -148,7 +155,7 @@ struct BudgetView: View {
                         }
                         
                     }
-                    
+                    }
                     
                 }
             }
