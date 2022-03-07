@@ -77,6 +77,7 @@ struct ShowInventoryView: View {
                         }
                         Button{
                             add.delete(operation)
+                            try? add.save()
                             InventoryView()
                             
                         }

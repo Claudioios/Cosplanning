@@ -63,6 +63,7 @@ struct ShowPlannerTaskView: View {
                         }
                         Button{
                             add.delete(operation)
+                            try? add.save()
                             PlannerView()
                         }
                     label:
