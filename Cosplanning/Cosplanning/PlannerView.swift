@@ -17,6 +17,17 @@ struct PlannerView: View {
     
     @State private var x = 1
     
+    @State private var date = Date()
+    @State private var currentdate = Date()
+    
+//    let dateRange: ClosedRange<Date> = {
+//        let calendar = Calendar.current
+//        let startComponents = DateComponents(year: 2021, month: 1, day: 1)
+//        let endComponents = DateComponents(year: 2021, month: 12, day: 31, hour: 23, minute: 59, second: 59)
+//        return calendar.date(from:startComponents)!
+//        ...
+//        calendar.date(from:endComponents)!
+//    }()
     @Environment(\.managedObjectContext) var add
     @FetchRequest(sortDescriptors: []) var operations: FetchedResults<PlannerOperation>
 //    @State private var date = Date()
@@ -50,36 +61,50 @@ struct PlannerView: View {
             Rectangle()
                     .frame(width: .infinity, height: 55).ignoresSafeArea( edges: .top)
                 .foregroundColor(Color("ViolaBottoneChiaro"))
-            VStack{
-                Button{
-
-                    showingCalendar.toggle()
-                   
-//                    DatePicker(
-//                        "Select Date",
-//                        selection: $date,
-//                        in: dateRange,
-//                        displayedComponents: [.date]
-//                    )
-//                        .datePickerStyle(CompactDatePickerStyle())
+//            VStack{
+//                Button{
+//
+//                    showingCalendar.toggle()
+//
+////                    DatePicker(
+////                        "Select Date",
+////                        selection: $date,
+////                        in: dateRange,
+////                        displayedComponents: [.date]
+////                    )
+////                        .datePickerStyle(CompactDatePickerStyle())
+////                        .padding()
+////                        Spacer()
+////                    Text("\(date)")
+////                        .padding()
+////                    Spacer()
+//                }
+//            label:
+//                {
+//                    Text("\(CalendarButton)")
+//                        .frame(width: 125)
 //                        .padding()
-//                        Spacer()
-//                    Text("\(date)")
-//                        .padding()
-//                    Spacer()
-                }
-            label:
-                {
-                    Text("\(CalendarButton)")
-                        .frame(width: 125)
-                        .padding()
-                        .foregroundColor(Color(.white))
-                        .background(Color("ViolaBottone"))
-                        .clipShape(Capsule())
-                }
-                .sheet(isPresented: $showingCalendar) {
-                    ShowCalendarView()
-                }
+//                        .foregroundColor(Color(.white))
+//                        .background(Color("ViolaBottone"))
+//                        .clipShape(Capsule())
+//                }
+//                .sheet(isPresented: $showingCalendar) {
+//                    ShowCalendarView()
+//                }
+//            }
+                VStack{
+                DatePicker(
+                    "Select Date",
+                    selection: $date,
+//                    in: dateRange,
+                    displayedComponents: [.date]
+                )
+                    .datePickerStyle(CompactDatePickerStyle())
+                    .padding()
+//                Spacer()
+                Text("\(date, format: .dateTime.day().month().year())")
+                    .padding()
+//                Spacer()
             }
                 Spacer()
                 

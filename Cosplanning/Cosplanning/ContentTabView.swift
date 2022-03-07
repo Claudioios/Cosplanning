@@ -8,10 +8,6 @@
 import SwiftUI
 
 struct ContentTabView: View {
-    
-    @StateObject var ArrayBudgetOperations = ArrayModel()
-    @StateObject var ArrayPlannerOperations = ArrayPlannerModel()
-    @StateObject var ArrayInventoryOperations = ArrayInventoryModel()
 
     @StateObject private var dataController = DataController()
 
