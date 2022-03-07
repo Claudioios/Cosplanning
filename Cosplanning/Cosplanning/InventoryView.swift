@@ -7,6 +7,8 @@
 
 import SwiftUI
 struct InventoryView: View {
+    let ThereIsNothing = NSLocalizedString("ThereIsNothing", comment: "ThereIsNothing")
+    let Inventory = NSLocalizedString("Inventory", comment: "Inventory")
     @State private var showingAddRemove = false
     @State private var inventory = 1
     
@@ -53,9 +55,9 @@ struct InventoryView: View {
                     {
                         VStack{
                             Image("emptyimage")
-                            Text("There is nothing here")
+                            Text("\(ThereIsNothing)")
                                 .font(.title2)
-                                .foregroundColor(Color("ViolaBottone"))
+                                .foregroundColor(Color("ViolaBottoneChiaro"))
                                 .padding()
                         }
                     }
@@ -64,7 +66,7 @@ struct InventoryView: View {
                 
             
             }
-            .navigationTitle("Inventory")
+            .navigationTitle("\(Inventory)")
             .background(Image("Background"))
             .toolbar{
                 ToolbarItemGroup(placement: .navigationBarTrailing){

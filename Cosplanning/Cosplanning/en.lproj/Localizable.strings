@@ -5,4 +5,19 @@
   Created by Claudio Silvestri on 03/03/22.
   
 */
-"Calendar" = "Calendar";
+"Projects" = "Projects";
+"Inventory" = "Inventory";
+"SelectDate" = "Select Date";
+"Title" = "Title";
+"Description" = "Description";
+"ThereIsNothing" = "There is nothing here";
+"ProjectName" = "Project name";
+"NewOperation" = "New Operation";
+"Money" = "Money";
+"ShortDescription" = "Short description";
+"Date" = "Date";
+"Add" = "Add";
+"Remove" = "Remove";
+"Name" = "Name";
+"PriceForPiece" = "Price for piece";
+"Quantity" = "Quantity";

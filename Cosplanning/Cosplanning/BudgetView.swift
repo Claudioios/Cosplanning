@@ -9,6 +9,9 @@ import SwiftUI
 
 struct BudgetView: View {
     
+    let ThereIsNothing = NSLocalizedString("ThereIsNothing", comment: "ThereIsNothing")
+    let NewOperation = NSLocalizedString("NewOperation", comment: "NewOperation")
+    
     @State private var showingAddRemove = false
 //    @State private var money : Double = 0
     @AppStorage("Money") private var money : Double = 0.0
@@ -89,7 +92,7 @@ struct BudgetView: View {
                                 }
                         label:
                             {
-                                Text("New Operation")
+                                Text("\(NewOperation)")
                                     .frame(width: 225)
                                     .padding()
                                     .foregroundColor(Color(.white))
@@ -164,9 +167,9 @@ struct BudgetView: View {
                                 {
                                     VStack{
                                         Image("emptyimage")
-                                        Text("There is nothing here")
+                                        Text("\(ThereIsNothing)")
                                             .font(.title2)
-                                            .foregroundColor(Color("ViolaBottone"))
+                                            .foregroundColor(Color("ViolaBottoneChiaro"))
                                             .padding()
                                     }
                                 }

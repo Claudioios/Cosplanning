@@ -10,6 +10,10 @@ import UIKit
 import CoreData
 
 struct ProjectView: View {
+    
+    let Projects = NSLocalizedString("Projects", comment: "Projects")
+    let ThereIsNothing = NSLocalizedString("ThereIsNothing", comment: "ThereIsNothing")
+    
     @State private var showingAddRemove = false
     @State private var projects = 1
     
@@ -54,7 +58,7 @@ struct ProjectView: View {
                         {
                             VStack{
                                 Image("emptyimage")
-                                Text("There is nothing here")
+                                Text("\(ThereIsNothing)")
                                     .font(.title2)
                                     .foregroundColor(Color("ViolaBottoneChiaro"))
                                     .padding()
@@ -67,7 +71,7 @@ struct ProjectView: View {
                     
 
         }
-                .navigationTitle("Projects")
+                .navigationTitle("\(Projects)")
                 .background(Image("Background"))
                 .toolbar{
                     ToolbarItemGroup(placement: .navigationBarTrailing){

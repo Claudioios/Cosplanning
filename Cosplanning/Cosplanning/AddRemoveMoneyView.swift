@@ -9,6 +9,13 @@ import SwiftUI
 
 struct AddRemoveMoneyView: View {
     
+    let MoneyLoc = NSLocalizedString("Money", comment: "Money")
+    let ShortDescription = NSLocalizedString("ShortDescription", comment: "ShortDescritpion")
+    let DateLoc = NSLocalizedString("Date", comment: "Date")
+    let SelectDate = NSLocalizedString("SelectDate", comment: "SelectDate")
+    let AddLoc = NSLocalizedString("Add", comment: "Add")
+    let RemoveLoc = NSLocalizedString("Remove", comment: "Remove")
+    
     @State private var Money: String = ""
     @State private var Description: String = ""
     @State private var date = Date()
@@ -22,7 +29,7 @@ struct AddRemoveMoneyView: View {
     var body: some View {
             VStack{
                 HStack{
-                    Text("Money")
+                    Text("\(MoneyLoc)")
                         .font(.title)
                         .fontWeight(.regular)
                         .padding()
@@ -38,7 +45,7 @@ struct AddRemoveMoneyView: View {
                         .keyboardType(.decimalPad)
                 }
                 HStack{
-                    Text("Short Description")
+                    Text("\(ShortDescription)")
                         .font(.title)
                         .fontWeight(.regular)
                         .padding()
@@ -53,7 +60,7 @@ struct AddRemoveMoneyView: View {
                         .textFieldStyle(.roundedBorder)
                 }
                 HStack{
-                    Text("Date")
+                    Text("\(DateLoc)")
                         .font(.title)
                         .fontWeight(.regular)
                         .padding()
@@ -61,7 +68,7 @@ struct AddRemoveMoneyView: View {
                 }
                 HStack{
                     DatePicker(
-                        "Select Date",
+                        "\(SelectDate)",
                         selection: $date,
                         displayedComponents: [.date]
                     )
@@ -77,7 +84,7 @@ struct AddRemoveMoneyView: View {
                         }
                     label:
                         {
-                            Text("Add")
+                            Text("\(AddLoc)")
                                 .frame(width: 100)
                                 .padding()
                                 .foregroundColor(Color(.white))
@@ -91,7 +98,7 @@ struct AddRemoveMoneyView: View {
                         }
                     label:
                         {
-                            Text("Add")
+                            Text("\(AddLoc)")
                                 .frame(width: 100)
                                 .padding()
                                 .foregroundColor(Color(.white))
@@ -106,7 +113,7 @@ struct AddRemoveMoneyView: View {
                         }
                     label:
                         {
-                            Text("Remove")
+                            Text("\(RemoveLoc)")
                                 .frame(width: 100)
                                 .padding()
                                 .foregroundColor(Color(.white))
@@ -120,7 +127,7 @@ struct AddRemoveMoneyView: View {
                         }
                     label:
                         {
-                            Text("Remove")
+                            Text("\(RemoveLoc)")
                                 .frame(width: 100)
                                 .padding()
                                 .foregroundColor(Color(.white))

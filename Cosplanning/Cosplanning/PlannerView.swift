@@ -9,7 +9,8 @@ import SwiftUI
 import CoreData
 
 struct PlannerView: View {
-    let CalendarButton = NSLocalizedString("Calendar", comment: "Caledar")
+    let SelectDate = NSLocalizedString("SelectDate", comment: "SelectDate")
+    let ThereIsNothing = NSLocalizedString("ThereIsNothing", comment: "ThereIsNothing")
     
     var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
@@ -101,7 +102,7 @@ struct PlannerView: View {
 //            }
                 VStack{
                 DatePicker(
-                    "Select Date",
+                    "\(SelectDate)",
                     selection: $date,
 //                    in: dateRange,
                     displayedComponents: [.date]
@@ -133,9 +134,9 @@ struct PlannerView: View {
                         {
                             VStack{
                                 Image("emptyimage")
-                                Text("There is nothing here")
+                                Text("\(ThereIsNothing)")
                                     .font(.title2)
-                                    .foregroundColor(Color("ViolaBottone"))
+                                    .foregroundColor(Color("ViolaBottoneChiaro"))
                                     .padding()
                             }
                         }

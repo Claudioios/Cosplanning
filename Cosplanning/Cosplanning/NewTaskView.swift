@@ -9,6 +9,10 @@ import SwiftUI
 
 struct NewTaskView: View {
     
+    let TitleLoc = NSLocalizedString("Title", comment: "Title")
+    let DescriptionLoc = NSLocalizedString("Description", comment: "Description")
+    let SelectDate = NSLocalizedString("SelectDate", comment: "SelectDate")
+    
     @State private var Title: String = ""
     @State private var Description: String = ""
 //    @State private var Material: String = ""
@@ -25,7 +29,7 @@ struct NewTaskView: View {
             VStack{
                 HStack{
                     
-                    Text("Title")
+                    Text("\(TitleLoc)")
                         .font(.title)
                         .fontWeight(.regular)
                         .padding()
@@ -40,7 +44,7 @@ struct NewTaskView: View {
                         .textFieldStyle(.roundedBorder)
                 }
                 HStack{
-                    Text("Description")
+                    Text("\(DescriptionLoc)")
                         .font(.title)
                         .fontWeight(.regular)
                         .padding()
@@ -56,7 +60,7 @@ struct NewTaskView: View {
                 }
                 HStack{
                     DatePicker(
-                        "Select Date",
+                        "\(SelectDate)",
                         selection: $date,
     //                    in: dateRange,
                         displayedComponents: [.date]

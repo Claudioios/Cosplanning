@@ -5,4 +5,19 @@
   Created by Claudio Silvestri on 03/03/22.
   
 */
-"Calendar" = "Calendario";
+"Projects" = "Progetti";
+"Inventory" = "Inventario";
+"SelectDate" = "Seleziona data";
+"Title" = "Titolo";
+"Description" = "Descrizione";
+"ThereIsNothing" = "Non c'è nulla qui";
+"ProjectName" = "Nome progetto";
+"NewOperation" = "Nuova operazione";
+"Money" = "Soldi";
+"ShortDescription" = "Breve descrizione";
+"Date" = "Data";
+"Add" = "Aggiungi";
+"Remove" = "Rimuovi";
+"Name" = "Nome";
+"PriceForPiece" = "Prezzo per pezzo";
+"Quantity" = "Quantità";

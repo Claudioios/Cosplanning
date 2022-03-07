@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct AddInventoryView: View {
+    
+    let NameLoc = NSLocalizedString("Name", comment: "Name")
+    let PriceForPiece = NSLocalizedString("PriceForPiece", comment: "PriceForPiece")
+    let QuantityLoc = NSLocalizedString("Quantity", comment: "Quanity")
+    
     @State private var Name: String = ""
     @State private var Price: String = ""
     @State private var Quantity: String = ""
@@ -20,7 +25,7 @@ struct AddInventoryView: View {
         
             VStack{
                 HStack{
-                    Text("Name")
+                    Text("\(NameLoc)")
                         .font(.title)
                         .fontWeight(.regular)
                         .padding()
@@ -35,7 +40,7 @@ struct AddInventoryView: View {
                         .textFieldStyle(.roundedBorder)
                 }
                 HStack{
-                    Text("Price for piece")
+                    Text("\(PriceForPiece)")
                         .font(.title)
                         .fontWeight(.regular)
                         .padding()
@@ -51,7 +56,7 @@ struct AddInventoryView: View {
                         .keyboardType(.decimalPad)
                 }
                 HStack{
-                    Text("Quantity")
+                    Text("\(QuantityLoc)")
                         .font(.title)
                         .fontWeight(.regular)
                         .padding()
