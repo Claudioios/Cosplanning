@@ -16,6 +16,7 @@ struct ShowPlannerTaskView: View {
     var Title: String
     var Description: String
     var Iden: NSManagedObjectID
+    
     init(Title: String, Description: String, Iden: NSManagedObjectID) {
         self.Title = Title
         self.Description = Description

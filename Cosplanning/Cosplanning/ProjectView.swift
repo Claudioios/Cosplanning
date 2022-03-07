@@ -7,6 +7,7 @@
 
 import SwiftUI
 import UIKit
+import CoreData
 
 struct ProjectView: View {
     @State private var showingAddRemove = false
@@ -40,7 +41,7 @@ struct ProjectView: View {
                         if (operations.count > 0) {
                             ScrollView{
                                 ForEach(operations) { operation in
-                                    ProjectsCardView(Title: operation.projectname ?? "Unknown", TasksNumber: operation.tasksnumber, ColorProject: operation.colorproject ?? "Unknown")
+                                    ProjectsCardView(Title: operation.projectname ?? "Unknown", TasksNumber: operation.tasksnumber, ColorProject: operation.colorproject ?? "Unknown", Iden: operation.objectID)
                                         
                                    
                                 }

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct ProjectsCardView: View {
     
@@ -15,14 +16,16 @@ struct ProjectsCardView: View {
     var Title: String
     var TasksNumber: Int64
     var ColorProject: String
+    var Iden: NSManagedObjectID
     
-    init(Title: String, TasksNumber: Int64, ColorProject: String) {
+    init(Title: String, TasksNumber: Int64, ColorProject: String, Iden: NSManagedObjectID) {
         self.Title = Title
         self.TasksNumber = TasksNumber
         self.ColorProject = ColorProject
+        self.Iden = Iden
     }
     var body: some View {
-        NavigationLink(destination: ShowProjectView()){
+        NavigationLink(destination: ShowProjectView(Title: Title, TasksNumber: TasksNumber, ColorProject: ColorProject, Iden: Iden)){
         HStack{
             Rectangle()
                 .frame(width: 350, height: 150)
@@ -61,8 +64,8 @@ struct ProjectsCardView: View {
     }
 }
 }
-struct ProjectsCardView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProjectsCardView(Title: "Ciao", TasksNumber: 10, ColorProject: "red")
-    }
-}
+//struct ProjectsCardView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ProjectsCardView(Title: "Ciao", TasksNumber: 10, ColorProject: "red")
+//    }
+//}
