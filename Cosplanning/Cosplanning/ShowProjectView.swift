@@ -26,17 +26,56 @@ struct ShowProjectView: View {
         
     }
     var body: some View {
-       
         VStack{
-            
+            Rectangle()
+                .frame(width: .infinity, height: 55).ignoresSafeArea( edges: .top)
+                .foregroundColor(Color("ViolaBottoneChiaro"))
+        
+        VStack{
+            Spacer()
             ForEach(operations) { operation in
                 if (Iden == operation.objectID)
                 {                    
-                    Text("\(Title)")
-                    Text("\(TasksNumber)")
-                    Text("\(ColorProject)")
-
-                    Button{
+                    HStack{
+                        Rectangle()
+                            .frame(width: 350, height: 100)
+                            .cornerRadius(43)
+                            .foregroundColor(Color("ViolaBottoneChiaro"))
+                            .padding()
+                            .overlay()
+                        {
+                            HStack{
+                                Text("\(Title)")
+                            }
+                        }
+                    }
+                    HStack{
+                        Rectangle()
+                            .frame(width: 350, height: 100)
+                            .cornerRadius(43)
+                            .foregroundColor(Color("ViolaBottoneChiaro"))
+                            .padding()
+                            .overlay()
+                        {
+                            HStack{
+                                Text("\(TasksNumber)")
+                            }
+                        }
+                    }
+                    HStack{
+                        Rectangle()
+                            .frame(width: 350, height: 100)
+                            .cornerRadius(43)
+                            .foregroundColor(Color("ViolaBottoneChiaro"))
+                            .padding()
+                            .overlay()
+                        {
+                            HStack{
+                                Text("\(ColorProject)")
+                            }
+                        }
+                    }
+                Button{
                         add.delete(operation)
                         ProjectView()
                     }
@@ -50,11 +89,13 @@ struct ShowProjectView: View {
                             .clipShape(Capsule())
                     }
                 }
-                    
+                 Spacer()
             }
 
         }
-    
+        .padding()
+        }
+        .background(Image("Background"))
 }
 }
 
