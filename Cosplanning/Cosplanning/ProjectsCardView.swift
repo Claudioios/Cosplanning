@@ -43,20 +43,20 @@ struct ProjectsCardView: View {
                             .padding(.top, 30.0)
                             .padding(.leading, 50.0)
                         Spacer()
-                        Circle()
-                            .frame(width: 25, height: 25)
-                            .padding(.top, 30.0)
-                            .padding(.trailing, 60.0)
-                            .foregroundColor(.green)
+//                        Circle()
+//                            .frame(width: 25, height: 25)
+//                            .padding(.top, 30.0)
+//                            .padding(.trailing, 60.0)
+//                            .foregroundColor(.green)
                     }
-                    HStack{
-                        Text("Number of task: \(TasksNumber)")
-                            .font(.title3)
-                            .fontWeight(.regular)
-                            .foregroundColor(.white)
-                            .padding(.leading, 50.0)
-                        Spacer()
-                    }
+//                    HStack{
+//                        Text("Number of task: \(TasksNumber)")
+//                            .font(.title3)
+//                            .fontWeight(.regular)
+//                            .foregroundColor(.white)
+//                            .padding(.leading, 50.0)
+//                        Spacer()
+//                    }
                     Spacer()
                 }
             }
