@@ -9,7 +9,8 @@ import SwiftUI
 import CoreData
 struct InventoryCardView: View {
     @State private var Ntasks = 0
-        
+    let PriceLock = NSLocalizedString("Price", comment: "Price")
+    let QuantityLock = NSLocalizedString("Quantity", comment: "Quantity")
     @Environment(\.managedObjectContext) var add
     @FetchRequest(sortDescriptors: []) var operations: FetchedResults<InventoryOperation>
     
@@ -36,7 +37,7 @@ struct InventoryCardView: View {
             {
                 HStack{
                     Text("\(Name)")
-                        .font(.largeTitle)
+                        .font(.title)
                         .fontWeight(.semibold)
                         .foregroundColor(.white)
                         .padding(.leading, 50.0)
@@ -44,10 +45,10 @@ struct InventoryCardView: View {
                     HStack{
                         VStack{
                             Spacer()
-                            Text("Price")
+                            Text("\(PriceLock)")
                                 .foregroundColor(.white)
                             Spacer()
-                            Text("\(Price, specifier: "%.2f")")
+                            Text("\(Price, specifier: "%.2f") $")
                                 .foregroundColor(.white)
                             Spacer()
                         }
@@ -55,10 +56,10 @@ struct InventoryCardView: View {
                             .padding()
                         VStack{
                             Spacer()
-                            Text("Quantity")
+                            Text("\(QuantityLock)")
                                 .foregroundColor(.white)
                             Spacer()
-                            Text("\(Quantity) $")
+                            Text("\(Quantity)")
                                 .foregroundColor(.white)
                             Spacer()
 

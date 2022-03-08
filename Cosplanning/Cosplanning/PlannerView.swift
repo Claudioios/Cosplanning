@@ -100,24 +100,27 @@ struct PlannerView: View {
 //                    ShowCalendarView()
 //                }
 //            }
-                VStack{
+                HStack{
+                    
                 DatePicker(
-                    "\(SelectDate)",
+                    "",
                     selection: $date,
 //                    in: dateRange,
                     displayedComponents: [.date]
                 )
+                        .labelsHidden()
                     .datePickerStyle(CompactDatePickerStyle())
                     .padding()
+                    
 //                Spacer()
-                Text("\(dateFormatter.string(from: date))")
-                    .padding()
-//                Spacer()
+//                Text("\(dateFormatter.string(from: date))")
+//                    .padding()
             }
                 Spacer()
                 
                     VStack{
                         Spacer()
+                        
                         if(operations.count > 0){
                             ScrollView{
                                 ForEach(operations) { operation in
