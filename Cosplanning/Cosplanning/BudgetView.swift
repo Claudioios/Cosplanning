@@ -122,7 +122,7 @@ struct BudgetView: View {
                             .padding()
                             .overlay()
                         {
-                            ScrollView(){
+                            ScrollView(showsIndicators: false){
                             VStack{
                                 Spacer()
                                 if(operations.count > 0){

@@ -100,8 +100,7 @@ struct PlannerView: View {
 //                    ShowCalendarView()
 //                }
 //            }
-                HStack{
-                    
+                VStack{
                 DatePicker(
                     "",
                     selection: $date,
