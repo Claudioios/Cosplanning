@@ -107,10 +107,8 @@ struct PlannerView: View {
 //                    in: dateRange,
                     displayedComponents: [.date]
                 )
+                        .labelsHidden()
                     .datePickerStyle(CompactDatePickerStyle())
-                    .padding()
-//                Spacer()
-                Text("\(dateFormatter.string(from: date))")
                     .padding()
 //                Spacer()
             }

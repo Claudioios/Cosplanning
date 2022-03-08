@@ -15,18 +15,18 @@
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="titledescription" optional="YES" attributeType="String"/>
-        <relationship name="projects" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ProjectOperation"/>
+        <relationship name="projects" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ProjectOperation" inverseName="planner" inverseEntity="ProjectOperation"/>
     </entity>
     <entity name="ProjectOperation" representedClassName="ProjectOperation" syncable="YES" codeGenerationType="class">
         <attribute name="colorproject" optional="YES" attributeType="String"/>
         <attribute name="projectname" optional="YES" attributeType="String"/>
         <attribute name="tasksnumber" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="planner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PlannerOperation"/>
+        <relationship name="planner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PlannerOperation" inverseName="projects" inverseEntity="PlannerOperation"/>
     </entity>
     <elements>
         <element name="BudgetOperation" positionX="-250.5859375" positionY="-9" width="103.28515625" height="89"/>
         <element name="InventoryOperation" positionX="-540.4609375" positionY="16.51953125" width="128" height="74"/>
-        <element name="PlannerOperation" positionX="57.06640625" positionY="254.25390625" width="128" height="89"/>
-        <element name="ProjectOperation" positionX="-562.265625" positionY="297.890625" width="128" height="89"/>
+        <element name="PlannerOperation" positionX="57.06640625" positionY="254.25390625" width="128" height="103"/>
+        <element name="ProjectOperation" positionX="-562.265625" positionY="297.890625" width="128" height="103"/>
     </elements>
 </model>
