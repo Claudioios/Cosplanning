@@ -28,6 +28,7 @@ struct PlannerView: View {
     @State private var date = Date()
     @State private var currentdate = Date()
     
+    @Environment(\.dismiss) var dismiss
 //    let dateRange: ClosedRange<Date> = {
 //        let calendar = Calendar.current
 //        let startComponents = DateComponents(year: 2021, month: 1, day: 1)
@@ -101,15 +102,63 @@ struct PlannerView: View {
 //                }
 //            }
                 VStack{
-                DatePicker(
-                    "",
-                    selection: $date,
-//                    in: dateRange,
-                    displayedComponents: [.date]
-                )
-                        .labelsHidden()
-                    .datePickerStyle(CompactDatePickerStyle())
+                Button{
+    //                    x = x+1
+                        showingCalendar.toggle()
+                    }
+                label: {
+                    Text("\(dateFormatter.string(from: date ?? Date.now))")
+                    .frame(width: 225)
                     .padding()
+                    .foregroundColor(Color("WhiteBlack"))
+                    .background(Color("ViolaBottone"))
+                    .clipShape(Capsule())
+                }
+                .sheet(isPresented: $showingCalendar) {
+                    VStack{
+                        
+                    Spacer()
+                        
+                    DatePicker(
+                        "",
+                        selection: $date,
+    //                    in: dateRange,
+                        displayedComponents: [.date]
+                    )
+                        .labelsHidden()
+                        .datePickerStyle(GraphicalDatePickerStyle())
+                        .padding()
+                        .background(Color("WhiteBlack"))
+                        Spacer()
+                        
+                        Button{
+                            dismiss()
+                            
+                        }
+                    label:
+                        {
+                            Image(systemName: "checkmark")
+                                .frame(width: 125)
+                                .padding()
+                                .foregroundColor(Color(.white))
+                                .background(Color("ViolaBottone"))
+                                .clipShape(Capsule())
+                        }
+                    }
+                    .background(Image("Background"))
+                }
+
+                    
+
+//                DatePicker(
+//                    "",
+//                    selection: $date,
+////                    in: dateRange,
+//                    displayedComponents: [.date]
+//                )
+//                        .labelsHidden()
+//                    .datePickerStyle(CompactDatePickerStyle())
+//                    .padding()
                     
 //                Spacer()
 //                Text("\(dateFormatter.string(from: date))")

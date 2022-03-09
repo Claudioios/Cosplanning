@@ -17,6 +17,7 @@ struct AddInventoryView: View {
     @State private var Price: String = ""
     @State private var Quantity: String = ""
     @State private var Unit: String = ""
+    
     @Environment(\.dismiss) var dismiss
     
     @Environment(\.managedObjectContext) var add
