@@ -41,6 +41,7 @@ struct BudgetView: View {
                 Rectangle()
                     .frame(width: .infinity, height: 50).ignoresSafeArea( edges: .top)
                     .foregroundColor(Color("ViolaBottoneChiaro"))
+                Spacer()
                 VStack {
 //                    List{
 //                        ForEach(operations) { operation in
@@ -63,7 +64,7 @@ struct BudgetView: View {
                     }
                     
                 }
-                ScrollView()
+                VStack()
                 {
                     Rectangle()
                         .frame(width: 350, height: 200)
