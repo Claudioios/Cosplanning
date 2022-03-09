@@ -42,11 +42,11 @@ struct InventoryView: View {
                         ScrollView{
                             ForEach(operations) { operation in
                                 InventoryCardView(Name: operation.materialname ?? "Unknow", Price: operation.price ?? 0.0, Quantity: operation.quantity ?? 0, Iden: operation.objectID)
-                                    
-                               
+                                
+                                
                             }
-//                            .onDelete(perform: DeleteElement)
-//                           
+                            //                            .onDelete(perform: DeleteElement)
+                            //                           
                         }
                         .padding()
                         .opacity(50)
@@ -64,26 +64,26 @@ struct InventoryView: View {
                     Spacer()
                 }
                 
-            
+                
             }
             .navigationTitle("\(Inventory)")
             .background(Image("Background"))
             .toolbar{
                 ToolbarItemGroup(placement: .navigationBarTrailing){
-                Button{
-//                    inventory = inventory+1
-                    showingAddRemove.toggle()
+                    Button{
+                        //                    inventory = inventory+1
+                        showingAddRemove.toggle()
+                    }
+                label: {
+                    Label ("Add", systemImage: "plus.circle.fill")
+                        .foregroundColor(Color("Giallo"))
                 }
-            label: {
-                Label ("Add", systemImage: "plus.circle.fill")
-                    .foregroundColor(Color("Giallo"))
-            }
-            .sheet(isPresented: $showingAddRemove) {
-                AddInventoryView()
+                .sheet(isPresented: $showingAddRemove) {
+                    AddInventoryView()
+                }
+                }
             }
         }
-    }
-}
     }
 }
 struct InventoryView_Previews: PreviewProvider {

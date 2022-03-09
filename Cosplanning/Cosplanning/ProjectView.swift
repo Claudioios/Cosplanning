@@ -35,48 +35,48 @@ struct ProjectView: View {
     
     var body: some View {
         NavigationView{
-                VStack{
+            VStack{
                 Rectangle()
-                        .frame(width: .infinity, height: 55).ignoresSafeArea( edges: .top)
+                    .frame(width: .infinity, height: 55).ignoresSafeArea( edges: .top)
                     .foregroundColor(Color("ViolaBottoneChiaro"))
-
-                    VStack{
-                        Spacer()
-                        if (operations.count > 0) {
-                            ScrollView{
-                                ForEach(operations) { operation in
-                                    ProjectsCardView(Title: operation.projectname ?? "Unknown", TasksNumber: operation.tasksnumber, ColorProject: operation.colorproject ?? "Unknown", Iden: operation.objectID)
-                                        
-                                   
-                                }
-//                                .onDelete(perform: DeleteElement)
+                
+                VStack{
+                    Spacer()
+                    if (operations.count > 0) {
+                        ScrollView{
+                            ForEach(operations) { operation in
+                                ProjectsCardView(Title: operation.projectname ?? "Unknown", TasksNumber: operation.tasksnumber, ColorProject: operation.colorproject ?? "Unknown", Iden: operation.objectID)
+                                
+                                
                             }
-                            .padding()
-                            .opacity(50)
+                            //                                .onDelete(perform: DeleteElement)
                         }
-                        else
-                        {
-                            VStack{
-                                Image("emptyimage")
-                                Text("\(ThereIsNothing)")
-                                    .font(.title2)
-                                    .foregroundColor(Color("ViolaBottoneChiaro"))
-                                    .padding()
-                            
-                            }
-                        }
-                        Spacer()
-                       
+                        .padding()
+                        .opacity(50)
                     }
+                    else
+                    {
+                        VStack{
+                            Image("emptyimage")
+                            Text("\(ThereIsNothing)")
+                                .font(.title2)
+                                .foregroundColor(Color("ViolaBottoneChiaro"))
+                                .padding()
+                            
+                        }
+                    }
+                    Spacer()
                     
-
-        }
-                .navigationTitle("\(Projects)")
-                .background(Image("Background"))
-                .toolbar{
-                    ToolbarItemGroup(placement: .navigationBarTrailing){
+                }
+                
+                
+            }
+            .navigationTitle("\(Projects)")
+            .background(Image("Background"))
+            .toolbar{
+                ToolbarItemGroup(placement: .navigationBarTrailing){
                     Button{
-//                        projects = projects+1
+                        //                        projects = projects+1
                         showingAddRemove.toggle()
                     }
                 label: {
@@ -84,19 +84,19 @@ struct ProjectView: View {
                         .foregroundColor(Color("Giallo"))
                 }
                 .sheet(isPresented: $showingAddRemove) {
-                   NewProjectView()
+                    NewProjectView()
                 }
-                    }
                 }
+            }
         }
         
     }
-    }
-   
+}
+
 struct ProjectView_Previews: PreviewProvider {
     static var previews: some View {
         ProjectView()
             .preferredColorScheme(.dark)
-.previewInterfaceOrientation(.portraitUpsideDown)
+            .previewInterfaceOrientation(.portraitUpsideDown)
     }
 }

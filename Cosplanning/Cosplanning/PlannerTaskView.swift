@@ -25,39 +25,39 @@ struct PlannerTaskView: View {
     
     var body: some View {
         NavigationLink(destination: ShowPlannerTaskView(Title: Title, Description: Description, Iden: Iden)){
-        HStack{
-            Rectangle()
-                .frame(width: 350, height: 150)
-                .cornerRadius(43)
-                .foregroundColor(Color("ViolaBottoneChiaro"))
-                .padding()
-                .overlay()
-            {
-                VStack{
-                    HStack{
-                        Text("\(Title)")
-                            .font(.largeTitle)
-                            .fontWeight(.semibold)
-                            .foregroundColor(.white)
-                            .padding(.top, 30.0)
-                            .padding(.leading, 50.0)
+            HStack{
+                Rectangle()
+                    .frame(width: 350, height: 150)
+                    .cornerRadius(43)
+                    .foregroundColor(Color("ViolaBottoneChiaro"))
+                    .padding()
+                    .overlay()
+                {
+                    VStack{
+                        HStack{
+                            Text("\(Title)")
+                                .font(.largeTitle)
+                                .fontWeight(.semibold)
+                                .foregroundColor(Color("WhiteBlack"))
+                                .padding(.top, 30.0)
+                                .padding(.leading, 50.0)
+                            Spacer()
+                        }
+                        HStack{
+                            Text("\(Description)")
+                                .font(.title3)
+                                .fontWeight(.regular)
+                                .foregroundColor(Color("WhiteBlack"))
+                                .padding(.leading, 50.0)
+                            Spacer()
+                        }
                         Spacer()
                     }
-                    HStack{
-                        Text("\(Description)")
-                            .font(.title3)
-                            .fontWeight(.regular)
-                            .foregroundColor(.white)
-                            .padding(.leading, 50.0)
-                        Spacer()
-                    }
-                    Spacer()
+                    
                 }
-
             }
         }
     }
-}
 }
 //struct PlannerTaskView_Previews: PreviewProvider {
 //    static var previews: some View {

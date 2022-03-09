@@ -30,53 +30,56 @@ struct ShowProjectView: View {
             Rectangle()
                 .frame(width: .infinity, height: 55).ignoresSafeArea( edges: .top)
                 .foregroundColor(Color("ViolaBottoneChiaro"))
-        
-        VStack{
-            Spacer()
-            ForEach(operations) { operation in
-                if (Iden == operation.objectID)
-                {                    
-                    HStack{
-                        Rectangle()
-                            .frame(width: 350, height: 100)
-                            .cornerRadius(43)
-                            .foregroundColor(Color("ViolaBottoneChiaro"))
-                            .padding()
-                            .overlay()
-                        {
-                            HStack{
-                                Text("\(Title)")
+            
+            VStack{
+                Spacer()
+                ForEach(operations) { operation in
+                    if (Iden == operation.objectID)
+                    {                    
+                        HStack{
+                            Rectangle()
+                                .frame(width: 350, height: 100)
+                                .cornerRadius(43)
+                                .foregroundColor(Color("ViolaBottoneChiaro"))
+                                .padding()
+                                .overlay()
+                            {
+                                HStack{
+                                    Text("\(Title)")
+                                        .foregroundColor(Color("WhiteBlack"))
+                                }
                             }
                         }
-                    }
-                    HStack{
-                        Rectangle()
-                            .frame(width: 350, height: 100)
-                            .cornerRadius(43)
-                            .foregroundColor(Color("ViolaBottoneChiaro"))
-                            .padding()
-                            .overlay()
-                        {
-                            HStack{
-                                Text("\(TasksNumber)")
+                        HStack{
+                            Rectangle()
+                                .frame(width: 350, height: 100)
+                                .cornerRadius(43)
+                                .foregroundColor(Color("ViolaBottoneChiaro"))
+                                .padding()
+                                .overlay()
+                            {
+                                HStack{
+                                    Text("\(TasksNumber)")
+                                        .foregroundColor(Color("WhiteBlack"))
+                                }
                             }
                         }
-                    }
-                    HStack{
-                        Rectangle()
-                            .frame(width: 350, height: 100)
-                            .cornerRadius(43)
-                            .foregroundColor(Color("ViolaBottoneChiaro"))
-                            .padding()
-                            .overlay()
-                        {
-                            HStack{
-                                Text("\(ColorProject)")
+                        HStack{
+                            Rectangle()
+                                .frame(width: 350, height: 100)
+                                .cornerRadius(43)
+                                .foregroundColor(Color("ViolaBottoneChiaro"))
+                                .padding()
+                                .overlay()
+                            {
+                                HStack{
+                                    Text("\(ColorProject)")
+                                        .foregroundColor(Color("WhiteBlack"))
+                                }
                             }
                         }
-                    }
-                    HStack{
-                        Button{
+                        HStack{
+                            Button{
                                 add.delete(operation)
                                 try? add.save()
                                 ProjectView()
@@ -90,30 +93,30 @@ struct ShowProjectView: View {
                                     .background(Color(UIColor.systemGreen))
                                     .clipShape(Capsule())
                             }
-                Button{
-                        add.delete(operation)
-                        try? add.save()
-                        ProjectView()
+                            Button{
+                                add.delete(operation)
+                                try? add.save()
+                                ProjectView()
+                            }
+                        label:
+                            {
+                                Text("Delete")
+                                    .frame(width: 125)
+                                    .padding()
+                                    .foregroundColor(Color(.white))
+                                    .background(Color(UIColor.systemRed))
+                                    .clipShape(Capsule())
+                            }
+                        }
                     }
-                label:
-                    {
-                        Text("Delete")
-                            .frame(width: 125)
-                            .padding()
-                            .foregroundColor(Color(.white))
-                            .background(Color(UIColor.systemRed))
-                            .clipShape(Capsule())
-                    }
-                    }
+                    Spacer()
                 }
-                 Spacer()
+                
             }
-
-        }
-        .padding()
+            .padding()
         }
         .background(Image("Background"))
-}
+    }
 }
 
 //struct ShowProjectView_Previews: PreviewProvider {

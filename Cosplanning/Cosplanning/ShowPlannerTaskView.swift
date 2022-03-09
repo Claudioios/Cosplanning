@@ -45,6 +45,7 @@ struct ShowPlannerTaskView: View {
                             {
                                 HStack{
                                     Text("\(Title)")
+                                        .foregroundColor(Color("WhiteBlack"))
                                 }
                             }
                         }
@@ -58,6 +59,7 @@ struct ShowPlannerTaskView: View {
                             {
                                 HStack{
                                     Text("\(Description)")
+                                        .foregroundColor(Color("WhiteBlack"))
                                 }
                             }
                         }

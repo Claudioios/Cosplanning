@@ -25,19 +25,19 @@ struct ShowCalendarView: View {
     
     var body: some View {
         VStack{
-        DatePicker(
-            "Select Date",
-            selection: $date,
-            in: dateRange,
-            displayedComponents: [.date]
-        )
-            .datePickerStyle(CompactDatePickerStyle())
-            .padding()
-        Spacer()
-        Text("\(date)")
-            .padding()
-        Spacer()
-    }
+            DatePicker(
+                "Select Date",
+                selection: $date,
+                in: dateRange,
+                displayedComponents: [.date]
+            )
+                .datePickerStyle(CompactDatePickerStyle())
+                .padding()
+            Spacer()
+            Text("\(date)")
+                .padding()
+            Spacer()
+        }
     }
 }
 
