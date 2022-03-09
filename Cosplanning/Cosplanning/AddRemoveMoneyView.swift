@@ -181,15 +181,3 @@ struct AddRemoveMoneyView: View {
         
     }
 }
-
-//extension View {
-//    func dismissKeyboard(){
-//        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to:nil, from:nil, for:nil)
-//    }
-//}
-
-//struct AddRemoveMoneyView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        AddRemoveMoneyView(money: 0.0)
-//    }
-//}

@@ -59,8 +59,3 @@ struct PlannerTaskView: View {
         }
     }
 }
-//struct PlannerTaskView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        PlannerTaskView(Title: "Title", Description: "Description", Iden:)
-//    }
-//}

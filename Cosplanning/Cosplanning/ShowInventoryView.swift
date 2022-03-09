@@ -9,9 +9,6 @@ import SwiftUI
 import CoreData
 
 struct ShowInventoryView: View {
-    //    @State private var Name: String = ""
-    //    @State private var Price: Double
-    //    @State private var Quantity: Int64
     @Environment(\.dismiss) var dismiss
     
     @Environment(\.managedObjectContext) var add
@@ -102,8 +99,3 @@ struct ShowInventoryView: View {
         .background(Image("Background"))
     }
 }
-//struct ShowInventoryView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ShowInventoryView(Name: "", Price: 0.0, Quantity: 0)
-//    }
-//}

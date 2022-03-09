@@ -74,8 +74,3 @@ struct InventoryCardView: View {
         }
     }
 }
-//struct InventoryCardView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        InventoryCardView(Name: "Ciao", Price: 10.0, Quantity: 1, Iden: "")
-//    }
-//}

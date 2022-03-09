@@ -42,30 +42,7 @@ struct BudgetView: View {
                     .frame(width: .infinity, height: 50).ignoresSafeArea( edges: .top)
                     .foregroundColor(Color("ViolaBottoneChiaro"))
                 Spacer()
-                VStack {
-                    //                    List{
-                    //                        ForEach(operations) { operation in
-                    //                            Text(operation.shortdescription ?? "Unknown")
-                    //                        }
-                    //                        .onDelete(perform: DeleteElement)
-                    //                    }
-                    HStack
-                    {
-                        //                        Button("Add") {
-                        //
-                        //                            let NewOperation = BudgetOperation(context: add)
-                        //                            NewOperation.money = Money
-                        //                            NewOperation.shortdescription = "Ciao"
-                        //                            NewOperation.date = Date.now
-                        //                            // more code to come
-                        //
-                        //                            try? add.save()
-                        //                        }
-                    }
-                    
-                }
-                VStack()
-                {
+                VStack(){
                     Rectangle()
                         .frame(width: 350, height: 200)
                         .cornerRadius(43)
@@ -189,20 +166,6 @@ struct BudgetView: View {
             }
             .navigationTitle("Budget")
             .background(Image("Background"))
-            //            .toolbar{
-            //                ToolbarItemGroup(placement: .navigationBarTrailing){
-            //                    Button{
-            //                        showingAddRemove.toggle()
-            //                    }
-            //                label: {
-            //                    Label ("Filter", systemImage: "line.3.horizontal.decrease.circle.fill")
-            //                        .foregroundColor(Color("Giallo"))
-            //                }
-            //                .sheet(isPresented: $showingAddRemove) {
-            //                    AddRemoveMoneyView()
-            //                }
-            //                }
-            //            }
         }
     }
 }

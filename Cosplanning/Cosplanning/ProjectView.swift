@@ -49,7 +49,6 @@ struct ProjectView: View {
                                 
                                 
                             }
-                            //                                .onDelete(perform: DeleteElement)
                         }
                         .padding()
                         .opacity(50)
@@ -76,7 +75,6 @@ struct ProjectView: View {
             .toolbar{
                 ToolbarItemGroup(placement: .navigationBarTrailing){
                     Button{
-                        //                        projects = projects+1
                         showingAddRemove.toggle()
                     }
                 label: {

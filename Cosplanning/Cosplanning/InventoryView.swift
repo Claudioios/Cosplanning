@@ -45,8 +45,6 @@ struct InventoryView: View {
                                 
                                 
                             }
-                            //                            .onDelete(perform: DeleteElement)
-                            //                           
                         }
                         .padding()
                         .opacity(50)

@@ -24,25 +24,8 @@ struct BudgetListView: View {
         self.date = date
         self.typeOperation = typeOperation
     }
-    
     var body: some View {
-        //        Rectangle()
-        //            .frame(width: .infinity, height: 55)
-        //            .border(Color.gray)
-        //            .foregroundColor(.white)
-        //            .overlay()
-        //                {
-        //                    HStack{
-        //                        Text("Operation 1")
-        //                            .padding()
-        //                        Spacer()
-        //                        Text("50$")
-        //                            .foregroundColor(.green)
-        //                            .padding()
-        //                    }
-        //                }
-        HStack
-        {
+        HStack{
             Rectangle()
                 .frame(width: 350, height: 75)
                 .opacity(0)

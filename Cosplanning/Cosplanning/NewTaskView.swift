@@ -15,7 +15,6 @@ struct NewTaskView: View {
     
     @State private var Title: String = ""
     @State private var Description: String = ""
-    //    @State private var Material: String = ""
     
     @State private var date = Date()
     
@@ -62,7 +61,6 @@ struct NewTaskView: View {
                 DatePicker(
                     "\(SelectDate)",
                     selection: $date,
-                    //                    in: dateRange,
                     displayedComponents: [.date]
                 )
                     .datePickerStyle(CompactDatePickerStyle())

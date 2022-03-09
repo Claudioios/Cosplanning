@@ -118,9 +118,3 @@ struct ShowProjectView: View {
         .background(Image("Background"))
     }
 }
-
-//struct ShowProjectView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ShowProjectView(Title: "", TasksNumber: 0, ColorProject: "", Iden: <#NSManagedObjectID#>)
-//    }
-//}

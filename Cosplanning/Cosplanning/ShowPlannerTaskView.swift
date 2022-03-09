@@ -87,9 +87,3 @@ struct ShowPlannerTaskView: View {
         .background(Image("Background"))
     }
 }
-
-//struct ShowPlannerTaskView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ShowPlannerTaskView(Title: "Ciao", Description: "Ciao Description", Iden: )
-//    }
-//}
