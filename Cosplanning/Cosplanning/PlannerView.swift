@@ -28,29 +28,29 @@ struct PlannerView: View {
     @State private var date = Date()
     @State private var currentdate = Date()
     
-    @Environment(\.dismiss) var dismiss
-//    let dateRange: ClosedRange<Date> = {
-//        let calendar = Calendar.current
-//        let startComponents = DateComponents(year: 2021, month: 1, day: 1)
-//        let endComponents = DateComponents(year: 2021, month: 12, day: 31, hour: 23, minute: 59, second: 59)
-//        return calendar.date(from:startComponents)!
-//        ...
-//        calendar.date(from:endComponents)!
-//    }()
+    //    @Environment(\.dismiss) var dismiss
+    //    let dateRange: ClosedRange<Date> = {
+    //        let calendar = Calendar.current
+    //        let startComponents = DateComponents(year: 2021, month: 1, day: 1)
+    //        let endComponents = DateComponents(year: 2021, month: 12, day: 31, hour: 23, minute: 59, second: 59)
+    //        return calendar.date(from:startComponents)!
+    //        ...
+    //        calendar.date(from:endComponents)!
+    //    }()
     @Environment(\.managedObjectContext) var add
     @FetchRequest(sortDescriptors: []) var operations: FetchedResults<PlannerOperation>
-//    @State private var date = Date()
-//    @State private var currentdate = Date()
-//
-//    let dateRange: ClosedRange<Date> = {
-//        let calendar = Calendar.current
-//        let startComponents = DateComponents(year: 2021, month: 1, day: 1)
-//        let endComponents = DateComponents(year: 2021, month: 12, day: 31, hour: 23, minute: 59, second: 59)
-//        return calendar.date(from:startComponents)!
-//            ...
-//            calendar.date(from:endComponents)!
-//    }()
-//    
+    //    @State private var date = Date()
+    //    @State private var currentdate = Date()
+    //
+    //    let dateRange: ClosedRange<Date> = {
+    //        let calendar = Calendar.current
+    //        let startComponents = DateComponents(year: 2021, month: 1, day: 1)
+    //        let endComponents = DateComponents(year: 2021, month: 12, day: 31, hour: 23, minute: 59, second: 59)
+    //        return calendar.date(from:startComponents)!
+    //            ...
+    //            calendar.date(from:endComponents)!
+    //    }()
+    //
     func DeleteElement(at offsets: IndexSet) {
         for offset in offsets {
             // find this book in our fetch request
@@ -67,72 +67,72 @@ struct PlannerView: View {
     var body: some View {
         NavigationView{
             VStack{
-            Rectangle()
+                Rectangle()
                     .frame(width: .infinity, height: 55).ignoresSafeArea( edges: .top)
-                .foregroundColor(Color("ViolaBottoneChiaro"))
-//            VStack{
-//                Button{
-//
-//                    showingCalendar.toggle()
-//
-////                    DatePicker(
-////                        "Select Date",
-////                        selection: $date,
-////                        in: dateRange,
-////                        displayedComponents: [.date]
-////                    )
-////                        .datePickerStyle(CompactDatePickerStyle())
-////                        .padding()
-////                        Spacer()
-////                    Text("\(date)")
-////                        .padding()
-////                    Spacer()
-//                }
-//            label:
-//                {
-//                    Text("\(CalendarButton)")
-//                        .frame(width: 125)
-//                        .padding()
-//                        .foregroundColor(Color(.white))
-//                        .background(Color("ViolaBottone"))
-//                        .clipShape(Capsule())
-//                }
-//                .sheet(isPresented: $showingCalendar) {
-//                    ShowCalendarView()
-//                }
-//            }
+                    .foregroundColor(Color("ViolaBottoneChiaro"))
+                //            VStack{
+                //                Button{
+                //
+                //                    showingCalendar.toggle()
+                //
+                ////                    DatePicker(
+                ////                        "Select Date",
+                ////                        selection: $date,
+                ////                        in: dateRange,
+                ////                        displayedComponents: [.date]
+                ////                    )
+                ////                        .datePickerStyle(CompactDatePickerStyle())
+                ////                        .padding()
+                ////                        Spacer()
+                ////                    Text("\(date)")
+                ////                        .padding()
+                ////                    Spacer()
+                //                }
+                //            label:
+                //                {
+                //                    Text("\(CalendarButton)")
+                //                        .frame(width: 125)
+                //                        .padding()
+                //                        .foregroundColor(Color(.white))
+                //                        .background(Color("ViolaBottone"))
+                //                        .clipShape(Capsule())
+                //                }
+                //                .sheet(isPresented: $showingCalendar) {
+                //                    ShowCalendarView()
+                //                }
+                //            }
                 VStack{
-                Button{
-    //                    x = x+1
+                    Button{
+                        //                    x = x+1
                         showingCalendar.toggle()
                     }
                 label: {
                     Text("\(dateFormatter.string(from: date ?? Date.now))")
-                    .frame(width: 225)
-                    .padding()
-                    .foregroundColor(Color("WhiteBlack"))
-                    .background(Color("ViolaBottone"))
-                    .clipShape(Capsule())
+                        .frame(width: 150)
+                        .padding()
+                        .foregroundColor(Color("WhiteBlack"))
+                        .background(Color("ViolaBottoneChiaro"))
+                        .clipShape(Capsule())
                 }
                 .sheet(isPresented: $showingCalendar) {
                     VStack{
                         
-                    Spacer()
+                        Spacer()
                         
-                    DatePicker(
-                        "",
-                        selection: $date,
-    //                    in: dateRange,
-                        displayedComponents: [.date]
-                    )
-                        .labelsHidden()
-                        .datePickerStyle(GraphicalDatePickerStyle())
-                        .padding()
-                        .background(Color("WhiteBlack"))
+                        DatePicker(
+                            "",
+                            selection: $date,
+                            //                    in: dateRange,
+                            displayedComponents: [.date]
+                        )
+                            .labelsHidden()
+                            .datePickerStyle(GraphicalDatePickerStyle())
+                            .padding()
+                            .background(Color("WhiteBlack"))
                         Spacer()
                         
                         Button{
-                            dismiss()
+                            showingCalendar.toggle()
                             
                         }
                     label:
@@ -147,89 +147,89 @@ struct PlannerView: View {
                     }
                     .background(Image("Background"))
                 }
-
                     
-
-//                DatePicker(
-//                    "",
-//                    selection: $date,
-////                    in: dateRange,
-//                    displayedComponents: [.date]
-//                )
-//                        .labelsHidden()
-//                    .datePickerStyle(CompactDatePickerStyle())
-//                    .padding()
                     
-//                Spacer()
-//                Text("\(dateFormatter.string(from: date))")
-//                    .padding()
-            }
+                    
+                    //                DatePicker(
+                    //                    "",
+                    //                    selection: $date,
+                    ////                    in: dateRange,
+                    //                    displayedComponents: [.date]
+                    //                )
+                    //                        .labelsHidden()
+                    //                    .datePickerStyle(CompactDatePickerStyle())
+                    //                    .padding()
+                    
+                    //                Spacer()
+                    //                Text("\(dateFormatter.string(from: date))")
+                    //                    .padding()
+                }
                 Spacer()
                 
-                    VStack{
-                        Spacer()
-                        
-                        if(operations.count > 0){
-                            ScrollView{
-                                ForEach(operations) { operation in
-                                    if (dateFormatter.string(from: operation.date ?? Date.now) == dateFormatter.string(from: date)){
+                VStack{
+                    Spacer()
+                    
+                    if(operations.count > 0){
+                        ScrollView{
+                            ForEach(operations) { operation in
+                                if (dateFormatter.string(from: operation.date ?? Date.now) == dateFormatter.string(from: date)){
                                     PlannerTaskView(Title: operation.title ?? "Unknown", Description: operation.titledescription ?? "Unknown", Iden: operation.objectID)
-                                    }
                                 }
-//                                .onDelete(perform: DeleteElement)
                             }
-                            .padding()
-                            .opacity(50)
+                            //                                .onDelete(perform: DeleteElement)
                         }
-                        else
-                        {
-                            VStack{
-                                Image("emptyimage")
-                                Text("\(ThereIsNothing)")
-                                    .font(.title2)
-                                    .foregroundColor(Color("ViolaBottoneChiaro"))
-                                    .padding()
-                            }
-                        }
-                        Spacer()
+                        .padding()
+                        .opacity(50)
                     }
+                    else
+                    {
+                        VStack{
+                            Image("emptyimage")
+                            Text("\(ThereIsNothing)")
+                                .font(.title2)
+                                .foregroundColor(Color("ViolaBottoneChiaro"))
+                                .padding()
+                        }
+                    }
+                    Spacer()
+                }
                 
-//                DatePicker(
-//                    "Select Date",
-//                    selection: $date,
-//                    in: dateRange,
-//                    displayedComponents: [.date]
-//                )
-//                    .datePickerStyle(CompactDatePickerStyle())
-//                    .padding()
-//                    Spacer()
-//                Text("\(date)")
-//                    .padding()
-//                Spacer()
+                //                DatePicker(
+                //                    "Select Date",
+                //                    selection: $date,
+                //                    in: dateRange,
+                //                    displayedComponents: [.date]
+                //                )
+                //                    .datePickerStyle(CompactDatePickerStyle())
+                //                    .padding()
+                //                    Spacer()
+                //                Text("\(date)")
+                //                    .padding()
+                //                Spacer()
             }
             .navigationTitle("Planner")
             .background(
                 Image("Background"))
-                
+            
             .toolbar{
                 ToolbarItemGroup(placement: .navigationBarTrailing){
-                Button{
-//                    x = x+1
-                    showingAddRemove.toggle()
+                    Button{
+                        //                    x = x+1
+                        showingAddRemove.toggle()
+                    }
+                label: {
+                    Label ("add", systemImage: "plus.circle.fill")
+                        .foregroundColor(Color("Giallo"))
                 }
-            label: {
-                Label ("add", systemImage: "plus.circle.fill")
-                    .foregroundColor(Color("Giallo"))
-            }
-            .sheet(isPresented: $showingAddRemove) {
-                NewTaskView()
-            }
+                .sheet(isPresented: $showingAddRemove) {
+                    NewTaskView()
+                }
                 }
             }
-            }
+        }
         
         
-
+        
     }
 }
 
