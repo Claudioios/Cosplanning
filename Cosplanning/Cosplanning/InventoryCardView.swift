@@ -27,52 +27,52 @@ struct InventoryCardView: View {
     
     var body: some View {
         NavigationLink(destination: ShowInventoryView(Name: Name, Price: Price, Quantity: Quantity, Iden: Iden)){
-        HStack{
-            Rectangle()
-                .frame(width: 350, height: 100)
-                .cornerRadius(43)
-                .foregroundColor(Color("ViolaBottoneChiaro"))
-                .padding()
-                .overlay()
-            {
-                HStack{
-                    Text("\(Name)")
-                        .font(.title)
-                        .fontWeight(.semibold)
-                        .foregroundColor(.white)
-                        .padding(.leading, 50.0)
-                    Spacer()
+            HStack{
+                Rectangle()
+                    .frame(width: 350, height: 100)
+                    .cornerRadius(43)
+                    .foregroundColor(Color("ViolaBottoneChiaro"))
+                    .padding()
+                    .overlay()
+                {
                     HStack{
-                        VStack{
-                            Spacer()
-                            Text("\(PriceLock)")
-                                .foregroundColor(.white)
-                            Spacer()
-                            Text("\(Price, specifier: "%.2f") $")
-                                .foregroundColor(.white)
-                            Spacer()
+                        Text("\(Name)")
+                            .font(.title)
+                            .fontWeight(.semibold)
+                            .foregroundColor(Color("WhiteBlack"))
+                            .padding(.leading, 50.0)
+                        Spacer()
+                        HStack{
+                            VStack{
+                                Spacer()
+                                Text("\(PriceLock)")
+                                    .foregroundColor(Color("WhiteBlack"))
+                                Spacer()
+                                Text("\(Price, specifier: "%.2f") $")
+                                    .foregroundColor(Color("WhiteBlack"))
+                                Spacer()
+                            }
+                            Divider()
+                                .padding()
+                            VStack{
+                                Spacer()
+                                Text("\(QuantityLock)")
+                                    .foregroundColor(Color("WhiteBlack"))
+                                Spacer()
+                                Text("\(Quantity)")
+                                    .foregroundColor(Color("WhiteBlack"))
+                                Spacer()
+                                
+                                
+                            }
+                            .padding(.trailing, 50.0)
                         }
-                        Divider()
-                            .padding()
-                        VStack{
-                            Spacer()
-                            Text("\(QuantityLock)")
-                                .foregroundColor(.white)
-                            Spacer()
-                            Text("\(Quantity)")
-                                .foregroundColor(.white)
-                            Spacer()
-
-                            
-                        }
-                        .padding(.trailing, 50.0)
                     }
+                    
                 }
-                
             }
         }
     }
-}
 }
 //struct InventoryCardView_Previews: PreviewProvider {
 //    static var previews: some View {

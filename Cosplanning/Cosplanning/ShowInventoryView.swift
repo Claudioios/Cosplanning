@@ -46,6 +46,7 @@ struct ShowInventoryView: View {
                             {
                                 HStack{
                                     Text("\(Name)")
+                                        .foregroundColor(Color("WhiteBlack"))
                                 }
                             }
                         }
@@ -59,6 +60,7 @@ struct ShowInventoryView: View {
                             {
                                 HStack{
                                     Text("\(Price, specifier: "%.2f")")
+                                        .foregroundColor(Color("WhiteBlack"))
                                 }
                             }
                         }
@@ -72,6 +74,7 @@ struct ShowInventoryView: View {
                             {
                                 HStack{
                                     Text("\(Quantity)")
+                                        .foregroundColor(Color("WhiteBlack"))
                                 }
                             }
                         }

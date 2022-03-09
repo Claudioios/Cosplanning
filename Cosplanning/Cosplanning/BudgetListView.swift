@@ -10,7 +10,7 @@ import SwiftUI
 struct BudgetListView: View {
     
     @State private var Positive = true
-        
+    
     @Environment(\.managedObjectContext) var add
     @FetchRequest(sortDescriptors: []) var operations: FetchedResults<BudgetOperation>
     
@@ -26,21 +26,21 @@ struct BudgetListView: View {
     }
     
     var body: some View {
-//        Rectangle()
-//            .frame(width: .infinity, height: 55)
-//            .border(Color.gray)
-//            .foregroundColor(.white)
-//            .overlay()
-//                {
-//                    HStack{
-//                        Text("Operation 1")
-//                            .padding()
-//                        Spacer()
-//                        Text("50$")
-//                            .foregroundColor(.green)
-//                            .padding()
-//                    }
-//                }
+        //        Rectangle()
+        //            .frame(width: .infinity, height: 55)
+        //            .border(Color.gray)
+        //            .foregroundColor(.white)
+        //            .overlay()
+        //                {
+        //                    HStack{
+        //                        Text("Operation 1")
+        //                            .padding()
+        //                        Spacer()
+        //                        Text("50$")
+        //                            .foregroundColor(.green)
+        //                            .padding()
+        //                    }
+        //                }
         HStack
         {
             Rectangle()

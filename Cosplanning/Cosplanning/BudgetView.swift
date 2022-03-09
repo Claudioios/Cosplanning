@@ -13,10 +13,10 @@ struct BudgetView: View {
     let NewOperation = NSLocalizedString("NewOperation", comment: "NewOperation")
     
     @State private var showingAddRemove = false
-//    @State private var money : Double = 0
+    //    @State private var money : Double = 0
     @AppStorage("Money") private var money : Double = 0.0
     @State private var x = 250
-
+    
     let Money : Double = 0
     
     @Environment(\.managedObjectContext) var add
@@ -43,24 +43,24 @@ struct BudgetView: View {
                     .foregroundColor(Color("ViolaBottoneChiaro"))
                 Spacer()
                 VStack {
-//                    List{
-//                        ForEach(operations) { operation in
-//                            Text(operation.shortdescription ?? "Unknown")
-//                        }
-//                        .onDelete(perform: DeleteElement)
-//                    }
+                    //                    List{
+                    //                        ForEach(operations) { operation in
+                    //                            Text(operation.shortdescription ?? "Unknown")
+                    //                        }
+                    //                        .onDelete(perform: DeleteElement)
+                    //                    }
                     HStack
                     {
-//                        Button("Add") {
-//
-//                            let NewOperation = BudgetOperation(context: add)
-//                            NewOperation.money = Money
-//                            NewOperation.shortdescription = "Ciao"
-//                            NewOperation.date = Date.now
-//                            // more code to come
-//
-//                            try? add.save()
-//                        }
+                        //                        Button("Add") {
+                        //
+                        //                            let NewOperation = BudgetOperation(context: add)
+                        //                            NewOperation.money = Money
+                        //                            NewOperation.shortdescription = "Ciao"
+                        //                            NewOperation.date = Date.now
+                        //                            // more code to come
+                        //
+                        //                            try? add.save()
+                        //                        }
                     }
                     
                 }
@@ -83,14 +83,14 @@ struct BudgetView: View {
                             Spacer()
                             Button{
                                 showingAddRemove.toggle()
-//                                    let NewOperation = BudgetOperation(context: add)
-//                                    NewOperation.money = Money
-//                                    NewOperation.shortdescription = "Ciao"
-//                                    NewOperation.date = Date.now
-//                                    // more code to come
-//
-//                                    try? add.save()
-                                }
+                                //                                    let NewOperation = BudgetOperation(context: add)
+                                //                                    NewOperation.money = Money
+                                //                                    NewOperation.shortdescription = "Ciao"
+                                //                                    NewOperation.date = Date.now
+                                //                                    // more code to come
+                                //
+                                //                                    try? add.save()
+                            }
                         label:
                             {
                                 Text("\(NewOperation)")
@@ -116,93 +116,93 @@ struct BudgetView: View {
                             .overlay()
                         {
                             Rectangle()
-                            .frame(width: 350, height: CGFloat(x))
-                            .foregroundColor(.white)
-//                            .border(Color.gray)
-                            .cornerRadius(42)
-                            .padding()
-                            .overlay()
-                        {
-                            ScrollView(showsIndicators: false){
-                            VStack{
-                                Spacer()
-                                if(operations.count > 0){
-                                    
-//                                    ForEach(0..<ArrayBudgetOperations.ArrayBudgetOperations.count) { ind in
-                                        
-//                                        BudgetListView(ind: ind, ArrayBudgetOperations: ArrayBudgetOperations)
+                                .frame(width: 350, height: CGFloat(x))
+                                .foregroundColor(.white)
+                            //                            .border(Color.gray)
+                                .cornerRadius(42)
+                                .padding()
+                                .overlay()
+                            {
+                                ScrollView(showsIndicators: false){
+                                    VStack{
+                                        Spacer()
+                                        if(operations.count > 0){
+                                            
+                                            //                                    ForEach(0..<ArrayBudgetOperations.ArrayBudgetOperations.count) { ind in
+                                            
+                                            //                                        BudgetListView(ind: ind, ArrayBudgetOperations: ArrayBudgetOperations)
                                             ForEach(operations) { operation in
                                                 BudgetListView(Money: operation.money ?? 0, Description: operation.shortdescription ?? "Unknown", date: operation.date ?? Date.now, typeOperation: operation.typeOperation ?? "Add")
                                                     .contextMenu()
-                                                    {
-                                                        Button(action: {
-                                                            if (operation.typeOperation == "Add")
-                                                            {
-                                                                money = money - operation.money
-                                                            }
-                                                            else
-                                                            {
-                                                                money = money + operation.money
-                                                            }
-                                                            add.delete(operation)
-                                                               try? add.save()
-                                                        })
+                                                {
+                                                    Button(action: {
+                                                        if (operation.typeOperation == "Add")
                                                         {
-                                                            HStack{
+                                                            money = money - operation.money
+                                                        }
+                                                        else
+                                                        {
+                                                            money = money + operation.money
+                                                        }
+                                                        add.delete(operation)
+                                                        try? add.save()
+                                                    })
+                                                    {
+                                                        HStack{
                                                             Image(systemName: "trash")
                                                             Text("Delete")
-                                                                
-                                                            }
-                                                                
+                                                            
                                                         }
+                                                        
                                                     }
+                                                }
                                                 
-                                               
+                                                
                                             }
-                                    //      .onDelete(perform: DeleteElement)
+                                            //      .onDelete(perform: DeleteElement)
                                             .foregroundColor(Color("ViolaBottoneChiaro"))
+                                            
+                                            
+                                        }
+                                        else
+                                        {
+                                            VStack{
+                                                Image("emptyimage")
+                                                Text("\(ThereIsNothing)")
+                                                    .font(.title2)
+                                                    .foregroundColor(Color("ViolaBottoneChiaro"))
+                                                    .padding()
+                                            }
+                                        }
                                         
-                                
-                                }
-                                else
-                                {
-                                    VStack{
-                                        Image("emptyimage")
-                                        Text("\(ThereIsNothing)")
-                                            .font(.title2)
-                                            .foregroundColor(Color("ViolaBottoneChiaro"))
-                                            .padding()
+                                        Spacer()
                                     }
                                 }
-                            
-                                Spacer()
-                                }
+                                .padding()
+                                
                             }
-                            .padding()
                             
                         }
-                        
-                    }
                     }
                     
                 }
             }
             .navigationTitle("Budget")
             .background(Image("Background"))
-//            .toolbar{
-//                ToolbarItemGroup(placement: .navigationBarTrailing){
-//                    Button{
-//                        showingAddRemove.toggle()
-//                    }
-//                label: {
-//                    Label ("Filter", systemImage: "line.3.horizontal.decrease.circle.fill")
-//                        .foregroundColor(Color("Giallo"))
-//                }
-//                .sheet(isPresented: $showingAddRemove) {
-//                    AddRemoveMoneyView()
-//                }
-//                }
-//            }
+            //            .toolbar{
+            //                ToolbarItemGroup(placement: .navigationBarTrailing){
+            //                    Button{
+            //                        showingAddRemove.toggle()
+            //                    }
+            //                label: {
+            //                    Label ("Filter", systemImage: "line.3.horizontal.decrease.circle.fill")
+            //                        .foregroundColor(Color("Giallo"))
+            //                }
+            //                .sheet(isPresented: $showingAddRemove) {
+            //                    AddRemoveMoneyView()
+            //                }
+            //                }
+            //            }
         }
     }
 }
